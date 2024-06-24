@@ -1,6 +1,5 @@
 // Header.jsx
 import "./Header.css";
-import reactLogo from "./assets/react.svg";
 
 function Header() {
   return (
