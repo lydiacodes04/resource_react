@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Main weatherData={weatherData} />
       </div>
-      <ModalWithForm>
+      <ModalWithForm title="New garment" buttonText="Add garment">
         <label htmlFor="" className="modal__label">
           Name{" "}
           <input
