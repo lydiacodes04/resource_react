@@ -1,24 +1,26 @@
 .footer {
-  font-family: Cabinet Grotesk, Arial, sans-serif;
+  font-family: Cabinet Grotesk, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
-  text-align: right;
 }
 .footer__content {
   display: flex;
   position: absolute;
+  justify-content: space-between;
 }
 .footer__content-name {
   position: relative;
-  top: 50px;
-  left: -40px;
+  top: 8vw;
+  left: -4vw;
   list-style-type: none;
+  text-align: left;
 }
 
 .footer__content-year {
   position: relative;
-  top: 50px;
-  left: 500px;
+  top: 8vw;
+  left: 75vw;
   list-style-type: none;
+  text-align: right;
 }
