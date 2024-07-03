@@ -79,7 +79,7 @@ function App() {
               type="radio"
               className="modal__radio-input"
               name="input"
-            />
+            />{" "}
             Hot
           </label>
           <label
