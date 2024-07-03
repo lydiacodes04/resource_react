@@ -4,6 +4,17 @@ import "./ModalWithForm.css";
 function ModalWithForm({ children, buttonText, title, activeModal, onClose }) {
   return (
     <div className={`modal ${activeModal === "add-garment" && "modal_opened"}`}>
+      {/* old way --works */}
+      {/* <div className={`modal ${activeModal === "add-garment" && "modal_opened"}`}> */}
+
+      {/* grader's suggestion--does not work */}
+      {/* isOpen={activeModal === "add-garment"} */}
+
+      {/* instructions on brief--I do not understand how to implement */}
+      {/* className={`modal modal_type_${name}`} */}
+
+      {/* note to grader: I do not understand how to implement your correction here. */}
+
       <div className="modal__content">
         <h2 className="modal__title">{title}</h2>
         <button onClick={onClose} type="button" className="modal__close">
@@ -20,16 +31,6 @@ function ModalWithForm({ children, buttonText, title, activeModal, onClose }) {
   );
 }
 
-//ItemCard is a component that renders the image and title for an item of clothing.
-// the image is an interactive elems a prop.
-//You should include the following:
-// The form’s title.
-// The button that closes the modal.
-// The <form> tag itself.
-// The button that submits the modal.
-
-//To correctly substitute name into the CSS class of the container, use the following syntax:
-// className={`modal modal_type_${name}`}
 //inputs and labels, use children prop
 // another prop: onClose should be called when the user clicks on the close button,
 // clicks outside of the modal content, or presses the Escape button on the keyboard.

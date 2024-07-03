@@ -31,8 +31,5 @@ function Main({ weatherData, handleCardClick }) {
     </main>
   );
 }
-// WeatherCard
-//clothing items >> wrap ItemCard component into the unordered list
-// and use the filter() and app() methods
 
 export default Main;
