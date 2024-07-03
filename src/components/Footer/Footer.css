@@ -1,0 +1,27 @@
+.footer {
+  padding: 32px 0px 28px;
+  font-family: Cabinet Grotesk;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: right;
+}
+.footer__content {
+  position: absolute;
+  display: flex;
+}
+.footer__content-name {
+  position: relative;
+  left: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__content-year {
+  position: relative;
+  right: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

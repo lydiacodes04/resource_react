@@ -1,12 +1,13 @@
-// Footer.jsx
 import "./Footer.css";
 
 function Footer() {
   return (
-    <> </>
-    // A component that renders meta info about the app: the copyright and the production year.
-    // It consists of basic text.
-    // For example "Designed by Lydia Lockhart" & "2024"
+    <div className="footer">
+      <ul className="footer__content">
+        <li className="footer__content-name">Designed by Lydia Lockhart </li>
+        <li className="footer__content-year"> 2024</li>
+      </ul>
+    </div>
   );
 }
 
