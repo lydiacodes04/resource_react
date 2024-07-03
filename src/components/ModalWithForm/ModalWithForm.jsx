@@ -2,20 +2,13 @@
 import "./ModalWithForm.css";
 import close from "../../assets/close.svg";
 
-function ModalWithForm({ children, buttonText, title, activeModal, onClose }) {
+function ModalWithForm({ children, buttonText, title, onClose, isOpened }) {
+  if (!isOpened) {
+    return null;
+  }
+
   return (
-    <div className={`modal ${activeModal === "add-garment" && "modal_opened"}`}>
-      {/* old way --works */}
-      {/* <div className={`modal ${activeModal === "add-garment" && "modal_opened"}`}> */}
-
-      {/* grader's suggestion--does not work */}
-      {/* isOpen={activeModal === "add-garment"} */}
-
-      {/* instructions on brief--I do not understand how to implement */}
-      {/* className={`modal modal_type_${name}`} */}
-
-      {/* note to grader: I do not understand how to implement your correction here. */}
-
+    <div className="modal modal_opened">
       <div className="modal__content">
         <h2 className="modal__title">{title}</h2>
         <button onClick={onClose} type="button" className="modal__close">
