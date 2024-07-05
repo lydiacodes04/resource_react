@@ -15,6 +15,18 @@
   visibility: visible;
 }
 
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+  width: 16px;
+  height: 16px;
+}
+
 .modal__title {
   margin: 0 0 30px;
   font-family: Cabinet Grotesk, sans-serif;
@@ -27,14 +39,14 @@
 .modal__content {
   position: relative;
   background-color: #fff;
-  padding: 20px 20px 36px;
+  padding: 25px 25px 36px;
   max-width: 496px;
   min-height: 436px;
   box-sizing: border-box;
   width: 100%;
   font-family: Cabinet Grotesk, sans-serif;
   font-size: 16px;
-  font-weight: 550;
+  font-weight: 700;
   line-height: 20px;
   text-align: left;
   border-radius: 20px;
@@ -51,14 +63,13 @@
 
 .modal__submit {
   position: absolute;
-  top: 300px;
-  left: 10px;
+  top: 330px;
+  left: 25px;
   background-color: #0000004d;
   color: #fff;
   padding: 8px 16px 8px 16px;
   gap: 8px;
-  border-radius: 4px 0px 0px 0px;
-  opacity: 0px;
+  border-radius: 4px;
   border: none;
 }
 
@@ -81,15 +92,6 @@
   row-gap: 4px;
   margin-bottom: 20px;
 }
-
-.modal__close {
-  position: absolute;
-  top: 20px;
-  right: 28px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  border: none;
-  background-color: transparent;
-  width: 16px;
-  height: 16px;
+.modal__label_type_radio {
+  font-weight: 500;
 }
