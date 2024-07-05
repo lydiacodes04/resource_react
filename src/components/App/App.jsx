@@ -53,8 +53,8 @@ function App() {
         onClose={closeActiveModal}
         isOpened={activeModal === "add-garment"}
       >
-        <label htmlFor="" className="modal__label">
-          Name{" "}
+        <label htmlFor="name" className="modal__label">
+          Name
           <input
             type="text"
             className="modal__input"
