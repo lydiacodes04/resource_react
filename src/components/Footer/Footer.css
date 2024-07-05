@@ -11,15 +11,15 @@
 }
 .footer__content-name {
   position: relative;
-  top: 8vw;
-  left: -4vw;
+  top: 1vh;
+  left: -3vw;
   list-style-type: none;
   text-align: left;
 }
 
 .footer__content-year {
   position: relative;
-  top: 8vw;
+  top: 1vh;
   left: 75vw;
   list-style-type: none;
   text-align: right;
