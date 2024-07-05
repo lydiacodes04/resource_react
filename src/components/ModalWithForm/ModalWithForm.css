@@ -58,7 +58,7 @@
   width: 100%;
   font-size: 16px;
   line-height: 20px;
-  row-gap: 16px;
+  row-gap: 28px;
 }
 
 .modal__submit {
@@ -71,6 +71,7 @@
   gap: 8px;
   border-radius: 4px;
   border: none;
+  margin-top: 35px;
 }
 
 .modal__input {
@@ -89,8 +90,7 @@
   padding: 8px 0px 20px;
   display: flex;
   flex-direction: column;
-  row-gap: 4px;
-  margin-bottom: 20px;
+  row-gap: 6px;
 }
 .modal__label_type_radio {
   font-weight: 500;
