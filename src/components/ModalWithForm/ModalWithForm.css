@@ -24,17 +24,12 @@
   text-align: left;
 }
 
-.modal__close {
-  position: absolute;
-  top: 20px;
-  right: 28px;
-}
-
 .modal__content {
   position: relative;
   background-color: #fff;
   padding: 20px 20px 36px;
   max-width: 496px;
+  min-height: 436px;
   box-sizing: border-box;
   width: 100%;
   font-family: Cabinet Grotesk, sans-serif;
@@ -87,9 +82,14 @@
   margin-bottom: 20px;
 }
 
-.modal__close-btn {
-  background-color: #fff;
-  overflow: hidden;
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
   width: 16px;
   height: 16px;
 }
