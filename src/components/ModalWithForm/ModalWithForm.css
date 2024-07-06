@@ -39,10 +39,8 @@
 .modal__content {
   position: relative;
   background-color: #fff;
-  /* padding: 10px 10px 12px; */
   max-width: 496px;
   min-height: 436px;
-  /* box-sizing: border-box; */
   width: 100%;
   font-family: Cabinet Grotesk, sans-serif;
   font-size: 16px;
@@ -64,7 +62,7 @@
 
 .modal__submit {
   position: absolute;
-  top: 330px;
+  top: 340px;
   left: 25px;
   background-color: #0000004d;
   color: #fff;
