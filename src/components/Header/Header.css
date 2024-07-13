@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 32px 0px 28px;
@@ -22,10 +23,19 @@
   text-align: left;
 }
 
-.header__add-clothes-btn {
-  margin: 0px 20px 0px auto;
+.header__toggle-and-clothes {
+  position: absolute;
+  right: 250px;
+  margin: 0px;
 }
+
+.header__add-clothes-btn {
+  margin: 0px 20px 0px 20px;
+}
+
 .header__user-container {
+  position: absolute;
+  right: 0;
   display: flex;
   align-items: center;
   gap: 12px;
