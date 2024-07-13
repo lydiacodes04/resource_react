@@ -25,29 +25,28 @@
 
 .switch__slider-F {
   top: 0px;
-  left: 20px;
+  left: 2px;
 }
 
 .switch__slider-C {
   top: 0px;
-  left: 2px;
+  left: 20px;
 }
 
 .switch__active {
   font-size: 16px;
-  /* color: white; */
 }
 
 .switch__temp-F {
   position: absolute;
   top: -12px;
-  left: 32px;
-  color: white;
+  left: 9px;
+  color: #fff;
 }
 
 .switch__temp-C {
   position: absolute;
   top: -12px;
-  left: 6px;
-  color: white;
+  left: 30px;
+  color: #fff;
 }
