@@ -47,8 +47,6 @@ function App() {
       .catch(console.error);
   }, []);
 
-  console.log(currentTemperatureUnit);
-
   return (
     <div className="page">
       <CurrentTemperatureUnitContext.Provider
