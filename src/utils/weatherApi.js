@@ -25,26 +25,20 @@ export const filterWeatherData = (data) => {
   return result;
 };
 
-// weather.temperature.F = data.main.temp);
-// weather.temperature.C = Math.round((data.main.temp - 32) * 5/9)};
-
-// const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
-// console.log(currentTemperatureUnit);
-
-const getWeatherTypeF = (temperature) => {
-  if (temperature > 86) {
+const getWeatherTypeF = (tempF) => {
+  if (tempF > 86) {
     return "hot";
-  } else if (temperature >= 66 && temperature < 86) {
+  } else if (tempF >= 66 && tempF < 86) {
     return "warm";
   } else {
     return "cold";
   }
 };
 
-const getWeatherTypeC = (temperature) => {
-  if (temperature > 30) {
+const getWeatherTypeC = (tempC) => {
+  if (tempC > 30) {
     return "hot";
-  } else if (temperature >= 19 && temperature < 30) {
+  } else if (tempC >= 19 && tempC < 30) {
     return "warm";
   } else {
     return "cold";
