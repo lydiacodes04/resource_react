@@ -34,11 +34,8 @@ function App() {
     setActiveModal("");
   };
 
-  const onAddItem = (e, values) => {
-    e.preventDefault();
-    console.log(e);
+  const onAddItem = (values) => {
     console.log(values);
-    // console.log(e.target);
   };
 
   const handleToggleSwitchChange = () => {

@@ -15,10 +15,10 @@ const AddItemModal = ({ isOpen, onAddItem, closeActiveModal }) => {
     setLink(e.target.value);
   };
 
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   call onAddItem with appropriate arguments
-  // }
+  function handleSubmit(e) {
+    e.preventDefault();
+    onAddItem({ name, link });
+  }
 
   return (
     <div
@@ -27,7 +27,7 @@ const AddItemModal = ({ isOpen, onAddItem, closeActiveModal }) => {
       text="Add garment"
       onClose={closeActiveModal}
       // isOpen={isOpen}
-      onSubmit={(e) => onAddItem(e, { name })}
+      onSubmit={handleSubmit}
     >
       <label htmlFor="name" className="modal__label">
         Name
@@ -41,13 +41,13 @@ const AddItemModal = ({ isOpen, onAddItem, closeActiveModal }) => {
           onChange={handleNameChange}
         />
       </label>
-      <label htmlFor="imageUrl" className="modal__label">
+      <label htmlFor="imageLink" className="modal__label">
         Image{" "}
         <input
           type="text"
           className="modal__input"
-          id="imageUrl"
-          placeholder="Image URL"
+          id="imageLink"
+          placeholder="Image Link"
           name="link"
           value={link}
           onChange={handleLinkChange}
