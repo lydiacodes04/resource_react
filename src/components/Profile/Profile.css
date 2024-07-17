@@ -5,13 +5,3 @@
   font-weight: 700;
   line-height: 24.8px;
 }
-
-.profile__sidebar {
-  text-align: left;
-  width: 229px;
-  height: 56px;
-}
-
-.profile__clothing-items {
-  display: flex;
-}

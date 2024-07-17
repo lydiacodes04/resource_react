@@ -1,0 +1,12 @@
+.sidebar {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  text-align: left;
+  width: 229px;
+  height: 56px;
+}
+
+.sidebar__username {
+  height: 25px;
+}
