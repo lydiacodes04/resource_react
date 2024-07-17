@@ -1,9 +1,16 @@
-//ModalWithForm.jsx
 import "./ModalWithForm.css";
 import close from "../../assets/close_icon.svg";
 
-function ModalWithForm({ children, buttonText, title, onClose, isOpened }) {
-  if (!isOpened) {
+function ModalWithForm({
+  children,
+  buttonText,
+  title,
+  onClose,
+  isOpen,
+  onAddItem,
+  onSubmit,
+}) {
+  if (!isOpen) {
     return null;
   }
 
@@ -15,7 +22,7 @@ function ModalWithForm({ children, buttonText, title, onClose, isOpened }) {
           <img src={close} alt="close button" className="modal__close-btn" />
         </button>
 
-        <form className="modal__form">
+        <form onSubmit={onSubmit} className="modal__form">
           {children}
           <button type="submit" className="modal__submit">
             {buttonText}
