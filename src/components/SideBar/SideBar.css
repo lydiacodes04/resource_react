@@ -1,6 +1,5 @@
 .sidebar {
   display: flex;
-  align-items: baseline;
   gap: 10px;
   text-align: left;
   width: 229px;
