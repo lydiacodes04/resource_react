@@ -3,7 +3,7 @@ import "../ModalWithForm/ModalWithForm";
 import "./AddItemModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const AddItemModal = ({ isOpen, onAddItem, closeActiveModal }) => {
+const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
   const [name, setName] = useState("");
   const handleNameChange = (e) => {
     console.log(e.target.value);
@@ -25,7 +25,7 @@ const AddItemModal = ({ isOpen, onAddItem, closeActiveModal }) => {
     <ModalWithForm
       title="New garment"
       buttonText="Add garment"
-      onClose={closeActiveModal}
+      onClose={onClose}
       isOpen={isOpen}
       onSubmit={handleSubmit}
     >
