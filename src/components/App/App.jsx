@@ -38,10 +38,6 @@ function App() {
     setActiveModal("");
   };
 
-  // const onAddItem = (values) => {
-  //   console.log(values);
-  // };
-
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
@@ -62,17 +58,6 @@ function App() {
       })
       .catch(console.error);
   }, []);
-
-  // useEffect(() => {
-  //   getItems()
-  //     .then((data) => {
-  //       setClothingItems(data);
-  //       data.forEach((item) =>
-  //         postItems(item.name, item.imageUrl, item.weather)
-  //       );
-  //     })
-  //     .catch(console.error);
-  // }, []);
 
   //original
   useEffect(() => {

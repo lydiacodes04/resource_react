@@ -13,7 +13,6 @@ function ItemCard({ item, onCardClick }) {
         src={item.imageUrl}
         alt={item.name}
       />
-      d
     </li>
   );
 }

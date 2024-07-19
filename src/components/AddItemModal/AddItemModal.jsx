@@ -16,7 +16,6 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
 
   const [weather, setWeather] = useState("");
   const handleWeatherChange = (e) => {
-    console.log(e.target.value);
     setWeather(e.target.value);
   };
 
