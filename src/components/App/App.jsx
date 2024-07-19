@@ -11,7 +11,7 @@ import Footer from "../Footer/Footer";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
-import { getItems } from "../../utils/api";
+import { getItems, postItems } from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -38,13 +38,20 @@ function App() {
     setActiveModal("");
   };
 
-  const onAddItem = (values) => {
-    console.log(values);
-  };
+  // const onAddItem = (values) => {
+  //   console.log(values);
+  // };
 
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
+  };
+
+  const handleAddItemSubmit = (item) => {
+    console.log(item);
+    postItems(item.name, item.imageUrl, item.weather).then((newCard) => {
+      setClothingItems([newCard, ...clothingItems]);
+    });
   };
 
   useEffect(() => {
@@ -56,6 +63,18 @@ function App() {
       .catch(console.error);
   }, []);
 
+  // useEffect(() => {
+  //   getItems()
+  //     .then((data) => {
+  //       setClothingItems(data);
+  //       data.forEach((item) =>
+  //         postItems(item.name, item.imageUrl, item.weather)
+  //       );
+  //     })
+  //     .catch(console.error);
+  // }, []);
+
+  //original
   useEffect(() => {
     getItems()
       .then((data) => {
@@ -98,7 +117,7 @@ function App() {
         <AddItemModal
           onClose={closeActiveModal}
           isOpen={activeModal === "add-garment"}
-          onAddItem={onAddItem}
+          onAddItem={handleAddItemSubmit}
         />
         {/* <ModalWithForm
         </ModalWithForm> */}
@@ -108,13 +127,13 @@ function App() {
               <AddItemModal
                 closeActiveModal={closeActiveModal}
                 isOpen={activeModal === "add-garment"}
-                onAddItem={onAddItem}
+                onAddItem={handleAddItemSubmit}
               />
             )
           }
           card={selectedCard}
           onClose={closeActiveModal}
-          onAddItem={onAddItem}
+          onAddItem={handleAddItemSubmit}
         />
       </CurrentTemperatureUnitContext.Provider>
     </div>

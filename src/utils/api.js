@@ -1,14 +1,33 @@
 const baseUrl = "http://localhost:3001";
+const headers = { "Content-Type": "application/json" };
 
 function getItems() {
   return fetch(`${baseUrl}/items`, {
-    headers: { "Content-Type": "application/json" },
+    headers: { headers },
   }).then((res) => {
     return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
   });
 }
 
 export { getItems };
+
+//CARD ROUTE: create a card (POST)
+function postItems(name, imageUrl, weather) {
+  return fetch(`${baseUrl}/items`, {
+    method: "POST",
+    headers: { headers },
+    body: JSON.stringify({
+      name,
+      imageUrl,
+      weather,
+    }),
+  }).then((res) => {
+    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+  });
+}
+
+export { postItems };
+
 // export default class Api {
 //   constructor({ baseUrl, headers }) {
 //     this._baseUrl = baseUrl;
