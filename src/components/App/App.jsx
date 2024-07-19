@@ -43,7 +43,6 @@ function App() {
   };
 
   const handleAddItemSubmit = (item) => {
-    console.log(item);
     postItems(item.name, item.imageUrl, item.weather).then((newCard) => {
       setClothingItems([newCard, ...clothingItems]);
     });
@@ -103,16 +102,9 @@ function App() {
           onAddItem={handleAddItemSubmit}
         />
         <ItemModal
-          activeModal={
-            <AddItemModal
-              onClose={closeActiveModal}
-              isOpen={activeModal === "add-garment"}
-              onAddItem={handleAddItemSubmit}
-            />
-          }
-          card={selectedCard}
+          activeModal={activeModal}
           onClose={closeActiveModal}
-          onAddItem={handleAddItemSubmit}
+          card={selectedCard}
         />
       </CurrentTemperatureUnitContext.Provider>
     </div>
