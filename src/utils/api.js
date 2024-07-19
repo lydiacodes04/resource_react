@@ -3,7 +3,8 @@ const headers = { "Content-Type": "application/json" };
 
 function getItems() {
   return fetch(`${baseUrl}/items`, {
-    headers: { headers },
+    // headers: { headers },
+    headers: { "Content-Type": "application/json" },
   }).then((res) => {
     return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
   });
@@ -15,7 +16,8 @@ export { getItems };
 function postItems(name, imageUrl, weather) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
-    headers: { headers },
+    // headers: { headers },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       name,
       imageUrl,
