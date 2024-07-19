@@ -4,7 +4,6 @@ import "./App.css";
 import { coordinates, APIkey } from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import Footer from "../Footer/Footer";
@@ -59,7 +58,6 @@ function App() {
       .catch(console.error);
   }, []);
 
-  //original
   useEffect(() => {
     getItems()
       .then((data) => {
@@ -104,17 +102,13 @@ function App() {
           isOpen={activeModal === "add-garment"}
           onAddItem={handleAddItemSubmit}
         />
-        {/* <ModalWithForm
-        </ModalWithForm> */}
         <ItemModal
           activeModal={
-            activeModal && (
-              <AddItemModal
-                closeActiveModal={closeActiveModal}
-                isOpen={activeModal === "add-garment"}
-                onAddItem={handleAddItemSubmit}
-              />
-            )
+            <AddItemModal
+              onClose={closeActiveModal}
+              isOpen={activeModal === "add-garment"}
+              onAddItem={handleAddItemSubmit}
+            />
           }
           card={selectedCard}
           onClose={closeActiveModal}

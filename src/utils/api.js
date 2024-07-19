@@ -28,12 +28,12 @@ function postItems(name, imageUrl, weather) {
 export { postItems };
 
 //  Delete card:
-  deleteRequest(cardID) {
-    return fetch(`${this._baseUrl}/cards/${cardID}`, {
-      method: "DELETE",
-      headers: this._headers,
-    }).then(this._checkResponse);
-  }
+// deleteRequest(cardID) {
+//   return fetch(`${baseUrl}/cards/${cardID}`, {
+//     method: "DELETE",
+//     headers: this._headers,
+//   }).then(this._checkResponse);
+// }
 
 //in index.js
 

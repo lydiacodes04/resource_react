@@ -19,9 +19,6 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
     setWeather(e.target.value);
   };
 
-  // Add state for weather input
-  // set the weather input value prop
-
   function handleSubmit(e) {
     e.preventDefault();
     onAddItem({ name, imageUrl, weather });
