@@ -28,12 +28,16 @@ function postItems(name, imageUrl, weather) {
 export { postItems };
 
 //  Delete card:
-// deleteRequest(cardID) {
-//   return fetch(`${baseUrl}/cards/${cardID}`, {
-//     method: "DELETE",
-//     headers: this._headers,
-//   }).then(this._checkResponse);
-// }
+function deleteItem(item) {
+  return fetch(`${baseUrl}/cards/${item._id}`, {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+  }).then((res) => {
+    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+  });
+}
+
+export { deleteItem };
 
 //in index.js
 
