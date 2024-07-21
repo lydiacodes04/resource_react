@@ -10,7 +10,12 @@ import Footer from "../Footer/Footer";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
-import { getItems, postItems, deleteItem } from "../../utils/api";
+import {
+  getItems,
+  postItems,
+  deleteItem,
+  checkResponse,
+} from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -50,25 +55,12 @@ function App() {
 
   const handleDeleteItem = (item) => {
     deleteItem(item)
-      .then((res) => {
-        return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-      })
+      .then(checkResponse)
       .then((res) => {
         const newClothingItems = [clothingItems].filter(item.id);
         setClothingItems(newClothingItems);
+        setActiveModal("");
       });
-
-    // const handleDeleteItem = (item) = {
-    //     const newClothingItems = [clothingItems].filter(item.id);
-    //   deleteItem(item._id).then((res) => {
-    //   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-    //   //After a successful API request, the clothingItems state should be updated using the filter() method.
-    // }).then((res)=>{
-    //     setClothingItems(newClothingItems);
-    //   })
-    // }
-    //You should also create a copy of the array and exclude the deleted card from it.
-    //close the item modal window
   };
 
   useEffect(() => {
