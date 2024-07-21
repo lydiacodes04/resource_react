@@ -54,14 +54,29 @@ function App() {
   };
 
   const handleDeleteItem = (item) => {
+    console.log(item);
     deleteItem(item)
-      .then(checkResponse)
       .then((res) => {
-        const newClothingItems = [clothingItems].filter(item.id);
+        const newClothingItems = clothingItems.filter(
+          (cardItem) => cardItem._id !== item._id
+        );
         setClothingItems(newClothingItems);
-        setActiveModal("").catch(console.error);
-      }, []);
+        setActiveModal("");
+      })
+      .catch((e) => console.error(e));
   };
+
+  // first version
+  // const handleDeleteItem = (item) => {
+  //   deleteItem(item)
+  //     .then(checkResponse)
+  //     .then((res) => {
+  //       console.log(res);
+  //       const newClothingItems = [clothingItems].filter(item.id);
+  //       setClothingItems(newClothingItems);
+  //       setActiveModal("").catch(console.error);
+  //     }, []);
+  // };
 
   useEffect(() => {
     getWeather(coordinates, APIkey)
