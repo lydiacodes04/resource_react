@@ -59,8 +59,8 @@ function App() {
       .then((res) => {
         const newClothingItems = [clothingItems].filter(item.id);
         setClothingItems(newClothingItems);
-        setActiveModal("");
-      });
+        setActiveModal("").catch(console.error);
+      }, []);
   };
 
   useEffect(() => {
