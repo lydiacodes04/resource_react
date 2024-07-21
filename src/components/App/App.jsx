@@ -49,8 +49,6 @@ function App() {
   };
 
   const handleDeleteItem = (item) => {
-    console.log(item);
-
     deleteItem(item)
       .then((res) => {
         return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
@@ -71,70 +69,70 @@ function App() {
     // }
     //You should also create a copy of the array and exclude the deleted card from it.
     //close the item modal window
-
-    useEffect(() => {
-      getWeather(coordinates, APIkey)
-        .then((data) => {
-          const filteredData = filterWeatherData(data);
-          setWeatherData(filteredData);
-        })
-        .catch(console.error);
-    }, []);
-
-    useEffect(() => {
-      getItems()
-        .then((data) => {
-          setClothingItems(data);
-        })
-        .catch(console.error);
-    }, []);
-
-    return (
-      <div className="page">
-        <CurrentTemperatureUnitContext.Provider
-          value={{ currentTemperatureUnit, handleToggleSwitchChange }}
-        >
-          <div className="page__content">
-            <Header handleAddClick={handleAddClick} weatherData={weatherData} />
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <Main
-                    weatherData={weatherData}
-                    onCardClick={handleCardClick}
-                    clothingItems={clothingItems}
-                  />
-                }
-              />
-              <Route
-                path="/profile"
-                element={
-                  <Profile
-                    onCardClick={handleCardClick}
-                    clothingItems={clothingItems}
-                  />
-                }
-              />
-            </Routes>
-
-            <Footer />
-          </div>
-          <AddItemModal
-            onClose={closeActiveModal}
-            isOpen={activeModal === "add-garment"}
-            onAddItem={handleAddItemSubmit}
-          />
-          <ItemModal
-            activeModal={activeModal}
-            onClose={closeActiveModal}
-            card={selectedCard}
-            handleDeleteItem={handleDeleteItem}
-          />
-        </CurrentTemperatureUnitContext.Provider>
-      </div>
-    );
   };
+
+  useEffect(() => {
+    getWeather(coordinates, APIkey)
+      .then((data) => {
+        const filteredData = filterWeatherData(data);
+        setWeatherData(filteredData);
+      })
+      .catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    getItems()
+      .then((data) => {
+        setClothingItems(data);
+      })
+      .catch(console.error);
+  }, []);
+
+  return (
+    <div className="page">
+      <CurrentTemperatureUnitContext.Provider
+        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+      >
+        <div className="page__content">
+          <Header handleAddClick={handleAddClick} weatherData={weatherData} />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Main
+                  weatherData={weatherData}
+                  onCardClick={handleCardClick}
+                  clothingItems={clothingItems}
+                />
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <Profile
+                  onCardClick={handleCardClick}
+                  clothingItems={clothingItems}
+                />
+              }
+            />
+          </Routes>
+
+          <Footer />
+        </div>
+        <AddItemModal
+          onClose={closeActiveModal}
+          isOpen={activeModal === "add-garment"}
+          onAddItem={handleAddItemSubmit}
+        />
+        <ItemModal
+          activeModal={activeModal}
+          onClose={closeActiveModal}
+          card={selectedCard}
+          handleDeleteItem={handleDeleteItem}
+        />
+      </CurrentTemperatureUnitContext.Provider>
+    </div>
+  );
 }
 
 export default App;

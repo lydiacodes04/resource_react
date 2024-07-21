@@ -12,10 +12,7 @@ function ItemModal({ activeModal, onClose, card, handleDeleteItem }) {
         <div className="modal__footer">
           <h2 className="modal__caption"> {card.name} </h2>
           <p className="modal__weather">Weather: {card.weather}</p>
-          <button
-            className="modal__delete-btn"
-            onClick={(handleDeleteItem, onClose)}
-          >
+          <button className="modal__delete-btn" onClick={handleDeleteItem}>
             Delete item
           </button>
         </div>
