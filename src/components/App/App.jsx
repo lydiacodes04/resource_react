@@ -54,7 +54,7 @@ function App() {
   };
 
   const handleDeleteItem = (item) => {
-    console.log(item);
+    console.log(item).then(checkResponse);
     deleteItem(item)
       .then((res) => {
         const newClothingItems = clothingItems.filter(
@@ -65,18 +65,6 @@ function App() {
       })
       .catch((e) => console.error(e));
   };
-
-  // first version
-  // const handleDeleteItem = (item) => {
-  //   deleteItem(item)
-  //     .then(checkResponse)
-  //     .then((res) => {
-  //       console.log(res);
-  //       const newClothingItems = [clothingItems].filter(item.id);
-  //       setClothingItems(newClothingItems);
-  //       setActiveModal("").catch(console.error);
-  //     }, []);
-  // };
 
   useEffect(() => {
     getWeather(coordinates, APIkey)
