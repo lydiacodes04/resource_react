@@ -48,22 +48,26 @@ function App() {
   };
 
   const handleAddItemSubmit = (item) => {
-    postItems(item.name, item.imageUrl, item.weather).then((newCard) => {
-      setClothingItems([newCard, ...clothingItems]);
-    });
+    postItems(item.name, item.imageUrl, item.weather)
+      .then((newCard) => {
+        setClothingItems([newCard, ...clothingItems]);
+      })
+      .catch((err) => console.error("Error submitting:", err));
+    closeActiveModal();
   };
 
   const handleDeleteItem = (item) => {
-    console.log(item).then(checkResponse);
+    console.log(item);
     deleteItem(item)
       .then((res) => {
         const newClothingItems = clothingItems.filter(
           (cardItem) => cardItem._id !== item._id
         );
         setClothingItems(newClothingItems);
-        setActiveModal("");
+        closeActiveModal("");
       })
-      .catch((e) => console.error(e));
+      // .then(checkResponse)
+      .catch((err) => console.error("Error deleting item:", err));
   };
 
   useEffect(() => {
@@ -107,6 +111,7 @@ function App() {
                 <Profile
                   onCardClick={handleCardClick}
                   clothingItems={clothingItems}
+                  handleAddClick={handleAddClick}
                 />
               }
             />

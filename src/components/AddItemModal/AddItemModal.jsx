@@ -3,6 +3,7 @@ import "../ModalWithForm/ModalWithForm";
 import "./AddItemModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import useForm from "../hooks/useForm";
+import { checkResponse } from "../../utils/api";
 
 // const { values, handleChange, setValues } = useForm({});
 //  function useForm(inputValues) {
@@ -15,18 +16,19 @@ import useForm from "../hooks/useForm";
 //   return { values, handleChange, setValues };
 // }
 
-const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
-  const { name, handleNameChange, setName } = useForm({});
-  // const [name, setName] = useState("");
-  // const handleNameChange = (e) => {
-  //   setName(e.target.value);
-  // };
+// const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
+//   const { name, handleNameChange, setName } = useForm({});
 
-  // const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
-  //   const [name, setName] = useState("");
-  //   const handleNameChange = (e) => {
-  //     setName(e.target.value);
-  //   };
+// const [name, setName] = useState("");
+// const handleNameChange = (e) => {
+//   setName(e.target.value);
+// };
+
+const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
+  const [name, setName] = useState("");
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
 
   const [imageUrl, setImageUrl] = useState("");
   const handleImageUrlChange = (e) => {
@@ -41,7 +43,6 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
   function handleSubmit(e) {
     e.preventDefault();
     onAddItem({ name, imageUrl, weather });
-    onClose();
   }
 
   return (
