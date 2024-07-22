@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import "../ModalWithForm/ModalWithForm";
 import "./AddItemModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { checkResponse } from "../../utils/api";
-
-// const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
-//   const { name, handleNameChange, setName } = useForm({});
 
 const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
   const [name, setName] = useState("");
