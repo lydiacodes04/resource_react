@@ -1,12 +1,6 @@
 {
   "items": [
     {
-      "_id": 1,
-      "name": "Boot",
-      "weather": "cold",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Boot.png?etag=0953a2ea59f1c6ebc832fabacdc9c70e"
-    },
-    {
       "_id": 2,
       "name": "Cap",
       "weather": "hot",
@@ -5096,9 +5090,15 @@
     },
     {
       "name": "Shorts",
-      "imageUrl": " https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Shorts.png?etag=d728c496643f610de8d8fea92dd915ba",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Shorts.png?etag=d728c496643f610de8d8fea92dd915ba",
       "weather": "hot",
       "_id": 1685
+    },
+    {
+      "name": "den",
+      "imageUrl": "",
+      "weather": "",
+      "_id": 1686
     }
   ]
 }
