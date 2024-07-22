@@ -2,27 +2,10 @@ import React, { useState } from "react";
 import "../ModalWithForm/ModalWithForm";
 import "./AddItemModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import useForm from "../hooks/useForm";
 import { checkResponse } from "../../utils/api";
-
-// const { values, handleChange, setValues } = useForm({});
-//  function useForm(inputValues) {
-//   const [values, setValues] = useState(inputValues);
-
-//   const handleChange = (event) => {
-//     const { value, name } = event.target;
-//     setValues({ ...values, [name]: value });
-//   };
-//   return { values, handleChange, setValues };
-// }
 
 // const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
 //   const { name, handleNameChange, setName } = useForm({});
-
-// const [name, setName] = useState("");
-// const handleNameChange = (e) => {
-//   setName(e.target.value);
-// };
 
 const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
   const [name, setName] = useState("");
