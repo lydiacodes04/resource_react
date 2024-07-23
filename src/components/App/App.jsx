@@ -60,7 +60,7 @@ function App() {
         setClothingItems(newClothingItems);
       })
       .catch((err) => console.error("Error deleting item:", err));
-    closeActiveModal("");
+    closeActiveModal();
   };
 
   useEffect(() => {
