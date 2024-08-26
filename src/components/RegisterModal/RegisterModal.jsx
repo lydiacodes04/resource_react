@@ -2,10 +2,32 @@ import React, { useState } from "react";
 import "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 
-function RegisterModal({ onClose, isOpen, handleSubmit }) {
-  if (!isOpen) {
-    return null;
-  }
+// function RegisterModal({ onClose, isOpen, handleSubmit }) {
+//   if (!isOpen) {
+//     return null;
+//   }
+
+const Register = () => {
+  // The inputs are controlled via a single piece of state: an object
+  // object called `data`. This lets us avoid writing separate change
+  // handlers for each input.
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+    name: "",
+    avatarUrl: "",
+  });
+
+  // This function fires whenever an input is changed, and it updates
+  // the value of the changed input. Note that the keys of this
+  // object match the name attributes of the corresponding inputs.
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   return (
     <ModalWithForm
@@ -23,8 +45,8 @@ function RegisterModal({ onClose, isOpen, handleSubmit }) {
           id="email"
           placeholder="Email"
           name="email"
-          value={email}
-          onChange={handleNameChange}
+          value={data.email}
+          onChange={handleChange}
         />
       </label>
       <label htmlFor="password" className="modal__label">
@@ -35,8 +57,8 @@ function RegisterModal({ onClose, isOpen, handleSubmit }) {
           id="password"
           placeholder="Password"
           name="password"
-          value={password}
-          onChange={handleNameChange}
+          value={data.password}
+          onChange={handleChange}
         />
       </label>
 
@@ -48,8 +70,8 @@ function RegisterModal({ onClose, isOpen, handleSubmit }) {
           id="name"
           placeholder="Name"
           name="name"
-          value={name}
-          onChange={handleNameChange}
+          value={data.name}
+          onChange={handleChange}
         />
       </label>
       <label htmlFor="avatarUrl" className="modal__label">
@@ -60,12 +82,24 @@ function RegisterModal({ onClose, isOpen, handleSubmit }) {
           id="avatarUrl"
           placeholder="Avatar Url"
           name="avatarUrl"
-          value={avatarUrl}
-          onChange={handleImageUrlChange}
+          value={data.avatarUrl}
+          onChange={handleChange}
         />
+      </label>
+      <label className="register__button-container">
+        <button type="submit" className="register__link">
+          Sign up
+        </button>
+      </label>
+      <label className="register__signin">
+        <Link to="login" className="register__login-link">
+          or Log In
+        </Link>
       </label>
     </ModalWithForm>
   );
-}
+};
 
-export default RegisterModal;
+// export default RegisterModal;
+
+export default Register;
