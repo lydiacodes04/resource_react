@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 
-function RegisterModal({ onClose, isOpen, handleSubmit }) {
+function LoginModal({ onClose, isOpen, handleSubmit }) {
   if (!isOpen) {
     return null;
   }
 
   return (
     <ModalWithForm
-      title="Sign Up"
-      buttonText="Sign Up"
+      title="Sign In"
+      buttonText="Sign In"
       onClose={onClose}
       isOpen={isOpen}
       onSubmit={handleSubmit}
@@ -39,33 +39,8 @@ function RegisterModal({ onClose, isOpen, handleSubmit }) {
           onChange={handleNameChange}
         />
       </label>
-
-      <label htmlFor="name" className="modal__label">
-        Name
-        <input
-          type="text"
-          className="modal__input"
-          id="name"
-          placeholder="Name"
-          name="name"
-          value={name}
-          onChange={handleNameChange}
-        />
-      </label>
-      <label htmlFor="avatarUrl" className="modal__label">
-        Avatar URL{" "}
-        <input
-          type="link"
-          className="modal__input"
-          id="avatarUrl"
-          placeholder="Avatar Url"
-          name="avatarUrl"
-          value={avatarUrl}
-          onChange={handleImageUrlChange}
-        />
-      </label>
     </ModalWithForm>
   );
 }
 
-export default RegisterModal;
+export default LoginModal;
