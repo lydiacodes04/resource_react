@@ -1,6 +1,6 @@
-# React + Vite
+# What To Wear (WTWR) Fullstack App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app utilizes React for the frontend, working in Vite with HMR and some ESLint rules. It utilizes a custom-made backend, https://github.com/lydiacodes04/se_project_express which uses Express.
 
 Currently, two official plugins are available:
 
