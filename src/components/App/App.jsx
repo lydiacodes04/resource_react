@@ -111,6 +111,16 @@ function App() {
                 />
               }
             />
+            <Route
+              path="*"
+              element={
+                isLoggedIn ? (
+                  <Navigate to="/" replace />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
           </Routes>
 
           <Footer />
