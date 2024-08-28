@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../ModalWithForm/ModalWithForm";
-import "./RegisterModal.css";
+import "./LoginModal.css";
 
 function LoginModal({ onClose, isOpen, handleSubmit, handleChange }) {
   if (!isOpen) {
@@ -24,7 +24,7 @@ function LoginModal({ onClose, isOpen, handleSubmit, handleChange }) {
           placeholder="Email"
           name="email"
           value={email}
-          onChange={handleNameChange}
+          onChange={handleChange}
         />
       </label>
       <label htmlFor="password" className="modal__label">
@@ -36,7 +36,7 @@ function LoginModal({ onClose, isOpen, handleSubmit, handleChange }) {
           placeholder="Password"
           name="password"
           value={password}
-          onChange={handleNameChange}
+          onChange={handleChange}
         />
       </label>
     </ModalWithForm>
