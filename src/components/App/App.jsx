@@ -13,7 +13,7 @@ import Profile from "../Profile/Profile";
 import { getItems, postItems, deleteItem } from "../../utils/api";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
-import { ProtectedRoute } from "../../utils/auth";
+import { ProtectedRoute, signUp, signIn, verifyUser } from "../../utils/auth";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -85,35 +85,20 @@ function App() {
     });
   };
 
-  const handleRegistration = ({
-    username,
-    email,
-    password,
-    confirmPassword,
-  }) => {
-    if (password === confirmPassword) {
-      auth
-        .register(username, password, email)
-        .then(() => {
-          // TODO: handle succesful registration
-          setIsLoggedIn(true);
-          closeActiveModal();
-          navigate("/login");
-        })
-        .catch((err) => console.error("Error setting data:", err));
-    }
+  const handleRegistration = ({ email, password, name, avatarUrl }) => {
+    auth
+      .register(email, password)
+      .then(() => {
+        setIsLoggedIn(true);
+        closeActiveModal();
+        navigate("/login");
+      })
+      .catch((err) => console.error("Error setting data:", err));
   };
 
   const handleRegistrationSubmit = (e) => {
     e.preventDefault();
     handleRegistration(data);
-  };
-
-  const Login = () => {
-    const [data, setData] = useState({
-      username: "",
-      password: "",
-    });
   };
 
   const handleChange = (e) => {
@@ -124,9 +109,31 @@ function App() {
     }));
   };
 
-  //new fn for login and logout
-  const handleLogin = () => {
-    setIsLoggedIn(true);
+  const Login = ({ handleLogin }) => {
+    const [data, setData] = useState({
+      email: "",
+      password: "",
+    });
+  };
+
+  const handleLogin = ({ email, password }) => {
+    if (!email || !password) {
+      return;
+    }
+    auth
+      .authorize(email, password)
+      .then(() => {
+        setIsLoggedIn(true);
+        localStorage.setItem("jwt", res.token);
+        closeActiveModal();
+        navigate("/profile");
+      })
+      .catch((err) => console.error("Error logging in:", err));
+  };
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    handleLogin(data);
   };
 
   const handleLogout = () => {
@@ -141,17 +148,14 @@ function App() {
   //   }));
   // };
 
-  // useEffect(() => {
-  //   setData((e) => {
-  //     const { name, value } = e.target;
-  //     ({ [name]: value });
-  //   })
-  //     .then(() => {
-  //       setIsLoggedIn(true);
-  //       closeActiveModal();
-  //     })
-  //     .catch((err) => console.error("Error setting data:", err));
-  // });
+  useEffect(() => {
+    verifyUser((email, password) => {})
+      .then(() => {
+        setIsLoggedIn(true);
+        closeActiveModal();
+      })
+      .catch((err) => console.error("Error logging in:", err));
+  });
 
   useEffect(() => {
     getWeather(coordinates, APIkey)
@@ -218,6 +222,14 @@ function App() {
                 </div>
               }
             />
+            <Route
+              path="/login"
+              element={
+                <div className="loginContainer">
+                  <Login handleLogin={handleLogin} />
+                </div>
+              }
+            />
           </Routes>
 
           <Footer />
@@ -236,13 +248,13 @@ function App() {
         <RegisterModal
           activeModal={RegisterModal}
           onClose={closeActiveModal}
-          onSubmit={handleSubmit}
+          onSubmit={handleRegistrationSubmit}
           onChange={handleChange}
         />
         <LoginModal
           activeModal={LoginModal}
           onClose={closeActiveModal}
-          onSubmit={handleSubmit}
+          onSubmit={handleLoginSubmit}
           onChange={handleChange}
         />
       </CurrentTemperatureUnitContext.Provider>

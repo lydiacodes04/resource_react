@@ -14,8 +14,6 @@ function ProtectedRoute({ isLoggedIn, children }) {
   return children;
 }
 
-export { ProtectedRoute };
-
 function signUp() {
   return fetch(`${baseUrl}/register`, {
     method: "POST",
@@ -23,8 +21,6 @@ function signUp() {
     body: JSON.stringify({ name, avatar, email, password }),
   }).then(checkResponse);
 }
-
-export { signUp };
 
 function signIn() {
   return fetch(`${baseUrl}/signIn`, {
@@ -34,4 +30,14 @@ function signIn() {
   }).then(checkResponse);
 }
 
-export { signIn };
+function verifyUser() {
+  return fetch(`${baseUrl}/users/me`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+}
+
+export { ProtectedRoute, signUp, signIn, verifyUser };
