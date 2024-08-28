@@ -17,7 +17,7 @@ function ProtectedRoute({ isLoggedIn, children }) {
 export { ProtectedRoute };
 
 function signUp() {
-  return fetch(`${baseUrl}/profile/`, {
+  return fetch(`${baseUrl}/profile/register`, {
     method: "POST",
     headers: headers,
     body: JSON.stringify({ name, avatar, email, password }),
