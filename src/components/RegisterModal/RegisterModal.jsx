@@ -2,32 +2,10 @@ import React, { useState } from "react";
 import "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 
-// function RegisterModal({ onClose, isOpen, handleSubmit }) {
-//   if (!isOpen) {
-//     return null;
-//   }
-
-const Register = () => {
-  // The inputs are controlled via a single piece of state: an object
-  // object called `data`. This lets us avoid writing separate change
-  // handlers for each input.
-  const [data, setData] = useState({
-    email: "",
-    password: "",
-    name: "",
-    avatarUrl: "",
-  });
-
-  // This function fires whenever an input is changed, and it updates
-  // the value of the changed input. Note that the keys of this
-  // object match the name attributes of the corresponding inputs.
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+function RegisterModal({ onClose, isOpen, handleSubmit }) {
+  if (!isOpen) {
+    return null;
+  }
 
   return (
     <ModalWithForm
@@ -98,8 +76,6 @@ const Register = () => {
       </label>
     </ModalWithForm>
   );
-};
+}
 
-// export default RegisterModal;
-
-export default Register;
+export default RegisterModal;
