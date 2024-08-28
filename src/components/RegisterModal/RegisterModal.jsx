@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 
-function RegisterModal({ onClose, isOpen, handleSubmit }) {
+function RegisterModal({ onClose, isOpen, handleSubmit, handleChange }) {
   if (!isOpen) {
     return null;
   }
@@ -65,7 +65,11 @@ function RegisterModal({ onClose, isOpen, handleSubmit }) {
         />
       </label>
       <label className="register__button-container">
-        <button type="submit" className="register__link">
+        <button
+          type="submit"
+          className="register__link"
+          onSubmit={handleSubmit}
+        >
           Sign up
         </button>
       </label>
