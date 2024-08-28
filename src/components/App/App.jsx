@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import "./App.css";
 import { coordinates, APIkey } from "../../utils/constants";
 import Header from "../Header/Header";
@@ -27,12 +27,14 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [data, setData] = useState({
-    email: "",
-    password: "",
-    name: "",
-    avatarUrl: "",
-  });
+  // const [data, setData] = useState({
+  //   email: "",
+  //   password: "",
+  //   name: "",
+  //   avatarUrl: "",
+  // });
+
+  const navigate = useNavigate();
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -73,7 +75,16 @@ function App() {
       .catch((err) => console.error("Error deleting item:", err));
   };
 
-  //new fn for registration
+  //new fns
+  const Register = () => {
+    const [data, setData] = useState({
+      email: "",
+      password: "",
+      name: "",
+      avatarUrl: "",
+    });
+  };
+
   const handleRegistration = ({
     username,
     email,
@@ -87,9 +98,30 @@ function App() {
           // TODO: handle succesful registration
           setIsLoggedIn(true);
           closeActiveModal();
+          navigate("/login");
         })
         .catch((err) => console.error("Error setting data:", err));
     }
+  };
+
+  const handleRegistrationSubmit = (e) => {
+    e.preventDefault();
+    handleRegistration(data);
+  };
+
+  const Login = () => {
+    const [data, setData] = useState({
+      username: "",
+      password: "",
+    });
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   //new fn for login and logout
@@ -100,24 +132,6 @@ function App() {
   const handleLogout = () => {
     setIsLoggedIn(false);
   };
-
-  // const Register = () => {
-  //   const [data, setData] = useState({
-  //     email: "",
-  //     password: "",
-  //     name: "",
-  //     avatarUrl: "",
-  //   });
-  // moved to useState area and removed Register arrow fn
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setData((prevData) => ({
-  //     ...prevData,
-  //     [name]: value,
-  //   }));
-  // };
-  //from lesson
 
   // const handleRegister = (e) => {
   //   const { name, value } = e.target;
