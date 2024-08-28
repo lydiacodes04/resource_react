@@ -133,15 +133,6 @@ function App() {
     setIsLoggedIn(false);
   };
 
-  // const handleRegister = (e) => {
-  //   const { name, value } = e.target;
-  //   setData(() => ({
-  //     [name]: value,
-  //   }));
-  //   handleLogin();
-  //   closeActiveModal();
-  // };
-
   // const handleUpdateUser = (e) => {
   //   const { name, value } = e.target;
   //   setData((prevData) => ({
@@ -253,6 +244,7 @@ return (
         activeModal={LoginModal}
         onClose={closeActiveModal}
         onSubmit={handleSubmit}
+        onChange={handleChange}
       />
     </CurrentTemperatureUnitContext.Provider>
   </div>

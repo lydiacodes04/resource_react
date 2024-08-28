@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 
-function LoginModal({ onClose, isOpen, handleSubmit }) {
+function LoginModal({ onClose, isOpen, handleSubmit, handleChange }) {
   if (!isOpen) {
     return null;
   }
