@@ -202,8 +202,16 @@ return (
               isLoggedIn ? (
                 <Navigate to="/" replace />
               ) : (
-                <Navigate to="/login" />
+                <Navigate to="/signIn" />
               )
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <div className="registerContainer">
+                <Register handleRegistration={handleRegistration} />
+              </div>
             }
           />
         </Routes>

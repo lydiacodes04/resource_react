@@ -73,7 +73,7 @@ function RegisterModal({ onClose, isOpen, handleSubmit, handleChange }) {
           Sign up
         </button>
       </label>
-      <label className="register__signin">
+      <label className="register__signIn">
         <Link to="login" className="register__login-link">
           or Log In
         </Link>
