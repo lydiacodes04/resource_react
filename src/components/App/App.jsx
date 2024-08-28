@@ -128,13 +128,13 @@ function App() {
   //   closeActiveModal();
   // };
 
-  const handleUpdateUser = (e) => {
-    const { name, value } = e.target;
-    setData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+  // const handleUpdateUser = (e) => {
+  //   const { name, value } = e.target;
+  //   setData((prevData) => ({
+  //     ...prevData,
+  //     [name]: value,
+  //   }));
+  // };
 
   useEffect(() => {
     setData((e) => {
