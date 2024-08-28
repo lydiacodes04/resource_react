@@ -27,7 +27,7 @@ function signUp() {
 export { signUp };
 
 function signIn() {
-  return fetch(`${baseUrl}/`, {
+  return fetch(`${baseUrl}/signIn`, {
     method: "POST",
     headers: headers,
     body: JSON.stringify({ email, password }),
