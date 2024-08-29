@@ -9,3 +9,11 @@
   color: #00000099;
   border: none;
 }
+
+.clothes-btn_visible {
+  visibility: visible;
+}
+
+.clothes-btn_hidden {
+  visibility: hidden;
+}
