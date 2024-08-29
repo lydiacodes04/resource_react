@@ -1,7 +1,12 @@
 import ItemCard from "../ItemCard/ItemCard";
 import "./ClothesSection.css";
 
-function ClothesSection({ onCardClick, clothingItems, handleAddClick }) {
+function ClothesSection({
+  onCardClick,
+  clothingItems,
+  handleAddClick,
+  currentUser,
+}) {
   // Checking if the current user is the owner of the current clothing item
   const isOwn = selectedCard.owner === currentUser._id;
 
