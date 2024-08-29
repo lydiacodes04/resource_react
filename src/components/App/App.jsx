@@ -84,7 +84,7 @@ function App() {
 
   const handleRegistration = ({ email, password, name, avatarUrl }) => {
     auth
-      .register(email, password)
+      .signUp(email, password)
       .then(() => {
         setIsLoggedIn(true);
         closeActiveModal();
@@ -118,7 +118,8 @@ function App() {
       return;
     }
     auth
-      .authorize(email, password)
+      .verifyUser(email, password)
+      .signIn()
       .then((data) => {
         if (data.jwt) {
           localStorage.setItem("jwt", res.token);
