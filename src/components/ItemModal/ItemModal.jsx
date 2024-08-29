@@ -1,7 +1,13 @@
 import "./ItemModal.css";
 import close from "../../assets/close_icon-white.svg";
 
-function ItemModal({ activeModal, onClose, card, handleDeleteItem }) {
+function ItemModal({
+  activeModal,
+  onClose,
+  card,
+  handleDeleteItem,
+  currentUser,
+}) {
   // Checking if the current user is the owner of the current clothing item
   const isOwn = selectedCard.owner === currentUser._id;
 
