@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import "../ModalWithForm/ModalWithForm";
 import "./EditProfileModal.css";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function EditProfileModal({ onClose, isOpen, handleSubmit, handleChange }) {
   if (!isOpen) {
     return null;
   }
+
+  const { currentUser } = useContext(CurrentUserContext);
 
   return (
     <ModalWithForm
@@ -21,7 +24,7 @@ function EditProfileModal({ onClose, isOpen, handleSubmit, handleChange }) {
           type="text"
           className="modal__input"
           id="name"
-          placeholder="Name"
+          placeholder={currentUser.name}
           name="name"
           value={data.name}
           onChange={handleChange}
