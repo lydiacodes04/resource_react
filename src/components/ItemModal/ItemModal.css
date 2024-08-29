@@ -34,7 +34,7 @@
   border: 0;
   background-color: #fff;
 }
-
+/* 
 .item__delete-button {
   position: absolute;
   top: -2px;
@@ -45,12 +45,12 @@
   font-weight: 550;
   border: 0;
   background-color: #fff;
-}
+} */
 
-.item__delete-button_visible {
+.modal__delete-btn_visible {
   visibility: visible;
 }
 
-.item__delete-button_hidden {
+.modal__delete-btn_hidden {
   visibility: hidden;
 }
