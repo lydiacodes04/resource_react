@@ -16,7 +16,7 @@ function RegisterModal({ onClose, isOpen, handleSubmit, handleChange }) {
       onSubmit={handleSubmit}
     >
       <label htmlFor="email" className="modal__label">
-        Email
+        Email *
         <input
           type="email"
           className="modal__input"
@@ -28,7 +28,7 @@ function RegisterModal({ onClose, isOpen, handleSubmit, handleChange }) {
         />
       </label>
       <label htmlFor="password" className="modal__label">
-        Password
+        Password *
         <input
           type="text"
           className="modal__input"
@@ -41,7 +41,7 @@ function RegisterModal({ onClose, isOpen, handleSubmit, handleChange }) {
       </label>
 
       <label htmlFor="name" className="modal__label">
-        Name
+        Name *
         <input
           type="text"
           className="modal__input"
@@ -53,7 +53,7 @@ function RegisterModal({ onClose, isOpen, handleSubmit, handleChange }) {
         />
       </label>
       <label htmlFor="avatarUrl" className="modal__label">
-        Avatar URL{" "}
+        Avatar URL *
         <input
           type="link"
           className="modal__input"
