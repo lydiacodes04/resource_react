@@ -34,3 +34,23 @@
   border: 0;
   background-color: #fff;
 }
+
+.item__delete-button {
+  position: absolute;
+  top: -2px;
+  right: 25px;
+  color: #ff4d00;
+  font-family: Cabinet Grotesk, sans-serif;
+  font-size: 20px;
+  font-weight: 550;
+  border: 0;
+  background-color: #fff;
+}
+
+.item__delete-button_visible {
+  visibility: visible;
+}
+
+.item__delete-button_hidden {
+  visibility: hidden;
+}

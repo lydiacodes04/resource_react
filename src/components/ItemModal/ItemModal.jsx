@@ -11,9 +11,7 @@ function ItemModal({ activeModal, onClose, card, handleDeleteItem }) {
   }`;
 
   return (
-    <div
-      className={`modal ${activeModal === "preview" && "modal_opened"} isOwn`}
-    >
+    <div className={`modal ${activeModal === "preview" && "modal_opened"}`}>
       <div className="modal__content modal__content_type_image">
         <button onClick={onClose} type="button" className="modal__close">
           <img src={close} alt="close button" className="modal__close-btn" />
@@ -23,7 +21,7 @@ function ItemModal({ activeModal, onClose, card, handleDeleteItem }) {
           <h2 className="modal__caption"> {card.name} </h2>
           <p className="modal__weather">Weather: {card.weather}</p>
           <button
-            className="modal__delete-btn, itemDeleteButtonClassName"
+            className="modal__delete-btn itemDeleteButtonClassName"
             onClick={() => handleDeleteItem(card) && onClose}
           >
             Delete item
