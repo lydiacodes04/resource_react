@@ -77,13 +77,17 @@ function App() {
   //new fns
   const Register = () => {
     const [userData, setData] = useState({
-      email: "",
-      password: "",
-      name: "",
-      avatarUrl: "",
-    }).then((userData) =>
-      signUp(userData).catch((err) => console.log("An error occurred", err))
-    );
+      email: "me@gmail.com",
+      password: "mypassword",
+      name: "my name",
+      avatarUrl:
+        "https://images.unsplash.com/photo-1628015081036-0747ec8f077a?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    })
+      .then((userData) => {
+        signUp(userData);
+        setData(userData);
+      })
+      .catch((err) => console.log("An error occurred", err));
   };
 
   const handleRegistration = ({ email, password, name, avatarUrl }) => {

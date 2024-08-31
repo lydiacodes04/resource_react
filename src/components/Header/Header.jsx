@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import "./Header.css";
-// import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function Header({ handleAddClick, weatherData, currentUser }) {
   console.log("This is the current user", currentUser);
@@ -11,7 +10,6 @@ function Header({ handleAddClick, weatherData, currentUser }) {
     day: "numeric",
   });
 
-  // const { currentUser } = useContext(CurrentUserContext);
   const myAvatar = currentUser.avatar || currentUser.name.charAt(0);
 
   return (
