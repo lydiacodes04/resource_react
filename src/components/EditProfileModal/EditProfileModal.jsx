@@ -3,7 +3,7 @@ import "../ModalWithForm/ModalWithForm";
 import "./EditProfileModal.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-function EditProfileModal({ onClose, isOpen, handleSubmit, handleChange }) {
+function EditProfileModal({ onClose, isOpen, handleSubmit }) {
   if (!isOpen) {
     return null;
   }
@@ -27,7 +27,6 @@ function EditProfileModal({ onClose, isOpen, handleSubmit, handleChange }) {
           placeholder={currentUser.name}
           name="name"
           value={data.name}
-          onChange={handleChange}
         />
       </label>
       <label htmlFor="avatarUrl" className="modal__label">
@@ -39,7 +38,6 @@ function EditProfileModal({ onClose, isOpen, handleSubmit, handleChange }) {
           placeholder="Avatar Url"
           name="avatarUrl"
           value={data.avatarUrl}
-          onChange={handleChange}
         />
       </label>
     </ModalWithForm>
