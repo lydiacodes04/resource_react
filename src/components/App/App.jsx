@@ -30,8 +30,13 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userData, setUserData] = useState({ password: "", email: "" });
-  const [currentUser, setCurrentUser] = useState({ password: "", email: "" });
+  const [userData, setUserData] = useState({
+    password: "",
+    email: "",
+    name: "",
+    avatarUrl: "",
+  });
+  const [currentUser, setCurrentUser] = useState({ email: "", password: "" });
 
   const navigate = useNavigate();
 
@@ -118,9 +123,12 @@ function App() {
     const [currentUser, setCurrentUser] = useState({
       email: "",
       password: "",
-    }).then(() =>
-      signIn().catch((err) => console.log("A login error has occurred", err))
-    );
+    })
+      .then(() => {
+        signIn(currentUser);
+        setCurrentUser(currentUser);
+      })
+      .catch((err) => console.log("A login error has occurred", err));
   };
 
   const handleLogin = ({ email, password }) => {
