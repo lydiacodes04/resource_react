@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 
-function RegisterModal({ onClose, isOpen, handleSubmit, handleChange }) {
+function RegisterModal({ onClose, isOpen, handleSubmit }) {
   if (!isOpen) {
     return null;
   }
@@ -24,7 +24,6 @@ function RegisterModal({ onClose, isOpen, handleSubmit, handleChange }) {
           placeholder="Email"
           name="email"
           value={data.email}
-          onChange={handleChange}
         />
       </label>
       <label htmlFor="password" className="modal__label">
@@ -36,7 +35,6 @@ function RegisterModal({ onClose, isOpen, handleSubmit, handleChange }) {
           placeholder="Password"
           name="password"
           value={data.password}
-          onChange={handleChange}
         />
       </label>
 
@@ -49,7 +47,6 @@ function RegisterModal({ onClose, isOpen, handleSubmit, handleChange }) {
           placeholder="Name"
           name="name"
           value={data.name}
-          onChange={handleChange}
         />
       </label>
       <label htmlFor="avatarUrl" className="modal__label">
@@ -61,7 +58,6 @@ function RegisterModal({ onClose, isOpen, handleSubmit, handleChange }) {
           placeholder="Avatar Url"
           name="avatarUrl"
           value={data.avatarUrl}
-          onChange={handleChange}
         />
       </label>
       <label className="register__button-container">

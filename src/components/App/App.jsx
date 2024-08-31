@@ -30,13 +30,20 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userData, setUserData] = useState({
+  // const [userData, setUserData] = useState({
+  //   password: "",
+  //   email: "",
+  //   name: "",
+  //   avatarUrl: "",
+  // });
+  const [currentUser, setCurrentUser] = useState({ email: "", password: "" });
+
+  const userData = {
     password: "",
     email: "",
     name: "",
     avatarUrl: "",
-  });
-  const [currentUser, setCurrentUser] = useState({ email: "", password: "" });
+  };
 
   const navigate = useNavigate();
 
@@ -81,7 +88,7 @@ function App() {
 
   //new fns
   const Register = () => {
-    const [userData, setData] = useState({
+    const [userData, setUserData] = useState({
       email: "me@gmail.com",
       password: "mypassword",
       name: "my name",
@@ -90,7 +97,8 @@ function App() {
     })
       .then((userData) => {
         signUp(userData);
-        setData(userData);
+        setUserData(userData);
+        setCurrentUser(userData);
       })
       .catch((err) => console.log("An error occurred", err));
   };
@@ -141,6 +149,7 @@ function App() {
       .then((data) => {
         if (data.jwt) {
           localStorage.setItem("jwt", res.token);
+          console.log(data);
           setUserData(data.user);
           setIsLoggedIn(true);
           closeActiveModal();
@@ -203,7 +212,11 @@ function App() {
           value={{ currentTemperatureUnit, handleToggleSwitchChange }}
         >
           <div className="page__content">
-            <Header handleAddClick={handleAddClick} weatherData={weatherData} />
+            <Header
+              handleAddClick={handleAddClick}
+              weatherData={weatherData}
+              currentUser={currentUser}
+            />
             <Routes>
               <Route
                 path="/"
@@ -278,7 +291,6 @@ function App() {
             activeModal={RegisterModal}
             onClose={closeActiveModal}
             onSubmit={handleRegistrationSubmit}
-            onChange={handleChange}
           />
           <LoginModal
             activeModal={LoginModal}

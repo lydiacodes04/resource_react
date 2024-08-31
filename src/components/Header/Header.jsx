@@ -5,6 +5,7 @@ import "./Header.css";
 
 function Header({ handleAddClick, weatherData, currentUser }) {
   console.log("This is the current user", currentUser);
+
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
