@@ -119,14 +119,6 @@ function App() {
     handleRegistration(data);
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
   const Login = ({ handleLogin }) => {
     const [currentUser, setCurrentUser] = useState({
       email: "",
