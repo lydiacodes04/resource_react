@@ -285,7 +285,6 @@ function App() {
             activeModal={EditProfileModal}
             onClose={closeActiveModal}
             onAddItem={handleAddItemSubmit}
-            onChange={handleChange}
           ></EditProfileModal>
           <RegisterModal
             activeModal={RegisterModal}
