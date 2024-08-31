@@ -76,23 +76,23 @@ function App() {
 
   //new fns
   const Register = () => {
-    const [data, setData] = useState({
+    const [userData, setData] = useState({
       email: "",
       password: "",
       name: "",
       avatarUrl: "",
-    }).then(() =>
-      signUp().catch((err) => console.log("An error occurred", err))
+    }).then((userData) =>
+      signUp(userData).catch((err) => console.log("An error occurred", err))
     );
   };
 
   const handleRegistration = ({ email, password, name, avatarUrl }) => {
     auth
-      .signUp(email, password, name, avatarUrl)
+      .signUp()
       .then(() => {
         setIsLoggedIn(true);
         closeActiveModal();
-        navigate("/login");
+        navigate("/profile");
       })
       .catch((err) => console.error("Error setting data:", err));
   };
@@ -100,7 +100,6 @@ function App() {
   const handleRegistrationSubmit = (e) => {
     e.preventDefault();
     handleRegistration(data);
-    setCurrentUser(data);
   };
 
   const handleChange = (e) => {
@@ -112,10 +111,12 @@ function App() {
   };
 
   const Login = ({ handleLogin }) => {
-    const [data, setData] = useState({
+    const [currentUser, setCurrentUser] = useState({
       email: "",
       password: "",
-    });
+    }).then(() =>
+      signIn().catch((err) => console.log("A login error has occurred", err))
+    );
   };
 
   const handleLogin = ({ email, password }) => {
