@@ -36,7 +36,7 @@ function App() {
   //   name: "",
   //   avatarUrl: "",
   // });
-  const [currentUser, setCurrentUser] = useState({ email: "", password: "" });
+  // const [currentUser, setCurrentUser] = useState({ email: "", password: "" });
 
   const userData = {
     password: "",
@@ -87,18 +87,26 @@ function App() {
   };
 
   //new fns
+
+  const Login = ({ handleLogin }) => {
+    const [currentUser, setCurrentUser] = useState({
+      email: "",
+      password: "",
+    });
+  };
+
   const Register = () => {
     const [userData, setUserData] = useState({
-      email: "me@gmail.com",
-      password: "mypassword",
-      name: "my name",
-      avatarUrl:
-        "https://images.unsplash.com/photo-1628015081036-0747ec8f077a?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      email: "",
+      password: "",
+      name: "",
+      avatarUrl: "",
     })
       .then((userData) => {
-        signUp(userData);
-        setUserData(userData);
-        setCurrentUser(userData);
+        console.log(userData);
+        signUp(userData.email, userData.password);
+        setUserData(email, password, name, avatarUrl);
+        setCurrentUser(userData.email, userData.password);
       })
       .catch((err) => console.log("An error occurred", err));
   };
@@ -119,18 +127,6 @@ function App() {
     handleRegistration(data);
   };
 
-  const Login = ({ handleLogin }) => {
-    const [currentUser, setCurrentUser] = useState({
-      email: "",
-      password: "",
-    })
-      .then(() => {
-        signIn(currentUser);
-        setCurrentUser(currentUser);
-      })
-      .catch((err) => console.log("A login error has occurred", err));
-  };
-
   const handleLogin = ({ email, password }) => {
     if (!email || !password) {
       return;
@@ -141,20 +137,26 @@ function App() {
       .then((data) => {
         if (data.jwt) {
           localStorage.setItem("jwt", res.token);
-          console.log(data);
-          setUserData(data.user);
-          setIsLoggedIn(true);
-          closeActiveModal();
-          navigate("/profile");
         }
+        return <Navigate to="/login" replace />;
       })
-      .catch((err) => console.error("Error logging in:", err));
+      .then((data) => {
+        console.log("this is the data", data);
+        // setUserData(data);
+        // signIn(currentUser);
+        // setCurrentUser(currentUser);
+        setIsLoggedIn(true);
+        e.preventDefault();
+        closeActiveModal();
+        navigate("/profile");
+      })
+      .catch((err) => console.log("A login error has occurred", err));
   };
 
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    handleLogin(data);
-  };
+  // const handleLoginSubmit = (e) => {
+  //   e.preventDefault();
+  //   handleLogin(data);
+  // };
 
   const handleLogout = () => {
     setIsLoggedIn(false);
@@ -286,7 +288,7 @@ function App() {
           <LoginModal
             activeModal={LoginModal}
             onClose={closeActiveModal}
-            onSubmit={handleLoginSubmit}
+            onSubmit={handleLogin}
           />
         </CurrentTemperatureUnitContext.Provider>
       </div>
@@ -295,3 +297,9 @@ function App() {
 }
 
 export default App;
+
+//sample User
+// email: "me@gmail.com",
+// password: "mypassword",
+// name: "my name"
+// avatarUrl: "https://images.unsplash.com/photo-1628015081036-0747ec8f077a?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
