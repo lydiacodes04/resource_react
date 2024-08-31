@@ -295,7 +295,6 @@ function App() {
             activeModal={LoginModal}
             onClose={closeActiveModal}
             onSubmit={handleLoginSubmit}
-            onChange={handleChange}
           />
         </CurrentTemperatureUnitContext.Provider>
       </div>
