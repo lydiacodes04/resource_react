@@ -100,6 +100,7 @@ function App() {
   const handleRegistrationSubmit = (e) => {
     e.preventDefault();
     handleRegistration(data);
+    setCurrentUser(data);
   };
 
   const handleChange = (e) => {

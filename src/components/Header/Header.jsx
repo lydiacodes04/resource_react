@@ -5,13 +5,14 @@ import "./Header.css";
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function Header({ handleAddClick, weatherData, currentUser }) {
+  console.log("This is the current user", currentUser);
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
   });
 
   // const { currentUser } = useContext(CurrentUserContext);
-  const avatar = currentUser.avatar || currentUser.name.charAt(0);
+  const myAvatar = currentUser.avatar || currentUser.name.charAt(0);
 
   return (
     <header className="header">
@@ -34,7 +35,7 @@ function Header({ handleAddClick, weatherData, currentUser }) {
         <Link to="/profile" className="header__link">
           <div className="header__user-container">
             <p className="header__username">{currentUser.name}</p>
-            <img src={avatar} alt="avatar" className="header__avatar" />
+            <img src={myAvatar} alt="avatar" className="header__avatar" />
           </div>
         </Link>
       </div>
