@@ -46,4 +46,4 @@ function EditProfileModal({ onClose, isOpen, handleSubmit, handleChange }) {
   );
 }
 
-export default LoginModal;
+export default EditProfileModal;

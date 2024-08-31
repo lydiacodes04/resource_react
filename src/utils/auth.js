@@ -9,6 +9,7 @@ function signUp() {
     body: JSON.stringify({ name, avatar, email, password }),
   }).then(checkResponse);
 }
+export { signUp };
 
 function signIn() {
   return fetch(`${baseUrl}/signIn`, {
@@ -17,6 +18,7 @@ function signIn() {
     body: JSON.stringify({ email, password }),
   }).then(checkResponse);
 }
+export { signIn };
 
 function verifyUser() {
   return fetch(`${baseUrl}/users/me`, {
@@ -28,4 +30,4 @@ function verifyUser() {
   }).then(checkResponse);
 }
 
-export { signUp, signIn, verifyUser };
+export { verifyUser };

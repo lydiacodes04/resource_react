@@ -15,6 +15,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import { signUp, signIn, verifyUser } from "../../utils/auth";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import ProtectedRoute from "../../utils/ProtectedRoute";
 
 function App() {
@@ -80,12 +81,14 @@ function App() {
       password: "",
       name: "",
       avatarUrl: "",
-    });
+    }).then(() =>
+      signUp().catch((err) => console.log("An error occurred", err))
+    );
   };
 
   const handleRegistration = ({ email, password, name, avatarUrl }) => {
     auth
-      .signUp(email, password)
+      .signUp(email, password, name, avatarUrl)
       .then(() => {
         setIsLoggedIn(true);
         closeActiveModal();
