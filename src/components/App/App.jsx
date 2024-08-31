@@ -13,8 +13,9 @@ import Profile from "../Profile/Profile";
 import { getItems, postItems, deleteItem } from "../../utils/api";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
-import { ProtectedRoute, signUp, signIn, verifyUser } from "../../utils/auth";
+import { signUp, signIn, verifyUser } from "../../utils/auth";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import ProtectedRoute from "../../utils/ProtectedRoute";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
