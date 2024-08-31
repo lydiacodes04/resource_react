@@ -153,11 +153,6 @@ function App() {
       .catch((err) => console.log("A login error has occurred", err));
   };
 
-  // const handleLoginSubmit = (e) => {
-  //   e.preventDefault();
-  //   handleLogin(data);
-  // };
-
   const handleLogout = () => {
     setIsLoggedIn(false);
   };
