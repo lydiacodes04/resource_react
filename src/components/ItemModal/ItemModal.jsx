@@ -1,15 +1,9 @@
 import "./ItemModal.css";
 import close from "../../assets/close_icon-white.svg";
 
-function ItemModal({
-  activeModal,
-  onClose,
-  card,
-  handleDeleteItem,
-  currentUser,
-}) {
+function ItemModal({ activeModal, onClose, card, handleDeleteItem, userData }) {
   // Checking if the current user is the owner of the current clothing item
-  const isOwn = selectedCard.owner === currentUser._id;
+  const isOwn = card.owner === userData._id;
 
   // Creating a variable which you'll then set in `className` for the delete button
   const modalDeleteBtnClassName = `modal__delete-btn ${

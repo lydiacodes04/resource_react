@@ -264,6 +264,7 @@ function App() {
             onClose={closeActiveModal}
             card={selectedCard}
             handleDeleteItem={handleDeleteItem}
+            userData={userData}
           />
           <EditProfileModal
             activeModal={EditProfileModal}
