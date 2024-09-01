@@ -31,6 +31,12 @@ function App() {
   const [clothingItems, setClothingItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({ email: "", password: "" });
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+    name: "",
+    avatarUrl: "",
+  });
 
   const navigate = useNavigate();
 
@@ -82,36 +88,29 @@ function App() {
   //   });
   // };
 
-  const Register = () => {
-    const [userData, setUserData] = useState({
-      email: "",
-      password: "",
-      name: "",
-      avatarUrl: "",
-    })
-      .then((userData) => {
-        console.log(userData);
-        signUp(userData.email, userData.password);
-        setUserData(email, password, name, avatarUrl);
-        setCurrentUser(userData.email, userData.password);
-      })
-      .catch((err) => console.log("An error occurred", err));
-  };
+  // const Register = () => {
+  //   const [userData, setUserData] = useState({
+  //     email: "",
+  //     password: "",
+  //     name: "",
+  //     avatarUrl: "",
+  //   })
+  //     .then((userData) => {})
+  //     .catch((err) => console.log("An error occurred", err));
+  // };
 
   const handleRegistration = ({ email, password, name, avatarUrl }) => {
     auth
-      .signUp()
+      .signUp(data)
       .then(() => {
+        setUserData(email, password, name, avatarUrl);
+        setCurrentUser(userData.email, userData.password);
         setIsLoggedIn(true);
+        e.preventDefault();
         closeActiveModal();
         navigate("/profile");
       })
       .catch((err) => console.error("Error setting data:", err));
-  };
-
-  const handleRegistrationSubmit = (e) => {
-    e.preventDefault();
-    handleRegistration(data);
   };
 
   const handleLogin = ({ email, password }) => {
@@ -230,7 +229,11 @@ function App() {
                 path="/register"
                 element={
                   <div className="registerContainer">
-                    <Register handleRegistration={handleRegistration} />
+                    <RegisterModal
+                      activeModal={RegisterModal}
+                      onClose={closeActiveModal}
+                      onSubmit={handleRegistration}
+                    />
                   </div>
                 }
               />
@@ -267,11 +270,6 @@ function App() {
             onClose={closeActiveModal}
             onAddItem={handleAddItemSubmit}
           ></EditProfileModal>
-          <RegisterModal
-            activeModal={RegisterModal}
-            onClose={closeActiveModal}
-            onSubmit={handleRegistrationSubmit}
-          />
         </CurrentTemperatureUnitContext.Provider>
       </div>
     </CurrentUserContext.Provider>
