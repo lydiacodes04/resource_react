@@ -30,7 +30,7 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const [currentUser, setCurrentUser] = useState({ email: "", password: "" });
+  const [currentUser, setCurrentUser] = useState({ email: "", password: "" });
 
   const navigate = useNavigate();
 
@@ -75,12 +75,12 @@ function App() {
 
   //new fns
 
-  const Login = ({ handleLogin }) => {
-    const [currentUser, setCurrentUser] = useState({
-      email: "",
-      password: "",
-    });
-  };
+  // const Login = ({ handleLogin }) => {
+  //   const [currentUser, setCurrentUser] = useState({
+  //     email: "",
+  //     password: "",
+  //   });
+  // };
 
   const Register = () => {
     const [userData, setUserData] = useState({
@@ -238,7 +238,12 @@ function App() {
                 path="/login"
                 element={
                   <div className="loginContainer">
-                    <Login handleLogin={handleLogin} />
+                    <LoginModal
+                      activeModal={LoginModal}
+                      onClose={closeActiveModal}
+                      onSubmit={handleLogin}
+                      handleLogin={handleLogin}
+                    />
                   </div>
                 }
               />
@@ -266,11 +271,6 @@ function App() {
             activeModal={RegisterModal}
             onClose={closeActiveModal}
             onSubmit={handleRegistrationSubmit}
-          />
-          <LoginModal
-            activeModal={LoginModal}
-            onClose={closeActiveModal}
-            onSubmit={handleLogin}
           />
         </CurrentTemperatureUnitContext.Provider>
       </div>
