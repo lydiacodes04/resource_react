@@ -104,7 +104,7 @@ function App() {
       .signUp(data)
       .then(() => {
         setUserData(email, password, name, avatarUrl);
-        setCurrentUser(userData.email, userData.password);
+        // setCurrentUser(userData.email, userData.password);
         setIsLoggedIn(true);
         e.preventDefault();
         closeActiveModal();
@@ -190,7 +190,7 @@ function App() {
             <Header
               handleAddClick={handleAddClick}
               weatherData={weatherData}
-              currentUser={currentUser}
+              userData={userData}
             />
             <Routes>
               <Route

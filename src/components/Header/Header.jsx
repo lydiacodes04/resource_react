@@ -3,15 +3,15 @@ import logo from "../../assets/logo.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import "./Header.css";
 
-function Header({ handleAddClick, weatherData, currentUser }) {
-  console.log("This is the current user", currentUser);
+function Header({ handleAddClick, weatherData, userData }) {
+  console.log("This is the current user", userData);
 
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
   });
 
-  const myAvatar = currentUser.avatar || currentUser.name.charAt(0);
+  const myAvatar = userData.avatar || userData.name.charAt(0);
 
   return (
     <header className="header">
@@ -33,7 +33,7 @@ function Header({ handleAddClick, weatherData, currentUser }) {
         </button>
         <Link to="/profile" className="header__link">
           <div className="header__user-container">
-            <p className="header__username">{currentUser.name}</p>
+            <p className="header__username">{userData.name}</p>
             <img src={myAvatar} alt="avatar" className="header__avatar" />
           </div>
         </Link>
