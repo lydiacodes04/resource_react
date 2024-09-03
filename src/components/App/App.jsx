@@ -17,6 +17,7 @@ import { signUp, signIn, verifyUser } from "../../utils/auth";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import ProtectedRoute from "../../utils/ProtectedRoute";
+import { getItems, postItems, deleteItem, updateProfile } from "../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
