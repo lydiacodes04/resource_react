@@ -140,9 +140,9 @@ function App() {
       .catch((err) => console.log("A login error has occurred", err));
   };
 
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  };
+  // const handleLogout = () => {
+  //   setIsLoggedIn(false);
+  // };
 
   // const handleUpdateUser = (e) => {
   //   const { name, value } = e.target;
@@ -179,6 +179,14 @@ function App() {
         setClothingItems(data);
       })
       .catch((err) => console.error("Error getting items:", err));
+  }, []);
+
+  useEffect(() => {
+    updateProfile()
+      .then((data) => {
+        setUserData(data);
+      })
+      .catch((err) => console.error("Error updating profile:", err));
   }, []);
 
   return (
