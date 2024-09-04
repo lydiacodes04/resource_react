@@ -1,5 +1,14 @@
+import { useEffect, useState } from "react";
 const baseUrl = "http://localhost:3001";
 const headers = { "Content-Type": "application/json" };
+// const jwt = require("jsonwebtoken");
+
+const checkResponse = () => {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Error: ${res.status}`);
+};
 
 function signUp() {
   return fetch(`${baseUrl}/register`, {
@@ -26,6 +35,7 @@ function verifyUser() {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
+    //token = 1234
   }).then(checkResponse);
 }
 
