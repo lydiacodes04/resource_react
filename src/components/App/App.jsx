@@ -5,6 +5,7 @@ import { coordinates, APIkey } from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import ItemModal from "../ItemModal/ItemModal";
+import ItemCard from "../ItemCard/ItemCard";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import Footer from "../Footer/Footer";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
@@ -136,6 +137,29 @@ function App() {
   //   }));
   // };
 
+  const handleCardLike = ({ id, isLiked }) => {
+    const token = localStorage.getItem("jwt");
+    // Check if this card is not currently liked
+    !isLiked
+      ? api
+          .addCardLike(id, token)
+          .then((updatedCard) => {
+            setClothingItems((cards) =>
+              cards.map((item) => (item._id === id ? updatedCard : item))
+            );
+          })
+          .catch((err) => console.log(err))
+      : // if not, send a request to remove the user's id from the card's likes array
+        api
+          .removeCardLike(id, token)
+          .then((updatedCard) => {
+            setClothingItems((cards) =>
+              cards.map((item) => (item._id === id ? updatedCard : item))
+            );
+          })
+          .catch((err) => console.log(err));
+  };
+
   useEffect(() => {
     verifyUser((data) => {
       if (data.jwt) {
@@ -193,6 +217,7 @@ function App() {
                     weatherData={weatherData}
                     onCardClick={handleCardClick}
                     clothingItems={clothingItems}
+                    handleCardLike={handleCardLike}
                   />
                 }
               />
@@ -214,7 +239,7 @@ function App() {
                   isLoggedIn ? (
                     <Navigate to="/" replace />
                   ) : (
-                    <Navigate to="/signIn" />
+                    <Navigate to="/login" />
                   )
                 }
               />
@@ -259,6 +284,10 @@ function App() {
             handleDeleteItem={handleDeleteItem}
             userData={userData}
           />
+          <ItemCard
+            card={selectedCard}
+            onCardClick={handleCardClick}
+          ></ItemCard>
           <EditProfileModal
             activeModal={EditProfileModal}
             onClose={closeActiveModal}
