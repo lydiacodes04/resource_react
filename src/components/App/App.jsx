@@ -287,6 +287,7 @@ function App() {
           <ItemCard
             card={selectedCard}
             onCardClick={handleCardClick}
+            handleCardLike={handleCardLike}
           ></ItemCard>
           <EditProfileModal
             activeModal={EditProfileModal}
