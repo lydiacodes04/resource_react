@@ -1,4 +1,5 @@
 import "./ItemCard.css";
+import cardHeart from "../../assets/heart-default.svg";
 
 function ItemCard({ item, onCardClick, onCardLike }) {
   const handleCardClick = () => {
@@ -12,6 +13,7 @@ function ItemCard({ item, onCardClick, onCardLike }) {
   return (
     <li className="card">
       <h2 className="card__name">{item.name}</h2>
+      <img className="card__heart">{cardHeart}</img>
       <img
         onClick={handleCardClick}
         className="card__image"
