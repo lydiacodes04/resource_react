@@ -84,26 +84,6 @@ function App() {
       .catch((err) => console.error("Error deleting item:", err));
   };
 
-  //new fns
-
-  // const Login = ({ handleLogin }) => {
-  //   const [currentUser, setCurrentUser] = useState({
-  //     email: "",
-  //     password: "",
-  //   });
-  // };
-
-  // const Register = () => {
-  //   const [userData, setUserData] = useState({
-  //     email: "",
-  //     password: "",
-  //     name: "",
-  //     avatarUrl: "",
-  //   })
-  //     .then((userData) => {})
-  //     .catch((err) => console.log("An error occurred", err));
-  // };
-
   const handleRegistration = ({ email, password, name, avatarUrl }) => {
     auth
       .signUp(data)
