@@ -5,7 +5,6 @@ import { coordinates, APIkey } from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import ItemModal from "../ItemModal/ItemModal";
-import ItemCard from "../ItemCard/ItemCard";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import Footer from "../Footer/Footer";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
@@ -152,6 +151,34 @@ function App() {
           .catch((err) => console.log(err));
   };
 
+  //     localStorage.removeItem(res.token);
+  //       return <Navigate to="/login" replace />;
+  //     })
+  //     .then((data) => {
+  //       console.log("this is the data", data);
+  //       // setUserData(data);
+  //       // signIn(currentUser);
+  //       // setCurrentUser(currentUser);
+  //       setIsLoggedIn(true);
+  //       e.preventDefault();
+  //       closeActiveModal();
+  //       navigate("/profile");
+  //     })
+  //     .catch((err) => console.log("A login error has occurred", err));
+  // };
+
+  useEffect(() => {
+    handleSignOut(() => {
+      localStorage.removeItem(res.token);
+    })
+      .then(() => {
+        setIsLoggedIn(false);
+        setCurrentUser({ email: "", password: "" });
+        navigate("/");
+      })
+      .catch((err) => console.error("Error logging in:", err));
+  });
+
   useEffect(() => {
     verifyUser((data) => {
       if (data.jwt) {
@@ -181,15 +208,6 @@ function App() {
       .catch((err) => console.error("Error getting items:", err));
   }, []);
 
-  useEffect(() => {
-    updateProfile()
-      .then((data) => {
-        setUserData(data);
-      })
-      .catch((err) => console.error("Error updating profile:", err));
-  }, []);
-
-  //signOut
   useEffect(() => {
     updateProfile()
       .then((data) => {
@@ -286,11 +304,6 @@ function App() {
             handleDeleteItem={handleDeleteItem}
             userData={userData}
           />
-          <ItemCard
-            card={selectedCard}
-            onCardClick={handleCardClick}
-            handleCardLike={handleCardLike}
-          ></ItemCard>
           <EditProfileModal
             activeModal={EditProfileModal}
             onClose={closeActiveModal}

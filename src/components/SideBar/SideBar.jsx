@@ -2,6 +2,8 @@ import "./SideBar.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 
+// handleSignOut
+
 function Sidebar() {
   const { currentUser } = useContext(CurrentUserContext);
 
@@ -16,7 +18,9 @@ function Sidebar() {
       <button className="sidebar__profile-edit-btn" onClick={EditProfileModal}>
         Edit Profile
       </button>
-      <button className="sidebar__logout">Log out</button>
+      <button className="sidebar__logout" onClick={handleSignOut}>
+        Log out
+      </button>
     </div>
   );
 }
