@@ -40,3 +40,17 @@ function verifyUser() {
 }
 
 export { verifyUser };
+
+// sends new user name and the avatar URL to the server.
+function updateProfile(name, avatarUrl) {
+  return fetch(`${baseUrl}/profile`, {
+    method: "PATCH",
+    headers: headers,
+    body: JSON.stringify({
+      name,
+      avatarUrl,
+    }),
+  }).then(checkResponse);
+}
+
+export { updateProfile };

@@ -13,16 +13,11 @@ import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
-import { signUp, signIn, verifyUser } from "../../utils/auth";
+import { signUp, signIn, verifyUser, updateProfile } from "../../utils/auth";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import ProtectedRoute from "../../utils/ProtectedRoute";
-import {
-  getItems,
-  postItems,
-  deleteItem,
-  updateProfile,
-} from "../../utils/api";
+import { getItems, postItems, deleteItem } from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -177,6 +172,15 @@ function App() {
       .catch((err) => console.error("Error getting items:", err));
   }, []);
 
+  useEffect(() => {
+    updateProfile()
+      .then((data) => {
+        setUserData(data);
+      })
+      .catch((err) => console.error("Error updating profile:", err));
+  }, []);
+
+  //signOut
   useEffect(() => {
     updateProfile()
       .then((data) => {
