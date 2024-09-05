@@ -167,17 +167,15 @@ function App() {
   //     .catch((err) => console.log("A login error has occurred", err));
   // };
 
-  useEffect(() => {
-    handleSignOut(() => {
-      localStorage.removeItem(res.token);
+  handleSignOut((id, token) => {
+    localStorage.removeItem(token);
+  })
+    .then(() => {
+      setIsLoggedIn(false);
+      setCurrentUser({ email: "", password: "" });
+      navigate("/");
     })
-      .then(() => {
-        setIsLoggedIn(false);
-        setCurrentUser({ email: "", password: "" });
-        navigate("/");
-      })
-      .catch((err) => console.error("Error logging in:", err));
-  });
+    .catch((err) => console.error("Error logging in:", err));
 
   useEffect(() => {
     verifyUser((data) => {
@@ -248,6 +246,7 @@ function App() {
                       onCardClick={handleCardClick}
                       clothingItems={clothingItems}
                       handleAddClick={handleAddClick}
+                      handleSignOut={handleSignOut}
                     />
                   </ProtectedRoute>
                 }

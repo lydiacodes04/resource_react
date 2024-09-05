@@ -4,7 +4,7 @@ import EditProfileModal from "../EditProfileModal/EditProfileModal";
 
 // handleSignOut
 
-function Sidebar() {
+function Sidebar({ handleSignOut }) {
   const { currentUser } = useContext(CurrentUserContext);
 
   return (
