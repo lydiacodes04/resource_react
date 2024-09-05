@@ -87,10 +87,10 @@ function App() {
 
   const handleRegistration = ({ email, password, name, avatarUrl }) => {
     auth
-      .signUp(data)
+      .signUp(email, password, name, avatarUrl)
       .then(() => {
         setUserData(email, password, name, avatarUrl);
-        // setCurrentUser(userData.email, userData.password);
+        setCurrentUser(email, password);
         setIsLoggedIn(true);
         e.preventDefault();
         closeActiveModal();
@@ -124,18 +124,6 @@ function App() {
       })
       .catch((err) => console.log("A login error has occurred", err));
   };
-
-  // const handleLogout = () => {
-  //   setIsLoggedIn(false);
-  // };
-
-  // const handleUpdateUser = (e) => {
-  //   const { name, value } = e.target;
-  //   setData((prevData) => ({
-  //     ...prevData,
-  //     [name]: value,
-  //   }));
-  // };
 
   const handleCardLike = ({ id, isLiked }) => {
     const token = localStorage.getItem("jwt");
