@@ -21,6 +21,25 @@
   background-color: #fff;
   align-items: center;
 }
+.card__heart {
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  margin: 0;
+  padding: 2px 12px 2px 12px;
+  gap: 8px;
+  border-radius: 4px;
+  opacity: 0px;
+  align-items: center;
+}
+
+.card__heart_visible {
+  visibility: visible;
+}
+
+.card__heart_hidden {
+  visibility: hidden;
+}
 
 .card__image {
   width: 100%;
