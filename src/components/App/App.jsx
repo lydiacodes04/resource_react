@@ -80,6 +80,15 @@ function App() {
       .catch((err) => console.error("Error deleting item:", err));
   };
 
+  // const Register = ({ handleRegistration }) => {
+  //   const [userData, setUserData] = useState({
+  //     email: "",
+  //     password: "",
+  //     name: "",
+  //     avatarUrl: "",
+  //   });
+  // };
+
   const handleRegistration = ({ email, password, name, avatarUrl }) => {
     auth
       .signUp(email, password, name, avatarUrl)
@@ -243,6 +252,7 @@ function App() {
                       activeModal={RegisterModal}
                       onClose={closeActiveModal}
                       onSubmit={handleRegistration}
+                      //or Register
                     />
                   </div>
                 }
