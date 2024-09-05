@@ -19,7 +19,7 @@ function signUp(email, password, name, avatarUrl) {
 }
 export { signUp };
 
-function signIn() {
+function signIn(email, password) {
   return fetch(`${baseUrl}/signIn`, {
     method: "POST",
     headers: headers,
@@ -28,7 +28,7 @@ function signIn() {
 }
 export { signIn };
 
-function verifyUser() {
+function verifyUser(email, password) {
   return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {

@@ -109,7 +109,7 @@ function App() {
     }
     auth
       .verifyUser(email, password)
-      .signIn()
+      .signIn(email, password)
       .then((data) => {
         if (data.jwt) {
           localStorage.setItem("jwt", res.token);
