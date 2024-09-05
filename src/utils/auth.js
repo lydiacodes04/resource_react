@@ -10,11 +10,11 @@ const checkResponse = () => {
   return Promise.reject(`Error: ${res.status}`);
 };
 
-function signUp() {
+function signUp(email, password, name, avatarUrl) {
   return fetch(`${baseUrl}/register`, {
     method: "POST",
     headers: headers,
-    body: JSON.stringify({ name, avatar, email, password }),
+    body: JSON.stringify({ email, password, name, avatarUrl }),
   }).then(checkResponse);
 }
 export { signUp };
