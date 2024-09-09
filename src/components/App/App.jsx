@@ -167,7 +167,7 @@ function App() {
   //     .catch((err) => console.log("A login error has occurred", err));
   // };
 
-  handleSignOut((id, token) => {
+  handleSignOut(({ id, token }) => {
     localStorage.removeItem(token);
   })
     .then(() => {
