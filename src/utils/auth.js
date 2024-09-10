@@ -28,14 +28,14 @@ function signIn(email, password) {
 }
 export { signIn };
 
-function verifyUser(email, password) {
+// function verifyUser(email, password, token)
+function verifyUser(token) {
   return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
-    //token = 1234
   }).then(checkResponse);
 }
 

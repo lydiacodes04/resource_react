@@ -4,7 +4,7 @@ import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import "./Header.css";
 
 function Header({ handleAddClick, weatherData, userData }) {
-  console.log("This is the current user", userData);
+  // console.log("This is the current user", userData);
 
   const currentDate = new Date().toLocaleString("default", {
     month: "long",

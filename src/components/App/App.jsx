@@ -107,7 +107,6 @@ function App() {
       return;
     }
     auth
-      .verifyUser(email, password)
       .signIn(email, password)
       .then((data) => {
         if (data.jwt) {
@@ -167,7 +166,8 @@ function App() {
   //     .catch((err) => console.log("A login error has occurred", err));
   // };
 
-  handleSignOut(({ id, token }) => {
+  /*
+  const handleSignOut = (({ id, token }) => {
     localStorage.removeItem(token);
   })
     .then(() => {
@@ -176,9 +176,18 @@ function App() {
       navigate("/");
     })
     .catch((err) => console.error("Error logging in:", err));
+  */
+
+  const handleSignOut = ({ id, token }) => {
+    localStorage.removeItem(token);
+
+    setIsLoggedIn(false);
+    setCurrentUser({ email: "", password: "" });
+    navigate("/");
+  };
 
   useEffect(() => {
-    verifyUser((data) => {
+    verifyUser(({ token }) => {
       if (data.jwt) {
         setIsLoggedIn(true);
         closeActiveModal();
