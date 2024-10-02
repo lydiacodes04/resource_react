@@ -23,14 +23,25 @@ function Header({ handleAddClick, weatherData, userData }) {
       </p>
       <ToggleSwitch />
       <div className="header__nav">
-        <button
+        {/* <button
           onClick={handleAddClick}
           type="button"
           className="header__add-clothes-btn"
         >
           {" "}
           + Add Clothes
+        </button> */}
+
+        <button type="button" className="header__sign-up">
+          {/* {" "} */}
+          Sign Up
         </button>
+
+        <button type="button" className="header__log-in">
+          {/* {" "} */}
+          Log In
+        </button>
+
         <Link to="/profile" className="header__link">
           <div className="header__user-container">
             <p className="header__username">{userData.name}</p>

@@ -3,7 +3,7 @@ const baseUrl = "http://localhost:3001";
 const headers = { "Content-Type": "application/json" };
 // const jwt = require("jsonwebtoken");
 
-const checkResponse = () => {
+const checkResponse = (res) => {
   if (res.ok) {
     return res.json();
   }
@@ -29,7 +29,7 @@ function signIn(email, password) {
 export { signIn };
 
 // function verifyUser(email, password, token)
-function verifyUser(token) {
+function verifyUser(email, password, token) {
   return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
