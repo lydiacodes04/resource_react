@@ -20,12 +20,12 @@ function ItemModal({ activeModal, onClose, card, handleDeleteItem, userData }) {
         <div className="modal__footer">
           <h2 className="modal__caption"> {card.name} </h2>
           <p className="modal__weather">Weather: {card.weather}</p>
-          <button
+          {/* <button
             className={modalDeleteBtnClassName}
             onClick={() => handleDeleteItem(card) && onClose}
           >
             Delete item
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
