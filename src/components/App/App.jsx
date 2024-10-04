@@ -186,17 +186,17 @@ function App() {
     navigate("/");
   };
 
-  useEffect(() => {
-    verifyUser(({ token }) => {
-      if (data.jwt) {
-        setIsLoggedIn(true);
-        closeActiveModal();
-        navigate("/profile");
-      }
-    })
-      .then(() => {})
-      .catch((err) => console.error("Error logging in:", err));
-  });
+  // useEffect(() => {
+  //   verifyUser(({ token }) => {
+  //     if (data.jwt) {
+  //       setIsLoggedIn(true);
+  //       closeActiveModal();
+  //       navigate("/profile");
+  //     }
+  //   })
+  //     .then(() => {})
+  //     .catch((err) => console.error("Error logging in:", err));
+  // });
 
   useEffect(() => {
     getWeather(coordinates, APIkey)
@@ -215,13 +215,13 @@ function App() {
       .catch((err) => console.error("Error getting items:", err));
   }, []);
 
-  useEffect(() => {
-    updateProfile()
-      .then((data) => {
-        setUserData(data);
-      })
-      .catch((err) => console.error("Error updating profile:", err));
-  }, []);
+  // useEffect(() => {
+  //   updateProfile()
+  //     .then((data) => {
+  //       setUserData(data);
+  //     })
+  //     .catch((err) => console.error("Error updating profile:", err));
+  // }, []);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

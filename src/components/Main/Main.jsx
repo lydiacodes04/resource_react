@@ -8,7 +8,7 @@ function Main({ weatherData, onCardClick, clothingItems, onCardLike }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const temp = weatherData?.temp?.[currentTemperatureUnit] || 999;
 
-  console.log(clothingItems);
+  // console.log(clothingItems);
   return (
     <main>
       <WeatherCard weatherData={weatherData} />
