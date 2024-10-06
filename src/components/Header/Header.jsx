@@ -31,7 +31,6 @@ function Header({ handleAddClick, weatherData, userData }) {
           {" "}
           + Add Clothes
         </button> */}
-
         <button type="button" className="header__sign-up">
           {/* {" "} */}
           Sign Up

@@ -43,3 +43,21 @@
 .header__username {
   margin: 0;
 }
+
+.header__nav {
+  position: relative;
+  display: flex;
+}
+
+.header__avatar {
+  visibility: hidden;
+  align-items: end;
+}
+/* .header__sign-up {
+  position: absolute;
+}
+
+.header__log-in {
+  position: absolute;
+  left: 30;
+} */
