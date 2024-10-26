@@ -3,7 +3,12 @@ import logo from "../../assets/logo.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import "./Header.css";
 
-function Header({ handleAddClick, weatherData, userData }) {
+function Header({
+  handleAddClick,
+  weatherData,
+  userData,
+  handleAddRegistration,
+}) {
   // console.log("This is the current user", userData);
 
   const currentDate = new Date().toLocaleString("default", {
@@ -31,7 +36,11 @@ function Header({ handleAddClick, weatherData, userData }) {
           {" "}
           + Add Clothes
         </button> */}
-        <button type="button" className="header__sign-up">
+        <button
+          type="button"
+          className="header__sign-up"
+          onClick={handleAddRegistration}
+        >
           {/* {" "} */}
           Sign Up
         </button>

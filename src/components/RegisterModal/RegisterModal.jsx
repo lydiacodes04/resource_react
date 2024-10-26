@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import "../ModalWithForm/ModalWithForm";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
+import { Link } from "react-router-dom";
 
 function RegisterModal({ onClose, isOpen, handleSubmit }) {
   if (!isOpen) {
     return null;
   }
+
+  const [data, setData] = useState({});
 
   return (
     <ModalWithForm

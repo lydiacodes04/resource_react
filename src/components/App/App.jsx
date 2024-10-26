@@ -49,6 +49,10 @@ function App() {
     setActiveModal("add-garment");
   };
 
+  const handleAddRegistration = () => {
+    setActiveModal("registration-modal");
+  };
+
   const closeActiveModal = () => {
     setActiveModal("");
   };
@@ -234,6 +238,7 @@ function App() {
               handleAddClick={handleAddClick}
               weatherData={weatherData}
               userData={userData}
+              handleAddRegistration={handleAddRegistration}
             />
             <Routes>
               <Route
@@ -270,7 +275,7 @@ function App() {
                   )
                 }
               />
-              <Route
+              {/* <Route
                 path="/register"
                 element={
                   <div className="registerContainer">
@@ -295,11 +300,23 @@ function App() {
                     />
                   </div>
                 }
-              />
+              /> */}
             </Routes>
 
             <Footer />
           </div>
+          <RegisterModal
+            isOpen={activeModal === "registration-modal"}
+            onClose={closeActiveModal}
+            onSubmit={handleRegistration}
+            //or Register
+          />
+          <LoginModal
+            activeModal={LoginModal}
+            onClose={closeActiveModal}
+            onSubmit={handleLogin}
+            handleLogin={handleLogin}
+          />
           <AddItemModal
             onClose={closeActiveModal}
             isOpen={activeModal === "add-garment"}
