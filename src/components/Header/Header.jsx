@@ -8,6 +8,7 @@ function Header({
   weatherData,
   userData,
   handleAddRegistration,
+  handleShowLogin,
 }) {
   // console.log("This is the current user", userData);
 
@@ -17,7 +18,7 @@ function Header({
   });
 
   const myAvatar = userData.avatar || userData.name.charAt(0);
-
+  console.log(userData);
   return (
     <header className="header">
       <Link to="/">
@@ -45,17 +46,21 @@ function Header({
           Sign Up
         </button>
 
-        <button type="button" className="header__log-in">
+        <button
+          type="button"
+          className="header__log-in"
+          onClick={handleShowLogin}
+        >
           {/* {" "} */}
           Log In
         </button>
 
-        <Link to="/profile" className="header__link">
+        {/* <Link to="/profile" className="header__link">
           <div className="header__user-container">
             <p className="header__username">{userData.name}</p>
             <img src={myAvatar} alt="avatar" className="header__avatar" />
           </div>
-        </Link>
+        </Link> */}
       </div>
     </header>
   );

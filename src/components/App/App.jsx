@@ -53,6 +53,11 @@ function App() {
     setActiveModal("registration-modal");
   };
 
+  const handleShowLogin = () => {
+    console.log("is our code firing");
+    setActiveModal("login-modal");
+  };
+
   const closeActiveModal = () => {
     setActiveModal("");
   };
@@ -239,6 +244,7 @@ function App() {
               weatherData={weatherData}
               userData={userData}
               handleAddRegistration={handleAddRegistration}
+              handleShowLogin={handleShowLogin}
             />
             <Routes>
               <Route
@@ -312,10 +318,9 @@ function App() {
             //or Register
           />
           <LoginModal
-            activeModal={LoginModal}
+            isOpen={activeModal === "login-modal"}
             onClose={closeActiveModal}
             onSubmit={handleLogin}
-            handleLogin={handleLogin}
           />
           <AddItemModal
             onClose={closeActiveModal}

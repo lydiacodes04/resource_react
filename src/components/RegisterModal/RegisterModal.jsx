@@ -64,13 +64,16 @@ function RegisterModal({ onClose, isOpen, handleSubmit }) {
         />
       </label>
       <label className="register__button-container">
-        <button
+        {/* <button
           type="submit"
           className="register__link"
           onSubmit={handleSubmit}
         >
           Sign up
-        </button>
+        </button> */}
+        <Link to="register" className="register__login-link">
+          Sign up
+        </Link>
       </label>
       <label className="register__signIn">
         <Link to="login" className="register__login-link">
