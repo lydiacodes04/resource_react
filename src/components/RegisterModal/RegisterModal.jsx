@@ -8,7 +8,17 @@ function RegisterModal({ onClose, isOpen, handleSubmit }) {
     return null;
   }
 
-  const [data, setData] = useState({});
+  const [email, setEmail] = useState("");
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  //continue doing this for each form field
+
+  function handleSubmitRegistration(e) {
+    e.preventDefault();
+    handleSubmit({ email, password, name, avatarUrl });
+  }
 
   return (
     <ModalWithForm
@@ -16,7 +26,7 @@ function RegisterModal({ onClose, isOpen, handleSubmit }) {
       buttonText="Sign Up"
       onClose={onClose}
       isOpen={isOpen}
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmitRegistration}
     >
       <label htmlFor="email" className="modal__label">
         Email *
@@ -26,7 +36,8 @@ function RegisterModal({ onClose, isOpen, handleSubmit }) {
           id="email"
           placeholder="Email"
           name="email"
-          value={data.email}
+          value={email}
+          onChange={handleEmailChange}
         />
       </label>
       <label htmlFor="password" className="modal__label">
