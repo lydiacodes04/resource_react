@@ -11,7 +11,7 @@ const checkResponse = (res) => {
 };
 
 function signUp(email, password, name, avatarUrl) {
-  return fetch(`${baseUrl}/register`, {
+  return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: headers,
     body: JSON.stringify({ email, password, name, avatarUrl }),

@@ -3,7 +3,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 import { Link } from "react-router-dom";
 
-function RegisterModal({ onClose, isOpen, handleSubmit }) {
+function RegisterModal({ onClose, isOpen, onSubmit }) {
   if (!isOpen) {
     return null;
   }
@@ -13,11 +13,24 @@ function RegisterModal({ onClose, isOpen, handleSubmit }) {
     setEmail(e.target.value);
   };
 
-  //continue doing this for each form field
+  const [password, setPassword] = useState("");
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const [name, setName] = useState("");
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const [avatarUrl, setAvatarUrl] = useState("");
+  const handleAvatarUrlChange = (e) => {
+    setAvatarUrl(e.target.value);
+  };
 
   function handleSubmitRegistration(e) {
     e.preventDefault();
-    handleSubmit({ email, password, name, avatarUrl });
+    onSubmit({ email, password, name, avatarUrl });
   }
 
   return (
@@ -48,7 +61,8 @@ function RegisterModal({ onClose, isOpen, handleSubmit }) {
           id="password"
           placeholder="Password"
           name="password"
-          value={data.password}
+          value={password}
+          onChange={handlePasswordChange}
         />
       </label>
 
@@ -60,7 +74,8 @@ function RegisterModal({ onClose, isOpen, handleSubmit }) {
           id="name"
           placeholder="Name"
           name="name"
-          value={data.name}
+          value={name}
+          onChange={handleNameChange}
         />
       </label>
       <label htmlFor="avatarUrl" className="modal__label">
@@ -71,7 +86,8 @@ function RegisterModal({ onClose, isOpen, handleSubmit }) {
           id="avatarUrl"
           placeholder="Avatar Url"
           name="avatarUrl"
-          value={data.avatarUrl}
+          value={avatarUrl}
+          onChange={handleAvatarUrlChange}
         />
       </label>
       <label className="register__button-container">

@@ -98,8 +98,7 @@ function App() {
   // };
 
   const handleRegistration = ({ email, password, name, avatarUrl }) => {
-    auth
-      .signUp(email, password, name, avatarUrl)
+    signUp(email, password, name, avatarUrl)
       .then(() => {
         setUserData(email, password, name, avatarUrl);
         setCurrentUser(email, password);
@@ -115,8 +114,7 @@ function App() {
     if (!email || !password) {
       return;
     }
-    auth
-      .signIn(email, password)
+    signIn(email, password)
       .then((data) => {
         if (data.jwt) {
           localStorage.setItem("jwt", res.token);
