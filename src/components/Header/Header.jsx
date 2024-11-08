@@ -10,15 +10,19 @@ function Header({
   handleAddRegistration,
   handleShowLogin,
 }) {
-  // console.log("This is the current user", userData);
-
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
   });
-
+  console.log({
+    handleAddClick,
+    weatherData,
+    userData,
+    handleAddRegistration,
+    handleShowLogin,
+  });
   const myAvatar = userData.avatar || userData.name.charAt(0);
-  console.log(userData);
+
   return (
     <header className="header">
       <Link to="/">

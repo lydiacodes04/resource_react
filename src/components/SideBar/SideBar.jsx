@@ -1,12 +1,12 @@
 import "./SideBar.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
-
+import { useContext } from "react";
 // handleSignOut
 
 function Sidebar({ handleSignOut }) {
-  const { currentUser } = useContext(CurrentUserContext);
-
+  const currentUser = useContext(CurrentUserContext);
+  console.log(currentUser);
   return (
     <div className="sidebar">
       <img

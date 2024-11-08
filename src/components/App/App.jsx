@@ -100,10 +100,10 @@ function App() {
   const handleRegistration = ({ email, password, name, avatarUrl }) => {
     signUp(email, password, name, avatarUrl)
       .then(() => {
-        setUserData(email, password, name, avatarUrl);
-        setCurrentUser(email, password);
+        setUserData({ email, password, name, avatarUrl });
+        setCurrentUser({ email, password, name, avatarUrl });
+
         setIsLoggedIn(true);
-        e.preventDefault();
         closeActiveModal();
         navigate("/profile");
       })

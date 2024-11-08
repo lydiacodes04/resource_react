@@ -7,13 +7,13 @@ function ClothesSection({
   handleAddClick,
   currentUser,
 }) {
-  // Checking if the current user is the owner of the current clothing item
-  const isOwn = selectedCard.owner === currentUser._id;
+  // // Checking if the current user is the owner of the current clothing item
+  // const isOwn = selectedCard.owner === currentUser._id;
 
-  // Creating a variable which you'll then set in `className` for the button
-  const modalClothesBtnClassName = `clothes-btn ${
-    isOwn ? "clothes-btn_visible" : "clothes-btn_hidden"
-  }`;
+  // // Creating a variable which you'll then set in `className` for the button
+  // const modalClothesBtnClassName = `clothes-btn ${
+  //   isOwn ? "clothes-btn_visible" : "clothes-btn_hidden"
+  // }`;
 
   return (
     <div className="clothes-section">
