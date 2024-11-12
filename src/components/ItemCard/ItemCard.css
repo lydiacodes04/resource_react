@@ -33,12 +33,12 @@
   align-items: center;
 }
 
-.card__heart_visible {
-  visibility: visible;
+.card__heart_liked {
+  /* visibility: visible; */
 }
 
-.card__heart_hidden {
-  visibility: hidden;
+.card__heart_default {
+  /* visibility: hidden; */
 }
 
 .card__image {

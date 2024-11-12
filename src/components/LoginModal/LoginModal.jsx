@@ -12,7 +12,13 @@ function LoginModal({ onClose, isOpen, onSubmit }) {
     setEmail(e.target.value);
   };
 
-  const handleSubmit = () => {
+  const [password, setPassword] = useState("");
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     onSubmit({ email, password });
   };
 
@@ -45,6 +51,7 @@ function LoginModal({ onClose, isOpen, onSubmit }) {
           placeholder="Password"
           name="password"
           value={password}
+          onChange={handlePasswordChange}
         />
       </label>
     </ModalWithForm>

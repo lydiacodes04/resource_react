@@ -6,6 +6,7 @@ function ClothesSection({
   clothingItems,
   handleAddClick,
   currentUser,
+  onCardLike,
 }) {
   // // Checking if the current user is the owner of the current clothing item
   // const isOwn = selectedCard.owner === currentUser._id;
@@ -29,7 +30,12 @@ function ClothesSection({
       </div>
       <ul className="cards__list">
         {clothingItems.map((item) => (
-          <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
+          <ItemCard
+            key={item._id}
+            item={item}
+            onCardClick={onCardClick}
+            onCardLike={onCardLike}
+          />
         ))}
       </ul>
     </div>

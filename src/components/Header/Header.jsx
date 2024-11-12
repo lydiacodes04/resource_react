@@ -14,13 +14,13 @@ function Header({
     month: "long",
     day: "numeric",
   });
-  console.log({
-    handleAddClick,
-    weatherData,
-    userData,
-    handleAddRegistration,
-    handleShowLogin,
-  });
+  // console.log({
+  //   handleAddClick,
+  //   weatherData,
+  //   userData,
+  //   handleAddRegistration,
+  //   handleShowLogin,
+  // });
   const myAvatar = userData.avatar || userData.name.charAt(0);
 
   return (

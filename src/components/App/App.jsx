@@ -116,8 +116,10 @@ function App() {
     }
     signIn(email, password)
       .then((data) => {
-        if (data.jwt) {
-          localStorage.setItem("jwt", res.token);
+        console.log(data);
+        if (data.token) {
+          console.log("we have a token");
+          localStorage.setItem("jwt", data.token);
         }
         return <Navigate to="/login" replace />;
       })
@@ -127,7 +129,6 @@ function App() {
         // signIn(currentUser);
         // setCurrentUser(currentUser);
         setIsLoggedIn(true);
-        e.preventDefault();
         closeActiveModal();
         navigate("/profile");
       })
@@ -184,9 +185,8 @@ function App() {
     })
     .catch((err) => console.error("Error logging in:", err));
   */
-
-  const handleSignOut = ({ id, token }) => {
-    localStorage.removeItem(token);
+  const handleSignOut = () => {
+    localStorage.removeItem("jwt");
 
     setIsLoggedIn(false);
     setCurrentUser({ email: "", password: "" });
@@ -252,7 +252,7 @@ function App() {
                     weatherData={weatherData}
                     onCardClick={handleCardClick}
                     clothingItems={clothingItems}
-                    handleCardLike={handleCardLike}
+                    onCardLike={handleCardLike}
                   />
                 }
               />
@@ -265,6 +265,7 @@ function App() {
                       clothingItems={clothingItems}
                       handleAddClick={handleAddClick}
                       handleSignOut={handleSignOut}
+                      onCardLike={handleCardLike}
                     />
                   </ProtectedRoute>
                 }

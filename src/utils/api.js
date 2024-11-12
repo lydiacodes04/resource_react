@@ -1,5 +1,8 @@
 const baseUrl = "http://localhost:3001";
-const headers = { "Content-Type": "application/json" };
+const headers = {
+  "Content-Type": "application/json",
+  Authorization: "Bearer " + localStorage.getItem("jwt"),
+};
 
 function checkResponse(res) {
   if (res.ok) {
