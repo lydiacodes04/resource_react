@@ -44,3 +44,21 @@ function deleteItem(item) {
 }
 
 export { deleteItem };
+
+function addCardLike(id, token) {
+  return fetch(`${baseUrl}/items/${item._id}`, {
+    method: "POST",
+    headers: headers,
+  }).then(checkResponse);
+}
+
+export { addCardLike };
+
+function removeCardLike(id, token) {
+  return fetch(`${baseUrl}/items/${item._id}`, {
+    method: "DELETE",
+    headers: headers,
+  }).then(checkResponse);
+}
+
+export { removeCardLike };

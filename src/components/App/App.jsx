@@ -16,7 +16,13 @@ import { signUp, signIn, verifyUser, updateProfile } from "../../utils/auth";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import ProtectedRoute from "../../utils/ProtectedRoute";
-import { getItems, postItems, deleteItem } from "../../utils/api";
+import {
+  getItems,
+  postItems,
+  deleteItem,
+  addCardLike,
+  removeCardLike,
+} from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -54,7 +60,6 @@ function App() {
   };
 
   const handleShowLogin = () => {
-    console.log("is our code firing");
     setActiveModal("login-modal");
   };
 
@@ -116,15 +121,12 @@ function App() {
     }
     signIn(email, password)
       .then((data) => {
-        console.log(data);
         if (data.token) {
-          console.log("we have a token");
           localStorage.setItem("jwt", data.token);
         }
         return <Navigate to="/login" replace />;
       })
       .then((data) => {
-        console.log("this is the data", data);
         // setUserData(data);
         // signIn(currentUser);
         // setCurrentUser(currentUser);
@@ -139,8 +141,8 @@ function App() {
     const token = localStorage.getItem("jwt");
     // Check if this card is not currently liked
     !isLiked
-      ? api
-          .addCardLike(id, token)
+      ? // ? api
+        addCardLike(id, token)
           .then((updatedCard) => {
             setClothingItems((cards) =>
               cards.map((item) => (item._id === id ? updatedCard : item))
@@ -148,8 +150,8 @@ function App() {
           })
           .catch((err) => console.log(err))
       : // if not, send a request to remove the user's id from the card's likes array
-        api
-          .removeCardLike(id, token)
+        // api
+        removeCardLike(id, token)
           .then((updatedCard) => {
             setClothingItems((cards) =>
               cards.map((item) => (item._id === id ? updatedCard : item))
