@@ -53,11 +53,9 @@
   visibility: hidden;
   align-items: end;
 }
-/* .header__sign-up {
-  position: absolute;
+
+.header__sign-up {
 }
 
 .header__log-in {
-  position: absolute;
-  left: 30;
-} */
+}

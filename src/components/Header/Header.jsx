@@ -46,7 +46,6 @@ function Header({
           className="header__sign-up"
           onClick={handleAddRegistration}
         >
-          {/* {" "} */}
           Sign Up
         </button>
 
@@ -55,7 +54,6 @@ function Header({
           className="header__log-in"
           onClick={handleShowLogin}
         >
-          {/* {" "} */}
           Log In
         </button>
 
