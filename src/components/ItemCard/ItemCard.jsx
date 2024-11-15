@@ -24,7 +24,7 @@ function ItemCard({ item, onCardClick, onCardLike }) {
   // }`;
 
   const cardHeartClassName = `card__heart`;
-  console.log(item);
+
   return (
     <li className="card">
       <h2 className="card__name">{item.name}</h2>
