@@ -1,14 +1,18 @@
 import "./ItemCard.css";
 import cardHeartDefault from "../../assets/heart-default.svg";
 import cardHeartLiked from "../../assets/heart-liked.svg";
+// import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+// import React, { useContext } from "react";
+
+// const currentUser = CurrentUserContext.currentUser;
 
 function ItemCard({ item, onCardClick, onCardLike }) {
   const handleCardClick = () => {
     onCardClick(item);
   };
 
-  const handleLike = ({ id, token }) => {
-    onCardLike({ id, token });
+  const handleLike = () => {
+    onCardLike(item);
     //pass ({id, token})
   };
 
@@ -18,6 +22,10 @@ function ItemCard({ item, onCardClick, onCardLike }) {
   const isLiked = item.likes
     ? item.likes.some((id) => id === currentUser._id)
     : false;
+
+  // const isLiked = item.likes
+  // ? item.likes.some((id) => id === currentUser._id)
+  // : false;
 
   // const cardHeartClassName = `card__heart ${
   //   isLiked ? "card__heart_liked" : "card__heart_default"

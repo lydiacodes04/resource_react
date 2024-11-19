@@ -45,17 +45,17 @@ function deleteItem(item) {
 
 export { deleteItem };
 
-function addCardLike(id, token) {
-  return fetch(`${baseUrl}/items/${item._id}`, {
-    method: "POST",
+function addCardLike(id) {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "PUT",
     headers: headers,
   }).then(checkResponse);
 }
 
 export { addCardLike };
 
-function removeCardLike(id, token) {
-  return fetch(`${baseUrl}/items/${item._id}`, {
+function removeCardLike(id) {
+  return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: headers,
   }).then(checkResponse);

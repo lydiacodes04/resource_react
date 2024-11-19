@@ -137,24 +137,24 @@ function App() {
       .catch((err) => console.log("A login error has occurred", err));
   };
 
-  const handleCardLike = ({ id, isLiked }) => {
+  const handleCardLike = ({ _id, isLiked }) => {
     const token = localStorage.getItem("jwt");
     // Check if this card is not currently liked
     !isLiked
       ? // ? api
-        addCardLike(id, token)
+        addCardLike(_id)
           .then((updatedCard) => {
             setClothingItems((cards) =>
-              cards.map((item) => (item._id === id ? updatedCard : item))
+              cards.map((item) => (item._id === _id ? updatedCard : item))
             );
           })
           .catch((err) => console.log(err))
       : // if not, send a request to remove the user's id from the card's likes array
         // api
-        removeCardLike(id, token)
+        removeCardLike(_id)
           .then((updatedCard) => {
             setClothingItems((cards) =>
-              cards.map((item) => (item._id === id ? updatedCard : item))
+              cards.map((item) => (item._id === _id ? updatedCard : item))
             );
           })
           .catch((err) => console.log(err));
