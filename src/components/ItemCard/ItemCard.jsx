@@ -1,12 +1,12 @@
 import "./ItemCard.css";
 import cardHeartDefault from "../../assets/heart-default.svg";
 import cardHeartLiked from "../../assets/heart-liked.svg";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+// import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 // import React, { useContext } from "react";
 
-const currentUser = CurrentUserContext.currentUser;
+// const currentUser = CurrentUserContext.currentUser;
 
-function ItemCard({ item, onCardClick, onCardLike }) {
+function ItemCard({ item, onCardClick, onCardLike, currentUser }) {
   const handleCardClick = () => {
     onCardClick(item);
   };

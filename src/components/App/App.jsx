@@ -255,6 +255,7 @@ function App() {
                     onCardClick={handleCardClick}
                     clothingItems={clothingItems}
                     onCardLike={handleCardLike}
+                    currentUser={currentUser}
                   />
                 }
               />
