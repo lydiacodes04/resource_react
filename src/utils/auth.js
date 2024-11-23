@@ -29,7 +29,7 @@ function signIn(email, password) {
 export { signIn };
 
 // function verifyUser(email, password, token)
-function verifyUser(email, password, token) {
+function verifyUser(token) {
   return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {

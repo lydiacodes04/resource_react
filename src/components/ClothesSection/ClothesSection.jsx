@@ -16,8 +16,6 @@ function ClothesSection({
   //   isOwn ? "clothes-btn_visible" : "clothes-btn_hidden"
   // }`;
 
-  console.log(clothingItems);
-
   return (
     <div className="clothes-section">
       <div className="clothes-section__items">

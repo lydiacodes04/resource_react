@@ -121,15 +121,18 @@ function App() {
     }
     signIn(email, password)
       .then((data) => {
+        // console.log(data);
         if (data.token) {
           localStorage.setItem("jwt", data.token);
+          return verifyUser(data.token);
         }
         return <Navigate to="/login" replace />;
       })
       .then((data) => {
+        console.log(data);
         // setUserData(data);
         // signIn(currentUser);
-        // setCurrentUser(currentUser);
+        setCurrentUser(data);
         setIsLoggedIn(true);
         closeActiveModal();
         navigate("/profile");
@@ -255,7 +258,6 @@ function App() {
                     onCardClick={handleCardClick}
                     clothingItems={clothingItems}
                     onCardLike={handleCardLike}
-                    currentUser={currentUser}
                   />
                 }
               />

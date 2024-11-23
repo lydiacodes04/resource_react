@@ -1,12 +1,14 @@
 import "./ItemCard.css";
 import cardHeartDefault from "../../assets/heart-default.svg";
 import cardHeartLiked from "../../assets/heart-liked.svg";
-// import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-// import React, { useContext } from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import React, { useContext } from "react";
 
-// const currentUser = CurrentUserContext.currentUser;
-
-function ItemCard({ item, onCardClick, onCardLike, currentUser }) {
+function ItemCard({ item, onCardClick, onCardLike }) {
+  const currentUser = useContext(CurrentUserContext);
+  // console.log(currentUser);
+  // here current user is undefined
+  // console.log(item);
   const handleCardClick = () => {
     onCardClick(item);
   };
@@ -18,6 +20,12 @@ function ItemCard({ item, onCardClick, onCardLike, currentUser }) {
 
   // The likes array should be an array of ids
   // const likes = {};
+
+  // console.log(currentUser);
+  // here current user is undefined
+
+  // const currentUser = { currentUser };
+  //this causes errors
 
   const isLiked = item.likes
     ? item.likes.some((id) => id === currentUser._id)
