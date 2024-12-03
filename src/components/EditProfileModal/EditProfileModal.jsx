@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import "../ModalWithForm/ModalWithForm";
+import React, { useState, useContext } from "react";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
+
 import "./EditProfileModal.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
@@ -8,7 +9,7 @@ function EditProfileModal({ onClose, isOpen, handleSubmit }) {
     return null;
   }
 
-  const { currentUser } = useContext(CurrentUserContext);
+  const currentUser = useContext(CurrentUserContext);
 
   return (
     <ModalWithForm
@@ -26,7 +27,7 @@ function EditProfileModal({ onClose, isOpen, handleSubmit }) {
           id="name"
           placeholder={currentUser.name}
           name="name"
-          value={data.name}
+          value={currentUser.name}
         />
       </label>
       <label htmlFor="avatarUrl" className="modal__label">
@@ -37,7 +38,7 @@ function EditProfileModal({ onClose, isOpen, handleSubmit }) {
           id="avatarUrl"
           placeholder="Avatar Url"
           name="avatarUrl"
-          value={data.avatarUrl}
+          value={currentUser.avatarUrl}
         />
       </label>
     </ModalWithForm>

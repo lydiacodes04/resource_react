@@ -22,7 +22,7 @@ function Header({
   //   handleAddRegistration,
   //   handleShowLogin,
   // });
-  const myAvatar = avatar || name.charAt(0);
+  const myAvatar = avatar || name;
 
   return (
     <header className="header">
@@ -34,36 +34,43 @@ function Header({
       </p>
       <ToggleSwitch />
       <div className="header__nav">
-        {/* <button
-          onClick={handleAddClick}
-          type="button"
-          className="header__add-clothes-btn"
-        >
-          {" "}
-          + Add Clothes
-        </button> */}
-        <button
-          type="button"
-          className="header__sign-up"
-          onClick={handleAddRegistration}
-        >
-          Sign Up
-        </button>
+        {!myAvatar ? (
+          <>
+            <button
+              type="button"
+              className="header__sign-up"
+              onClick={handleAddRegistration}
+            >
+              Sign Up
+            </button>
 
-        <button
-          type="button"
-          className="header__log-in"
-          onClick={handleShowLogin}
-        >
-          Log In
-        </button>
+            <button
+              type="button"
+              className="header__log-in"
+              onClick={handleShowLogin}
+            >
+              Log In
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              onClick={handleAddClick}
+              type="button"
+              className="header__add-clothes-btn"
+            >
+              {" "}
+              + Add Clothes
+            </button>
 
-        <Link to="/profile" className="header__link">
-          <div className="header__user-container">
-            <p className="header__username">{name}</p>
-            <img src={avatar} alt="avatar" className="header__avatar" />
-          </div>
-        </Link>
+            <Link to="/profile" className="header__link">
+              <div className="header__user-container">
+                <p className="header__username">{name}</p>
+                <img src={myAvatar} alt="avatar" className="header__avatar" />
+              </div>
+            </Link>
+          </>
+        )}
       </div>
     </header>
   );

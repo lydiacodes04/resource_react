@@ -59,6 +59,10 @@ function App() {
     setActiveModal("add-garment");
   };
 
+  const handleEditModal = () => {
+    setActiveModal("edit-profile");
+  };
+
   const handleAddRegistration = () => {
     setActiveModal("registration-modal");
   };
@@ -277,6 +281,7 @@ function App() {
                       handleAddClick={handleAddClick}
                       handleSignOut={handleSignOut}
                       onCardLike={handleCardLike}
+                      handleEditModal={handleEditModal}
                     />
                   </ProtectedRoute>
                 }
@@ -345,7 +350,8 @@ function App() {
             userData={userData}
           />
           <EditProfileModal
-            activeModal={EditProfileModal}
+            activeModal={activeModal}
+            isOpen={activeModal === "edit-profile"}
             onClose={closeActiveModal}
             onAddItem={handleAddItemSubmit}
           ></EditProfileModal>
