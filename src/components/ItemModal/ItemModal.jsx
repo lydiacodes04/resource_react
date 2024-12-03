@@ -11,8 +11,12 @@ function ItemModal({ activeModal, onClose, card, handleDeleteItem, userData }) {
   // console.log(card, currentUser);
   // Creating a variable which you'll then set in `className` for the delete button
   const modalDeleteBtnClassName = `modal__delete-btn ${
-    isOwn ? "modal__delete-btn_visible" : "modal__delete-btn_hidden"
+    isOwn && activeModal === "preview"
+      ? "modal__delete-btn_visible"
+      : "modal__delete-btn_hidden"
   }`;
+  // console.log({ ...card }, currentUser);
+  // console.log(modalDeleteBtnClassName);
 
   return (
     <div className={`modal ${activeModal === "preview" && "modal_opened"}`}>

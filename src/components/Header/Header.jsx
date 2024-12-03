@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import "./Header.css";
-
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { useContext } from "react";
 function Header({
   handleAddClick,
   weatherData,
-  userData,
   handleAddRegistration,
   handleShowLogin,
 }) {
@@ -14,14 +14,15 @@ function Header({
     month: "long",
     day: "numeric",
   });
+  const { avatar, email, name } = useContext(CurrentUserContext);
+  // console.log(currentUser);
   // console.log({
   //   handleAddClick,
   //   weatherData,
-  //   userData,
   //   handleAddRegistration,
   //   handleShowLogin,
   // });
-  const myAvatar = userData.avatar || userData.name.charAt(0);
+  const myAvatar = avatar || name.charAt(0);
 
   return (
     <header className="header">
@@ -57,12 +58,12 @@ function Header({
           Log In
         </button>
 
-        {/* <Link to="/profile" className="header__link">
+        <Link to="/profile" className="header__link">
           <div className="header__user-container">
-            <p className="header__username">{userData.name}</p>
-            <img src={myAvatar} alt="avatar" className="header__avatar" />
+            <p className="header__username">{name}</p>
+            <img src={avatar} alt="avatar" className="header__avatar" />
           </div>
-        </Link> */}
+        </Link>
       </div>
     </header>
   );

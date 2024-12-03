@@ -55,7 +55,7 @@ function addCardLike(id) {
 export { addCardLike };
 
 function removeCardLike(id) {
-  return fetch(`${baseUrl}/items/${id}`, {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
     method: "DELETE",
     headers: headers,
   }).then(checkResponse);

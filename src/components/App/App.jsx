@@ -35,7 +35,9 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("jwt") ? true : false
+  );
   const [currentUser, setCurrentUser] = useState({ email: "", password: "" });
   const [userData, setUserData] = useState({
     email: "",
@@ -43,6 +45,8 @@ function App() {
     name: "",
     avatarUrl: "",
   });
+
+  console.log("is logged in", isLoggedIn);
 
   const navigate = useNavigate();
 
@@ -140,27 +144,29 @@ function App() {
       .catch((err) => console.log("A login error has occurred", err));
   };
 
-  const handleCardLike = ({ _id, isLiked }) => {
+  const handleCardLike = (_id, isLiked) => {
     const token = localStorage.getItem("jwt");
     // Check if this card is not currently liked
-    !isLiked
-      ? // ? api
-        addCardLike(_id)
-          .then((updatedCard) => {
-            setClothingItems((cards) =>
-              cards.map((item) => (item._id === _id ? updatedCard : item))
-            );
-          })
-          .catch((err) => console.log(err))
-      : // if not, send a request to remove the user's id from the card's likes array
-        // api
-        removeCardLike(_id)
-          .then((updatedCard) => {
-            setClothingItems((cards) =>
-              cards.map((item) => (item._id === _id ? updatedCard : item))
-            );
-          })
-          .catch((err) => console.log(err));
+    if (!isLiked) {
+      // ? api
+      addCardLike(_id)
+        .then((updatedCard) => {
+          setClothingItems((cards) =>
+            cards.map((item) => (item._id === _id ? updatedCard : item))
+          );
+        })
+        .catch((err) => console.log(err));
+    } else {
+      // if not, send a request to remove the user's id from the card's likes array
+      // api
+      removeCardLike(_id)
+        .then((updatedCard) => {
+          setClothingItems((cards) =>
+            cards.map((item) => (item._id === _id ? updatedCard : item))
+          );
+        })
+        .catch((err) => console.log(err));
+    }
   };
 
   //     localStorage.removeItem(res.token);
