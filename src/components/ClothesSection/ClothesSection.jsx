@@ -19,14 +19,14 @@ function ClothesSection({
   return (
     <div className="clothes-section">
       <div className="clothes-section__items">
-        <p>Your items</p>
+        {/* <p>Your items</p>
         <button
           className="modalClothesBtnClassName"
           onClick={handleAddClick}
           type="button"
         >
           + Add new
-        </button>
+        </button> */}
       </div>
       <ul className="cards__list">
         {clothingItems.map((item) => (

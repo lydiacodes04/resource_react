@@ -46,7 +46,7 @@ function App() {
     avatarUrl: "",
   });
 
-  console.log("is logged in", isLoggedIn);
+  // console.log("is logged in", isLoggedIn);
 
   const navigate = useNavigate();
 
@@ -137,7 +137,7 @@ function App() {
         return <Navigate to="/login" replace />;
       })
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         // setUserData(data);
         // signIn(currentUser);
         setCurrentUser(data);

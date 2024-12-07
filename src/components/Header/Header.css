@@ -24,9 +24,12 @@
 }
 
 .header__add-clothes-btn {
-  margin: 0px 20px 0px 20px;
+  margin: 0px;
+  padding: 0px;
   position: absolute;
-  right: 250px;
+  left: 500px;
+  top: -20px;
+  border: none;
 }
 .header__link {
   text-decoration: none;
