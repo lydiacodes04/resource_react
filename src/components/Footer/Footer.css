@@ -11,7 +11,7 @@
 }
 .footer__content-name {
   position: relative;
-  top: 14vh;
+  top: 10vh;
   left: -3vw;
   list-style-type: none;
   text-align: left;
@@ -19,7 +19,7 @@
 
 .footer__content-year {
   position: relative;
-  top: 14vh;
+  top: 10vh;
   left: 68vw;
   list-style-type: none;
   text-align: right;
