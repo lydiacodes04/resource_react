@@ -1,5 +1,6 @@
 .sidebar {
   display: flex;
+  position: relative;
   flex-direction: column;
   gap: 10px;
   text-align: left;
@@ -7,14 +8,31 @@
   height: 56px;
 }
 
+.sidebar__avatar {
+  scale: calc(8%);
+  border-radius: 50%;
+  position: absolute;
+  left: -320px;
+  top: -345px;
+}
+
 .sidebar__username {
-  height: 25px;
+  height: 15px;
+  position: absolute;
+  left: 85px;
+  top: -26px;
 }
 
 .sidebar__profile-edit-btn {
   border: none;
+  position: absolute;
+  left: 10px;
+  top: 70px;
 }
 
 .sidebar__logout {
   border: none;
+  position: absolute;
+  left: 10px;
+  top: 100px;
 }
