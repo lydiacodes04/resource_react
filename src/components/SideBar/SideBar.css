@@ -9,11 +9,29 @@
 }
 
 .sidebar__avatar {
-  scale: calc(8%);
+  scale: calc(7%);
   border-radius: 50%;
   position: absolute;
+  left: -26vw;
+  top: -47vh;
+
+  /* for Gios' to fit well, use
+  left: -350px;
+  top: -350px; 
+  OR
+   left: -28vw;
+  top: -48vh;
+  
+  */
+
+  /* for Kubra's to fit well, use
   left: -320px;
-  top: -315px;
+  top: -315px; 
+  OR
+  left: -25vw;
+  top: -44vh;
+  
+  */
 }
 
 .sidebar__username {
