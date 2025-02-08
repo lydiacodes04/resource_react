@@ -24,6 +24,11 @@
   text-align: left;
 }
 
+.header__nav {
+  position: relative;
+  display: flex;
+}
+
 .header__add-clothes-btn {
   margin: 0px;
   padding: 0px;
@@ -35,30 +40,35 @@
   white-space: nowrap;
   text-align: center;
 }
+
 .header__link {
   text-decoration: none;
   color: #000;
+  position: relative;
 }
 
-.header__user-container {
+/* .header__user-container {
   position: absolute;
   right: 0;
   display: flex;
   align-items: center;
   gap: 12px;
-}
+} */
+
 .header__username {
   margin: 0;
 }
 
-.header__nav {
-  position: relative;
-  display: flex;
-}
-
 .header__avatar {
-  visibility: hidden;
-  align-items: end;
+  /* visibility: hidden; */
+  /* align-items: end; */
+  scale: calc(8%);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .header__sign-up {
@@ -83,7 +93,4 @@
   font-weight: 550;
   line-height: 24px;
   white-space: nowrap;
-
-  /* margin: 0px;
-  padding: 0px; */
 }
