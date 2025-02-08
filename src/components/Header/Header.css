@@ -49,8 +49,8 @@
 
 .header__user-container {
   position: absolute;
-  left: 400px;
-  top: -10px;
+  left: 350px;
+  top: -15px;
   display: flex;
   align-items: center;
 }
