@@ -47,13 +47,13 @@
   position: relative;
 }
 
-/* .header__user-container {
+.header__user-container {
   position: absolute;
-  right: 0;
+  left: 400px;
+  top: -10px;
   display: flex;
   align-items: center;
-  gap: 12px;
-} */
+}
 
 .header__username {
   margin: 0;
@@ -61,14 +61,11 @@
 
 .header__avatar {
   /* visibility: hidden; */
-  /* align-items: end; */
-  scale: calc(8%);
+  align-items: end;
+  scale: calc(7%);
   border-radius: 50%;
   position: absolute;
-  top: 10px;
-  left: 10px;
   margin: 0;
-  padding: 0;
 }
 
 .header__sign-up {
