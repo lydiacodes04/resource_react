@@ -26,14 +26,14 @@
 
 .header__nav {
   position: relative;
-  display: flex;
+  /* display: flex; */
 }
 
 .header__add-clothes-btn {
   margin: 0px;
   padding: 0px;
   position: absolute;
-  left: 550px;
+  left: 510px;
   top: -10px;
   border: none;
   text-wrap: none;
@@ -42,30 +42,38 @@
 }
 
 .header__link {
-  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
   color: #000;
-  position: relative;
+  font-weight: normal;
+  text-decoration: none;
 }
 
 .header__user-container {
-  position: absolute;
-  left: 350px;
-  top: -15px;
+  position: relative;
   display: flex;
+  /* left: 350px;
+  top: -15px; */
   align-items: center;
+  align-content: flex-start;
+  flex-wrap: nowrap;
 }
 
 .header__username {
+  position: absolute;
   margin: 0;
+  padding: 0;
 }
 
 .header__avatar {
   /* visibility: hidden; */
+  position: absolute;
   align-items: end;
   scale: calc(7%);
   border-radius: 50%;
-  position: absolute;
   margin: 0;
+  padding: 0;
 }
 
 .header__sign-up {
