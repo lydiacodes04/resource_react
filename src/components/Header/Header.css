@@ -53,17 +53,17 @@
 .header__user-container {
   position: relative;
   display: flex;
-  /* left: 350px;
-  top: -15px; */
-  align-items: center;
+  /* align-items: center;
   align-content: flex-start;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap; */
 }
 
 .header__username {
   position: absolute;
   margin: 0;
   padding: 0;
+  left: 670px;
+  top: -10px;
 }
 
 .header__avatar {
@@ -74,6 +74,8 @@
   border-radius: 50%;
   margin: 0;
   padding: 0;
+  left: 400px;
+  top: -360px;
 }
 
 .header__sign-up {
