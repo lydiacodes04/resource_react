@@ -2,10 +2,14 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  gap: 10px;
-  text-align: left;
+  /* gap: 10px; */
   width: 229px;
   height: 56px;
+  font-family: Cabinet Grotesk, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
 }
 
 .sidebar__avatar {
