@@ -3,8 +3,10 @@
   position: relative;
   flex-direction: column;
   /* gap: 10px; */
-  width: 229px;
-  height: 56px;
+  /* width: 229px;
+  height: 56px; */
+  width: 18vw;
+  height: 22vh;
   font-family: Cabinet Grotesk, sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -16,8 +18,8 @@
   scale: calc(7%);
   border-radius: 50%;
   position: absolute;
-  left: -26vw;
-  top: -47vh;
+  left: -27vw;
+  top: -48vh;
 
   /* for Gios' to fit well, use
   left: -350px;
