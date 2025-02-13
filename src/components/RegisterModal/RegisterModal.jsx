@@ -102,6 +102,9 @@ function RegisterModal({ onClose, isOpen, onSubmit }) {
           Sign up
         </Link>
       </label>
+      {/* 
+      <label className="modal__submit">Sign up</label> */}
+
       <label className="register__signIn">
         <Link to="login" className="register__login-link">
           or Log In
