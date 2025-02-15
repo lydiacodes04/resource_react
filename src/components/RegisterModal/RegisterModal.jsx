@@ -90,22 +90,9 @@ function RegisterModal({ onClose, isOpen, onSubmit }) {
           onChange={handleAvatarUrlChange}
         />
       </label>
-      <label className="register__button-container">
-        {/* <button
-          type="submit"
-          className="register__link"
-          onSubmit={handleSubmit}
-        >
-          Sign up
-        </button> */}
-        <Link to="register" className="register__login-link">
-          Sign up
-        </Link>
-      </label>
-      {/* 
-      <label className="modal__submit">Sign up</label> */}
+      <label className="register__button-container"></label>
 
-      <label className="register__signIn">
+      <label className="register__logIn">
         <Link to="login" className="register__login-link">
           or Log In
         </Link>

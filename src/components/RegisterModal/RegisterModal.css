@@ -1,0 +1,13 @@
+.register__button-container {
+  position: relative;
+}
+
+.register__logIn {
+  position: absolute;
+  top: 385px;
+  right: 300px;
+}
+
+.register__logIn-link {
+  text-decoration: none;
+}
