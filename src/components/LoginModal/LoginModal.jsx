@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./LoginModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import { Link } from "react-router-dom";
 
 function LoginModal({ onClose, isOpen, onSubmit }) {
   if (!isOpen) {
@@ -24,8 +25,8 @@ function LoginModal({ onClose, isOpen, onSubmit }) {
 
   return (
     <ModalWithForm
-      title="Sign In"
-      buttonText="Sign In"
+      title="Log In"
+      buttonText="Log In"
       onClose={onClose}
       isOpen={isOpen}
       onSubmit={handleSubmit}
@@ -53,6 +54,13 @@ function LoginModal({ onClose, isOpen, onSubmit }) {
           value={password}
           onChange={handlePasswordChange}
         />
+      </label>
+      <label className="register__button-container"></label>
+
+      <label className="register__logIn">
+        <Link to="login" className="register__login-link">
+          or Sign Up
+        </Link>
       </label>
     </ModalWithForm>
   );
