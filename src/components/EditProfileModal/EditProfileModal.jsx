@@ -11,6 +11,16 @@ function EditProfileModal({ onClose, isOpen, submitEditProfile }) {
 
   const currentUser = useContext(CurrentUserContext);
 
+  const [name, setName] = useState("");
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const [avatarUrl, setAvatarUrl] = useState("");
+  const handleAvatarUrlChange = (e) => {
+    setAvatarUrl(e.target.value);
+  };
+
   return (
     <ModalWithForm
       title="Change Profile Data"
@@ -27,7 +37,8 @@ function EditProfileModal({ onClose, isOpen, submitEditProfile }) {
           id="name"
           placeholder={currentUser.name}
           name="name"
-          value={currentUser.name}
+          value={name}
+          onChange={handleNameChange}
         />
       </label>
       <label htmlFor="avatarUrl" className="modal__label">
@@ -36,9 +47,10 @@ function EditProfileModal({ onClose, isOpen, submitEditProfile }) {
           type="link"
           className="modal__input"
           id="avatarUrl"
-          placeholder="Avatar Url"
+          placeholder={currentUser.avatarUrl}
           name="avatarUrl"
-          value={currentUser.avatarUrl}
+          value={avatarUrl}
+          onChange={handleAvatarUrlChange}
         />
       </label>
     </ModalWithForm>
