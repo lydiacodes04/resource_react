@@ -4,7 +4,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./EditProfileModal.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-function EditProfileModal({ onClose, isOpen, handleSubmit }) {
+function EditProfileModal({ onClose, isOpen, submitEditProfile }) {
   if (!isOpen) {
     return null;
   }
@@ -17,7 +17,7 @@ function EditProfileModal({ onClose, isOpen, handleSubmit }) {
       buttonText="Save changes"
       onClose={onClose}
       isOpen={isOpen}
-      onSubmit={handleSubmit}
+      onSubmit={submitEditProfile}
     >
       <label htmlFor="name" className="modal__label">
         Name *

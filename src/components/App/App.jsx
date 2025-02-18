@@ -123,6 +123,15 @@ function App() {
       .catch((err) => console.error("Error setting data:", err));
   };
 
+  const submitEditProfile = ({ name, avatarUrl }) => {
+    setUserData({ name, avatarUrl })
+      .then(() => {
+        closeActiveModal();
+        navigate("/profile");
+      })
+      .catch((err) => console.error("Error setting data:", err));
+  };
+
   const handleLogin = ({ email, password }) => {
     if (!email || !password) {
       return;
@@ -353,7 +362,7 @@ function App() {
             activeModal={activeModal}
             isOpen={activeModal === "edit-profile"}
             onClose={closeActiveModal}
-            onAddItem={handleAddItemSubmit}
+            onSubmit={submitEditProfile}
           ></EditProfileModal>
         </CurrentTemperatureUnitContext.Provider>
       </div>
