@@ -66,12 +66,12 @@
   /* visibility: hidden; */
   position: absolute;
   align-items: end;
-  scale: calc(7%);
+  scale: calc(5%);
   border-radius: 50%;
   margin: 0;
   padding: 0;
-  left: 470px;
-  top: -380px;
+  left: 460px;
+  top: -400px;
 }
 
 .header__sign-up {
