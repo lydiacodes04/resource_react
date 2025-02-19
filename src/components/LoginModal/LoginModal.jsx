@@ -57,10 +57,8 @@ function LoginModal({ onClose, isOpen, onSubmit }) {
       </label>
       <label className="register__button-container"></label>
 
-      <label className="register__logIn">
-        <Link to="login" className="register__login-link">
-          or Sign Up
-        </Link>
+      <label className="register__logIn" onClick={onClose}>
+        or Sign Up
       </label>
     </ModalWithForm>
   );
