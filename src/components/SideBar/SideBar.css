@@ -1,10 +1,10 @@
 .sidebar {
   display: flex;
-  position: relative;
+  /* position: relative; */
   flex-direction: column;
   /* gap: 10px; */
-  width: 229px;
-  height: 56px;
+  width: 100px;
+  height: 50px;
   /* width: 18vw;
   height: 22vh; */
   font-family: Cabinet Grotesk, sans-serif;
@@ -15,13 +15,13 @@
 }
 
 .sidebar__avatar {
-  scale: calc(8%);
+  scale: calc(50%);
   border-radius: 50%;
-  position: absolute;
+  /* position: absolute; */
   /* left: -28vw;
   top: -60vh; */
-  left: -360px;
-  top: -360px;
+  /* left: -360px;
+  top: -360px; */
 
   /* for Gios' to fit well, use
   left: -360px;
@@ -44,21 +44,21 @@
 
 .sidebar__username {
   height: 15px;
-  position: absolute;
-  left: 85px;
-  top: 10px;
+  /* position: absolute; */
+  /* left: 85px;
+  top: 10px; */
 }
 
 .sidebar__profile-edit-btn {
   border: none;
-  position: absolute;
-  left: 10px;
-  top: 90px;
+  /* position: absolute; */
+  /* left: 10px;
+  top: 90px; */
 }
 
 .sidebar__logout {
   border: none;
-  position: absolute;
-  left: 10px;
-  top: 120px;
+  /* position: absolute; */
+  /* left: 10px;
+  top: 120px; */
 }
