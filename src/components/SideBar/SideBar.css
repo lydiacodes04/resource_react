@@ -18,12 +18,14 @@
   scale: calc(8%);
   border-radius: 50%;
   position: absolute;
-  left: -26vw;
-  top: -47vh;
+  /* left: -28vw;
+  top: -60vh; */
+  left: -360px;
+  top: -360px;
 
   /* for Gios' to fit well, use
-  left: -350px;
-  top: -350px; 
+  left: -360px;
+  top: -360px; 
   OR
    left: -28vw;
   top: -48vh;
