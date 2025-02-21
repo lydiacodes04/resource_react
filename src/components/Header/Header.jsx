@@ -65,8 +65,8 @@ function Header({
 
             <Link to="/profile" className="header__link">
               <div className="header__user-container">
-                <p className="header__username">{name}</p>
-                <img src={myAvatar} alt="avatar" className="header__avatar" />
+                <p className="header__username">{name} </p>
+                <img className="header__avatar" src={myAvatar} alt="avatar" />
               </div>
             </Link>
           </>

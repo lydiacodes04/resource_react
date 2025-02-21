@@ -40,14 +40,18 @@
 .header__link {
   margin: 0px;
   padding: 0px;
-  position: absolute;
+  /* position: absolute;
   color: #000;
-  text-decoration: none;
+  text-decoration: none; */
 }
 
 .header__user-container {
   position: relative;
   display: flex;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+
   /* align-items: center;
   align-content: flex-start;
   flex-wrap: nowrap; */
@@ -60,18 +64,19 @@
   left: 670px;
   top: -10px;
   white-space: nowrap;
+  text-decoration: none;
+  color: #000;
 }
 
 .header__avatar {
-  /* visibility: hidden; */
   position: absolute;
   align-items: end;
   scale: calc(5%);
   border-radius: 50%;
-  margin: 0;
-  padding: 0;
-  left: 460px;
-  top: -400px;
+  /* margin: 0;
+  padding: 0; */
+  left: 400px;
+  top: -350px;
 }
 
 .header__sign-up {
