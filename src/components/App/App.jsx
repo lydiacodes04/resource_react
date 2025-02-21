@@ -230,6 +230,12 @@ function App() {
   // });
 
   useEffect(() => {
+    if (localStorage.getItem("jwt")) {
+      // handle signin logic when you refresh browser
+    }
+  }, []);
+
+  useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
         const filteredData = filterWeatherData(data);
@@ -339,12 +345,13 @@ function App() {
             isOpen={activeModal === "registration-modal"}
             onClose={closeActiveModal}
             onSubmit={handleRegistration}
-            //or Register
+            handleShowLogin={handleShowLogin}
           />
           <LoginModal
             isOpen={activeModal === "login-modal"}
             onClose={closeActiveModal}
             onSubmit={handleLogin}
+            handleAddRegistration={handleAddRegistration}
           />
           <AddItemModal
             onClose={closeActiveModal}

@@ -3,7 +3,7 @@ import "./LoginModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { Link } from "react-router-dom";
 
-function LoginModal({ onClose, isOpen, onSubmit }) {
+function LoginModal({ onClose, isOpen, onSubmit, handleAddRegistration }) {
   if (!isOpen) {
     return null;
   }
@@ -46,7 +46,7 @@ function LoginModal({ onClose, isOpen, onSubmit }) {
       <label htmlFor="password" className="modal__label">
         Password
         <input
-          type="text"
+          type="password"
           className="modal__input"
           id="password"
           placeholder="Password"
@@ -57,7 +57,7 @@ function LoginModal({ onClose, isOpen, onSubmit }) {
       </label>
       <label className="register__button-container"></label>
 
-      <label className="register__logIn" onClick={onClose}>
+      <label className="register__logIn" onClick={handleAddRegistration}>
         or Sign Up
       </label>
     </ModalWithForm>
