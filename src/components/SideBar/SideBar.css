@@ -1,12 +1,10 @@
 .sidebar {
   display: flex;
-  /* position: relative; */
+
   flex-direction: column;
   /* gap: 10px; */
   width: 100px;
   height: 50px;
-  /* width: 18vw;
-  height: 22vh; */
   font-family: Cabinet Grotesk, sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -17,48 +15,16 @@
 .sidebar__avatar {
   scale: calc(50%);
   border-radius: 50%;
-  /* position: absolute; */
-  /* left: -28vw;
-  top: -60vh; */
-  /* left: -360px;
-  top: -360px; */
-
-  /* for Gios' to fit well, use
-  left: -360px;
-  top: -360px; 
-  OR
-   left: -28vw;
-  top: -48vh;
-  
-  */
-
-  /* for Kubra's to fit well, use
-  left: -320px;
-  top: -315px; 
-  OR
-  left: -25vw;
-  top: -44vh;
-  
-  */
 }
 
 .sidebar__username {
   height: 15px;
-  /* position: absolute; */
-  /* left: 85px;
-  top: 10px; */
 }
 
 .sidebar__profile-edit-btn {
   border: none;
-  /* position: absolute; */
-  /* left: 10px;
-  top: 90px; */
 }
 
 .sidebar__logout {
   border: none;
-  /* position: absolute; */
-  /* left: 10px;
-  top: 120px; */
 }
