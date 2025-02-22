@@ -8,14 +8,12 @@ function Sidebar({ handleSignOut, handleEditModal }) {
 
   return (
     <div className="sidebar">
-      <div className="sidebar__user">
-        <img
-          className="sidebar__avatar"
-          src={currentUser.avatar}
-          alt="user avatar"
-        />
-        <p className="sidebar__username">{currentUser.name}</p>
-      </div>
+      <img
+        className="sidebar__avatar"
+        src={currentUser.avatar}
+        alt="user avatar"
+      />
+      <p className="sidebar__username">{currentUser.name}</p>
       <button className="sidebar__profile-edit-btn" onClick={handleEditModal}>
         Edit Profile
       </button>

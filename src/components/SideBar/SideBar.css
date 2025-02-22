@@ -1,27 +1,16 @@
 .sidebar {
-  display: flex;
-  flex-direction: column;
-  /* gap: 10px; */
-  width: 100px;
-  height: 50px;
-  font-family: Cabinet Grotesk, sans-serif;
+  width: 200px;
+  height: 10px;
+  text-align: left;
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
-  text-align: left;
-}
-
-.sidebar__user {
-  /* display: flex; */
 }
 
 .sidebar__avatar {
-  scale: calc(50%);
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
-}
-
-.sidebar__username {
-  height: 15px;
 }
 
 .sidebar__profile-edit-btn {
