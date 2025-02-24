@@ -253,7 +253,7 @@ function App() {
   }, []);
 
   // useEffect(() => {
-  //   updateProfile()
+  //   updateProfile(name, avatar)
   //     .then((data) => {
   //       setUserData(data);
   //     })
@@ -311,32 +311,6 @@ function App() {
                   )
                 }
               />
-              {/* <Route
-                path="/register"
-                element={
-                  <div className="registerContainer">
-                    <RegisterModal
-                      activeModal={RegisterModal}
-                      onClose={closeActiveModal}
-                      onSubmit={handleRegistration}
-                      //or Register
-                    />
-                  </div>
-                }
-              />
-              <Route
-                path="/login"
-                element={
-                  <div className="loginContainer">
-                    <LoginModal
-                      activeModal={LoginModal}
-                      onClose={closeActiveModal}
-                      onSubmit={handleLogin}
-                      handleLogin={handleLogin}
-                    />
-                  </div>
-                }
-              /> */}
             </Routes>
 
             <Footer />
