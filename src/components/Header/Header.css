@@ -22,28 +22,28 @@
 
 .header__nav {
   display: flex;
+  /* align-items: flex-end; */
+  align-content: end;
 }
 
 .header__add-clothes-btn {
   border: none;
   white-space: nowrap;
-  /* text-align: center; */
 }
 
-.header__user-container {
+.header__link {
   display: flex;
-  /* align-items: flex-start; */
+  align-items: flex-end;
   text-decoration: none;
 }
 
 .header__username {
-  /* white-space: nowrap; */
+  white-space: nowrap;
   text-decoration: none;
   color: #000;
 }
 
 .header__avatar {
-  /* align-items: end; */
   height: 50px;
   width: 50px;
   border-radius: 50%;
