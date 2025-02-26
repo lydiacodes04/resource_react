@@ -15,13 +15,7 @@ function Header({
     day: "numeric",
   });
   const { avatar, email, name } = useContext(CurrentUserContext);
-  // console.log(currentUser);
-  // console.log({
-  //   handleAddClick,
-  //   weatherData,
-  //   handleAddRegistration,
-  //   handleShowLogin,
-  // });
+
   const myAvatar = avatar || name;
 
   return (

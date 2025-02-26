@@ -1,5 +1,4 @@
 .header {
-  position: relative;
   display: flex;
   align-items: center;
   margin: 32px 0px 28px;
@@ -23,7 +22,7 @@
 
 .header__nav {
   position: relative;
-  /* display: flex; */
+  display: flex;
 }
 
 .header__add-clothes-btn {
@@ -37,16 +36,7 @@
   text-align: center;
 }
 
-.header__link {
-  margin: 0px;
-  padding: 0px;
-  /* position: absolute;
-  color: #000;
-  text-decoration: none; */
-}
-
 .header__user-container {
-  position: relative;
   display: flex;
   margin: 0px;
   padding: 0px;
