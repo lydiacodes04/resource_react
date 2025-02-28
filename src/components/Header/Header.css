@@ -1,6 +1,7 @@
 .header {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: space-between;
   margin: 32px 0px 28px;
   font-family: Cabinet Grotesk, sans-serif;
   font-size: 18px;
@@ -22,8 +23,8 @@
 
 .header__nav {
   display: flex;
-  /* align-items: flex-end; */
-  align-content: end;
+  margin-left: auto;
+  align-items: center;
 }
 
 .header__add-clothes-btn {
