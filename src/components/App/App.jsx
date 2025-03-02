@@ -224,8 +224,8 @@ function App() {
         .then((data) => {
           setIsLoggedIn(true);
           setCurrentUser(data);
-          closeActiveModal();
-          navigate("/profile");
+          // closeActiveModal();
+          // navigate("/profile");
         })
         .catch((err) => console.error("Error logging in:", err));
     }
