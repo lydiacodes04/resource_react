@@ -26,43 +26,45 @@ function Header({
       <p className="header__date-and-location">
         {currentDate}, {weatherData.city}
       </p>
-      <ToggleSwitch />
-      <div className="header__nav">
-        {!myAvatar ? (
-          <>
-            <button
-              type="button"
-              className="header__sign-up"
-              onClick={handleAddRegistration}
-            >
-              Sign Up
-            </button>
+      <div className="header__controls">
+        <ToggleSwitch />
+        <div className="header__nav">
+          {!myAvatar ? (
+            <>
+              <button
+                type="button"
+                className="header__sign-up"
+                onClick={handleAddRegistration}
+              >
+                Sign Up
+              </button>
 
-            <button
-              type="button"
-              className="header__log-in"
-              onClick={handleShowLogin}
-            >
-              Log In
-            </button>
-          </>
-        ) : (
-          <>
-            <button
-              onClick={handleAddClick}
-              type="button"
-              className="header__add-clothes-btn"
-            >
-              {" "}
-              + Add Clothes
-            </button>
+              <button
+                type="button"
+                className="header__log-in"
+                onClick={handleShowLogin}
+              >
+                Log In
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                onClick={handleAddClick}
+                type="button"
+                className="header__add-clothes-btn"
+              >
+                {" "}
+                + Add Clothes
+              </button>
 
-            <Link to="/profile" className="header__link">
-              <p className="header__username">{name} </p>
-              <img className="header__avatar" src={myAvatar} alt="avatar" />
-            </Link>
-          </>
-        )}
+              <Link to="/profile" className="header__link">
+                <p className="header__username">{name} </p>
+                <img className="header__avatar" src={myAvatar} alt="avatar" />
+              </Link>
+            </>
+          )}
+        </div>
       </div>
     </header>
   );
