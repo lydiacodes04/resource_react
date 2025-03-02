@@ -217,17 +217,19 @@ function App() {
     navigate("/");
   };
 
-  // useEffect(() => {
-  //   verifyUser(({ token }) => {
-  //     if (data.jwt) {
-  //       setIsLoggedIn(true);
-  //       closeActiveModal();
-  //       navigate("/profile");
-  //     }
-  //   })
-  //     .then(() => {})
-  //     .catch((err) => console.error("Error logging in:", err));
-  // });
+  useEffect(() => {
+    if (localStorage.getItem("jwt")) {
+      const token = localStorage.getItem("jwt");
+      verifyUser(token)
+        .then((data) => {
+          setIsLoggedIn(true);
+          setCurrentUser(data);
+          closeActiveModal();
+          navigate("/profile");
+        })
+        .catch((err) => console.error("Error logging in:", err));
+    }
+  });
 
   useEffect(() => {
     if (localStorage.getItem("jwt")) {
