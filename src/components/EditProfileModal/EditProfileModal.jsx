@@ -4,7 +4,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./EditProfileModal.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-function EditProfileModal({ onClose, isOpen, submitEditProfile }) {
+function EditProfileModal({ onClose, isOpen, onSubmit }) {
   if (!isOpen) {
     return null;
   }
@@ -21,13 +21,18 @@ function EditProfileModal({ onClose, isOpen, submitEditProfile }) {
     setAvatarUrl(e.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit({ name, avatarUrl });
+  };
+
   return (
     <ModalWithForm
       title="Change Profile Data"
       buttonText="Save changes"
       onClose={onClose}
       isOpen={isOpen}
-      onSubmit={submitEditProfile}
+      onSubmit={handleSubmit}
     >
       <label htmlFor="name" className="modal__label">
         Name *

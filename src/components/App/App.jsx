@@ -124,8 +124,8 @@ function App() {
   };
 
   const submitEditProfile = ({ name, avatarUrl }) => {
-    setUserData({ name, avatarUrl })
-      .then(() => {
+    updateProfile(name, avatarUrl)
+      .then((data) => {
         closeActiveModal();
         navigate("/profile");
       })
@@ -229,13 +229,13 @@ function App() {
         })
         .catch((err) => console.error("Error logging in:", err));
     }
-  });
-
-  useEffect(() => {
-    if (localStorage.getItem("jwt")) {
-      // handle signin logic when you refresh browser
-    }
   }, []);
+
+  // useEffect(() => {
+  //   if (localStorage.getItem("jwt")) {
+  //     // handle signin logic when you refresh browser
+  //   }
+  // }, []);
 
   useEffect(() => {
     getWeather(coordinates, APIkey)

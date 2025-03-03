@@ -43,11 +43,13 @@ export { verifyUser };
 
 // sends new user name and the avatar URL to the server.
 function updateProfile(name, avatarUrl) {
+  // correct the endpoint /users/me
   return fetch(`${baseUrl}/profile`, {
     method: "PATCH",
     headers: headers,
     body: JSON.stringify({
       name,
+      // avatar: avatarUrl
       avatarUrl,
     }),
   }).then(checkResponse);
