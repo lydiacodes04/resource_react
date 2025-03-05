@@ -14,7 +14,7 @@ function Header({
     month: "long",
     day: "numeric",
   });
-  const { avatar, email, name } = useContext(CurrentUserContext);
+  const { avatar, name } = useContext(CurrentUserContext);
 
   const myAvatar = avatar || name;
 

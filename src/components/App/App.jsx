@@ -39,12 +39,6 @@ function App() {
     localStorage.getItem("jwt") ? true : false
   );
   const [currentUser, setCurrentUser] = useState({ email: "", password: "" });
-  const [userData, setUserData] = useState({
-    email: "",
-    password: "",
-    name: "",
-    avatarUrl: "",
-  });
 
   const navigate = useNavigate();
 
@@ -102,9 +96,7 @@ function App() {
   const handleRegistration = ({ email, password, name, avatarUrl }) => {
     signUp(email, password, name, avatarUrl)
       .then(() => {
-        setUserData({ email, password, name, avatarUrl });
         setCurrentUser({ email, password, name, avatarUrl });
-
         setIsLoggedIn(true);
         closeActiveModal();
         navigate("/profile");
@@ -212,7 +204,6 @@ function App() {
             <Header
               handleAddClick={handleAddClick}
               weatherData={weatherData}
-              userData={userData}
               handleAddRegistration={handleAddRegistration}
               handleShowLogin={handleShowLogin}
             />
@@ -279,7 +270,6 @@ function App() {
             onClose={closeActiveModal}
             card={selectedCard}
             handleDeleteItem={handleDeleteItem}
-            userData={userData}
           />
           <EditProfileModal
             activeModal={activeModal}

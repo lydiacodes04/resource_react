@@ -3,7 +3,7 @@ import close from "../../assets/close_icon-white.svg";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
 
-function ItemModal({ activeModal, onClose, card, handleDeleteItem, userData }) {
+function ItemModal({ activeModal, onClose, card, handleDeleteItem }) {
   // Checking if the current user is the owner of the current clothing item
   const currentUser = useContext(CurrentUserContext);
 
