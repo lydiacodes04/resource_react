@@ -159,7 +159,6 @@ function App() {
 
   const handleSignOut = () => {
     localStorage.removeItem("jwt");
-
     setIsLoggedIn(false);
     setCurrentUser({ email: "", password: "" });
     navigate("/");
