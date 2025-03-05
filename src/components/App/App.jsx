@@ -46,8 +46,6 @@ function App() {
     avatarUrl: "",
   });
 
-  // console.log("is logged in", isLoggedIn);
-
   const navigate = useNavigate();
 
   const handleCardClick = (card) => {
@@ -101,15 +99,6 @@ function App() {
       .catch((err) => console.error("Error deleting item:", err));
   };
 
-  // const Register = ({ handleRegistration }) => {
-  //   const [userData, setUserData] = useState({
-  //     email: "",
-  //     password: "",
-  //     name: "",
-  //     avatarUrl: "",
-  //   });
-  // };
-
   const handleRegistration = ({ email, password, name, avatarUrl }) => {
     signUp(email, password, name, avatarUrl)
       .then(() => {
@@ -138,7 +127,6 @@ function App() {
     }
     signIn(email, password)
       .then((data) => {
-        // console.log(data);
         if (data.token) {
           localStorage.setItem("jwt", data.token);
           return verifyUser(data.token);
@@ -146,9 +134,6 @@ function App() {
         return <Navigate to="/login" replace />;
       })
       .then((data) => {
-        // console.log(data);
-        // setUserData(data);
-        // signIn(currentUser);
         setCurrentUser(data);
         setIsLoggedIn(true);
         closeActiveModal();
@@ -161,7 +146,6 @@ function App() {
     const token = localStorage.getItem("jwt");
     // Check if this card is not currently liked
     if (!isLiked) {
-      // ? api
       addCardLike(_id)
         .then((updatedCard) => {
           setClothingItems((cards) =>
@@ -171,7 +155,6 @@ function App() {
         .catch((err) => console.log(err));
     } else {
       // if not, send a request to remove the user's id from the card's likes array
-      // api
       removeCardLike(_id)
         .then((updatedCard) => {
           setClothingItems((cards) =>
@@ -182,33 +165,6 @@ function App() {
     }
   };
 
-  //     localStorage.removeItem(res.token);
-  //       return <Navigate to="/login" replace />;
-  //     })
-  //     .then((data) => {
-  //       console.log("this is the data", data);
-  //       // setUserData(data);
-  //       // signIn(currentUser);
-  //       // setCurrentUser(currentUser);
-  //       setIsLoggedIn(true);
-  //       e.preventDefault();
-  //       closeActiveModal();
-  //       navigate("/profile");
-  //     })
-  //     .catch((err) => console.log("A login error has occurred", err));
-  // };
-
-  /*
-  const handleSignOut = (({ id, token }) => {
-    localStorage.removeItem(token);
-  })
-    .then(() => {
-      setIsLoggedIn(false);
-      setCurrentUser({ email: "", password: "" });
-      navigate("/");
-    })
-    .catch((err) => console.error("Error logging in:", err));
-  */
   const handleSignOut = () => {
     localStorage.removeItem("jwt");
 
@@ -224,18 +180,10 @@ function App() {
         .then((data) => {
           setIsLoggedIn(true);
           setCurrentUser(data);
-          // closeActiveModal();
-          // navigate("/profile");
         })
         .catch((err) => console.error("Error logging in:", err));
     }
   }, []);
-
-  // useEffect(() => {
-  //   if (localStorage.getItem("jwt")) {
-  //     // handle signin logic when you refresh browser
-  //   }
-  // }, []);
 
   useEffect(() => {
     getWeather(coordinates, APIkey)
@@ -253,14 +201,6 @@ function App() {
       })
       .catch((err) => console.error("Error getting items:", err));
   }, []);
-
-  // useEffect(() => {
-  //   updateProfile(name, avatar)
-  //     .then((data) => {
-  //       setUserData(data);
-  //     })
-  //     .catch((err) => console.error("Error updating profile:", err));
-  // }, []);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -354,9 +294,3 @@ function App() {
 }
 
 export default App;
-
-//sample User
-// email: "me@gmail.com",
-// password: "mypassword",
-// name: "my name"
-// avatarUrl: "https://images.unsplash.com/photo-1628015081036-0747ec8f077a?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
