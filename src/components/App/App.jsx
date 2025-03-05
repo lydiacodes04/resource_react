@@ -15,7 +15,7 @@ import LoginModal from "../LoginModal/LoginModal";
 import { signUp, signIn, verifyUser, updateProfile } from "../../utils/auth";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
-import ProtectedRoute from "../../utils/ProtectedRoute";
+import ProtectedRoute from "../ProtectedRoute";
 import {
   getItems,
   postItems,
