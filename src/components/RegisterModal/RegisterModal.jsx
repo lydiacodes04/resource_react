@@ -90,7 +90,7 @@ function RegisterModal({ onClose, isOpen, onSubmit, handleShowLogin }) {
           onChange={handleAvatarUrlChange}
         />
       </label>
-      <label className="register__button-container"></label>
+      {/* <button className="register__button-container"></button> */}
 
       <label className="register__logIn" onClick={handleShowLogin}>
         or Log In
