@@ -123,7 +123,7 @@ function App() {
           localStorage.setItem("jwt", data.token);
           return verifyUser(data.token);
         }
-        return <Navigate to="/login" replace />;
+        return navigate("/");
       })
       .then((data) => {
         setCurrentUser(data);
