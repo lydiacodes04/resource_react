@@ -55,11 +55,11 @@ function LoginModal({ onClose, isOpen, onSubmit, handleAddRegistration }) {
           onChange={handlePasswordChange}
         />
       </label>
-      <label className="register__button-container"></label>
+      {/* <button className="register__button-container"></button> */}
 
-      <label className="register__logIn" onClick={handleAddRegistration}>
+      <button className="register__logIn" onClick={handleAddRegistration}>
         or Sign Up
-      </label>
+      </button>
     </ModalWithForm>
   );
 }

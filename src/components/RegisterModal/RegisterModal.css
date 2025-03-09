@@ -6,6 +6,8 @@
   position: absolute;
   top: 385px;
   right: 300px;
+  border: none;
+  background: none;
 }
 
 .register__logIn-link {
