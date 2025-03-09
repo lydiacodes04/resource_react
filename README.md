@@ -17,3 +17,6 @@ Pictures, GIFs, or screenshots
 Project demo video (highly recommended)
 
 Link to GitHub Pages (optional)
+
+Areas for further development 
+Ability to change location, to see weather for future days, and to see any possible precipitation (rainy, cloudy, snowy, etc)
