@@ -24,6 +24,7 @@ export { signIn };
 
 function verifyUser(token) {
   // return fetch(`${baseUrl}/profile`, {
+
   return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
@@ -34,6 +35,8 @@ function verifyUser(token) {
 }
 
 export { verifyUser };
+
+//missmatch between update profile and verify user endpoints
 
 function updateProfile(name, avatarUrl) {
   // return fetch(`${baseUrl0}/profile`, {
