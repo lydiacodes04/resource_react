@@ -1,4 +1,5 @@
 const baseUrl = "http://localhost:3001";
+// const baseUrl0 = "http://localhost:3000";
 const headers = { "Content-Type": "application/json" };
 
 import { checkResponse } from "./api";
@@ -22,6 +23,7 @@ function signIn(email, password) {
 export { signIn };
 
 function verifyUser(token) {
+  // return fetch(`${baseUrl}/profile`, {
   return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
@@ -34,7 +36,9 @@ function verifyUser(token) {
 export { verifyUser };
 
 function updateProfile(name, avatarUrl) {
-  return fetch(`${baseUrl}/users/me`, {
+  // return fetch(`${baseUrl0}/profile`, {
+  return fetch(`${baseUrl}/profile`, {
+    // return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: headers,
     body: JSON.stringify({
