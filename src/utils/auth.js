@@ -23,9 +23,8 @@ function signIn(email, password) {
 export { signIn };
 
 function verifyUser(token) {
-  // return fetch(`${baseUrl}/profile`, {
-
-  return fetch(`${baseUrl}/users/me`, {
+  return fetch(`${baseUrl}/profile`, {
+    // return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -39,9 +38,7 @@ export { verifyUser };
 //missmatch between update profile and verify user endpoints
 
 function updateProfile(name, avatarUrl) {
-  // return fetch(`${baseUrl0}/profile`, {
-  return fetch(`${baseUrl}/profile`, {
-    // return fetch(`${baseUrl}/users/me`, {
+  return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: headers,
     body: JSON.stringify({
