@@ -96,7 +96,8 @@ function App() {
   const handleRegistration = ({ email, password, name, avatarUrl }) => {
     signUp(email, password, name, avatarUrl)
       .then(() => {
-        setCurrentUser({ email, password, name, avatarUrl });
+        setCurrentUser({ email, password });
+        // setCurrentUser({ email, password, name, avatarUrl });
         setIsLoggedIn(true);
         closeActiveModal();
         navigate("/profile");
@@ -225,7 +226,6 @@ function App() {
                     <Profile
                       onCardClick={handleCardClick}
                       clothingItems={clothingItems}
-                      handleAddClick={handleAddClick}
                       handleSignOut={handleSignOut}
                       onCardLike={handleCardLike}
                       handleEditModal={handleEditModal}

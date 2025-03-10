@@ -4,33 +4,12 @@ import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import React from "react";
 
-function ClothesSection({
-  onCardClick,
-  clothingItems,
-  handleAddClick,
-  onCardLike,
-}) {
+function ClothesSection({ onCardClick, clothingItems, onCardLike }) {
   const currentUser = useContext(CurrentUserContext);
-  // // Checking if the current user is the owner of the current clothing item
-  // const isOwn = selectedCard.owner === currentUser._id;
-
-  // // Creating a variable which you'll then set in `className` for the button
-  // const modalClothesBtnClassName = `clothes-btn ${
-  //   isOwn ? "clothes-btn_visible" : "clothes-btn_hidden"
-  // }`;
 
   return (
     <div className="clothes-section">
-      <div className="clothes-section__items">
-        {/* <p>Your items</p>
-        <button
-          className="modalClothesBtnClassName"
-          onClick={handleAddClick}
-          type="button"
-        >
-          + Add new
-        </button> */}
-      </div>
+      <div className="clothes-section__items"></div>
       <ul className="cards__list">
         {clothingItems
           .filter((item) => {

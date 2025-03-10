@@ -5,7 +5,6 @@ import "./Profile.css";
 function Profile({
   onCardClick,
   clothingItems,
-  handleAddClick,
   handleSignOut,
   onCardLike,
   handleEditModal,
@@ -22,7 +21,6 @@ function Profile({
         <ClothesSection
           onCardClick={onCardClick}
           clothingItems={clothingItems}
-          handleAddClick={handleAddClick}
           onCardLike={onCardLike}
         />
       </section>
