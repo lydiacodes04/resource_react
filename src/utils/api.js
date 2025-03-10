@@ -4,6 +4,11 @@ const headers = {
   Authorization: "Bearer " + localStorage.getItem("jwt"),
 };
 
+const getHeaders = () => ({
+  "Content-Type": "application/json",
+  Authorization: "Bearer " + localStorage.getItem("jwt"),
+});
+
 function checkResponse(res) {
   if (res.ok) {
     return res.json();
@@ -14,7 +19,7 @@ export { checkResponse };
 
 function getItems() {
   return fetch(`${baseUrl}/items`, {
-    headers: headers,
+    headers: getHeaders(),
   }).then(checkResponse);
 }
 
@@ -24,7 +29,7 @@ export { getItems };
 function postItems(name, imageUrl, weather) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
-    headers: headers,
+    headers: getHeaders(),
     body: JSON.stringify({
       name,
       imageUrl,
@@ -39,7 +44,7 @@ export { postItems };
 function deleteItem(item) {
   return fetch(`${baseUrl}/items/${item._id}`, {
     method: "DELETE",
-    headers: headers,
+    headers: getHeaders(),
   }).then(checkResponse);
 }
 
@@ -48,7 +53,7 @@ export { deleteItem };
 function addCardLike(id) {
   return fetch(`${baseUrl}/items/${id}/likes`, {
     method: "PUT",
-    headers: headers,
+    headers: getHeaders(),
   }).then(checkResponse);
 }
 
@@ -57,7 +62,7 @@ export { addCardLike };
 function removeCardLike(id) {
   return fetch(`${baseUrl}/items/${id}/likes`, {
     method: "DELETE",
-    headers: headers,
+    headers: getHeaders(),
   }).then(checkResponse);
 }
 

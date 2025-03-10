@@ -23,8 +23,7 @@ function signIn(email, password) {
 export { signIn };
 
 function verifyUser(token) {
-  return fetch(`${baseUrl}/profile`, {
-    // return fetch(`${baseUrl}/users/me`, {
+  return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
