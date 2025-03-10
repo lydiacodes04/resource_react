@@ -137,7 +137,6 @@ function App() {
 
   const handleCardLike = (_id, isLiked) => {
     const token = localStorage.getItem("jwt");
-    // Check if this card is not currently liked
     if (!isLiked) {
       addCardLike(_id)
         .then((updatedCard) => {
@@ -147,7 +146,6 @@ function App() {
         })
         .catch((err) => console.log(err));
     } else {
-      // if not, send a request to remove the user's id from the card's likes array
       removeCardLike(_id)
         .then((updatedCard) => {
           setClothingItems((cards) =>
