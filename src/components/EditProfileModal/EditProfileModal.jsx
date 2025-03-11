@@ -25,6 +25,14 @@ function EditProfileModal({ onClose, isOpen, onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!name.trim()) {
+      alert("Name is required");
+      return;
+    }
+    if (!avatarUrl.trim()) {
+      alert("Avatar URL is required");
+      return;
+    }
     onSubmit({ name, avatarUrl });
   };
 
