@@ -11,12 +11,14 @@ function EditProfileModal({ onClose, isOpen, onSubmit }) {
 
   const currentUser = useContext(CurrentUserContext);
 
-  const [name, setName] = useState("");
+  const [name, setName] = useState(currentUser?.name || "");
+
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
 
-  const [avatarUrl, setAvatarUrl] = useState("");
+  const [avatarUrl, setAvatarUrl] = useState(currentUser?.avatar || "");
+
   const handleAvatarUrlChange = (e) => {
     setAvatarUrl(e.target.value);
   };
@@ -40,7 +42,7 @@ function EditProfileModal({ onClose, isOpen, onSubmit }) {
           type="text"
           className="modal__input"
           id="name"
-          placeholder={currentUser.name}
+          placeholder="Name"
           name="name"
           value={name}
           onChange={handleNameChange}
@@ -49,10 +51,10 @@ function EditProfileModal({ onClose, isOpen, onSubmit }) {
       <label htmlFor="avatarUrl" className="modal__label">
         Avatar *
         <input
-          type="link"
+          type="url"
           className="modal__input"
           id="avatarUrl"
-          placeholder={currentUser.avatarUrl}
+          placeholder="Avatar URL"
           name="avatarUrl"
           value={avatarUrl}
           onChange={handleAvatarUrlChange}
