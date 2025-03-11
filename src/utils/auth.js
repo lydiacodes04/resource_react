@@ -1,13 +1,17 @@
 const baseUrl = "http://localhost:3001";
-// const baseUrl0 = "http://localhost:3000";
-const headers = { "Content-Type": "application/json" };
+// const headers = { "Content-Type": "application/json" };
+
+const getHeaders = () => ({
+  "Content-Type": "application/json",
+  Authorization: "Bearer " + localStorage.getItem("jwt"),
+});
 
 import { checkResponse } from "./api";
 
 function signUp(email, password, name, avatarUrl) {
   return fetch(`${baseUrl}/signup`, {
     method: "POST",
-    headers: headers,
+    headers: getHeaders(),
     body: JSON.stringify({ email, password, name, avatarUrl }),
   }).then(checkResponse);
 }
@@ -16,7 +20,7 @@ export { signUp };
 function signIn(email, password) {
   return fetch(`${baseUrl}/signIn`, {
     method: "POST",
-    headers: headers,
+    headers: getHeaders(),
     body: JSON.stringify({ email, password }),
   }).then(checkResponse);
 }
@@ -39,7 +43,7 @@ export { verifyUser };
 function updateProfile(name, avatarUrl) {
   return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
-    headers: headers,
+    headers: getHeaders(),
     body: JSON.stringify({
       name,
       avatar: avatarUrl,
