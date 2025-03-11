@@ -41,6 +41,7 @@ export { verifyUser };
 //missmatch between update profile and verify user endpoints
 
 function updateProfile(name, avatarUrl) {
+  console.log("Updating profile with:", { name, avatarUrl });
   return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: getHeaders(),
