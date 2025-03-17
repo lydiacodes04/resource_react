@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  Navigate,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import "./App.css";
 import { coordinates, APIkey } from "../../utils/constants";
 import Header from "../Header/Header";
@@ -41,6 +47,15 @@ function App() {
   const [currentUser, setCurrentUser] = useState({ email: "", password: "" });
 
   const navigate = useNavigate();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.showLogin) {
+      setActiveModal("login-modal");
+      navigate("/", { state: {}, replace: true });
+    }
+  }, [location]);
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -237,7 +252,7 @@ function App() {
                   isLoggedIn ? (
                     <Navigate to="/" replace />
                   ) : (
-                    <Navigate to="/login" />
+                    <Navigate to="/" state={{ showLogin: true }} replace />
                   )
                 }
               />
