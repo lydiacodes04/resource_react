@@ -24,7 +24,6 @@ function ItemCard({ item, onCardClick, onCardLike }) {
   return (
     <li className="card">
       <h2 className="card__name">{item.name}</h2>
-      {/* item.name */}
       <img
         className={cardHeartClassName}
         onClick={handleLike}
@@ -35,9 +34,7 @@ function ItemCard({ item, onCardClick, onCardLike }) {
         className="card__image"
         onClick={handleCardClick}
         src={item.imageUrl}
-        // item.imageUrl
         alt={item.name}
-        // item.name
       />
     </li>
   );
