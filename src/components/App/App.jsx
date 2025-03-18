@@ -112,7 +112,6 @@ function App() {
     signUp(email, password, name, avatarUrl)
       .then(() => {
         setCurrentUser({ email, password });
-        // setCurrentUser({ email, password, name, avatarUrl });
         setIsLoggedIn(true);
         closeActiveModal();
         navigate("/profile");
