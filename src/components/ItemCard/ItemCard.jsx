@@ -12,7 +12,11 @@ function ItemCard({ item, onCardClick, onCardLike }) {
   };
 
   const handleLike = () => {
-    onCardLike(item._id, isLiked);
+    if (currentUser._id === item.owner) {
+      onCardLike(item._id, isLiked);
+    } else {
+      console.log("Not your item");
+    }
   };
 
   const isLiked = item.likes
