@@ -92,7 +92,11 @@ function RegisterModal({ onClose, isOpen, onSubmit, handleShowLogin }) {
       </label>
       {/* <button className="register__button-container"></button> */}
 
-      <button className="register__logIn" onClick={handleShowLogin}>
+      <button
+        className="register__logIn"
+        type="button"
+        onClick={handleShowLogin}
+      >
         or Log In
       </button>
     </ModalWithForm>
