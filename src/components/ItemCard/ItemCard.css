@@ -33,14 +33,6 @@
   align-items: center;
 }
 
-.card__heart_liked {
-  /* visibility: visible; */
-}
-
-.card__heart_default {
-  /* visibility: hidden; */
-}
-
 .card__image {
   width: 100%;
   border: 1px #000;

@@ -1,6 +1,5 @@
 import "./SideBar.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-// import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import { useContext } from "react";
 
 function Sidebar({ handleSignOut, handleEditModal }) {

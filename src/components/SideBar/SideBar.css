@@ -16,11 +16,11 @@
 
 .sidebar__header {
   display: flex;
-  align-items: center; /* Vertically center avatar and username */
+  align-items: center;
 }
 
 .sidebar__username {
-  margin-left: 10px; /* Space between avatar and username */
+  margin-left: 10px;
   white-space: nowrap;
 }
 

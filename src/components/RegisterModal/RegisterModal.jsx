@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
-import { Link } from "react-router-dom";
 
 function RegisterModal({ onClose, isOpen, onSubmit, handleShowLogin }) {
   if (!isOpen) {
@@ -90,7 +89,6 @@ function RegisterModal({ onClose, isOpen, onSubmit, handleShowLogin }) {
           onChange={handleAvatarUrlChange}
         />
       </label>
-      {/* <button className="register__button-container"></button> */}
 
       <button
         className="register__logIn"
