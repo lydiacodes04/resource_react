@@ -9,7 +9,11 @@ function ClothesSection({ onCardClick, clothingItems, onCardLike }) {
 
   return (
     <div className="clothes-section">
-      <div className="clothes-section__items"></div>
+      <div className="clothes-section__items">
+        {" "}
+        Your items
+        <button className="clothes-section__items-button">+ Add New </button>
+      </div>
       <ul className="cards__list">
         {clothingItems
           .filter((item) => {
