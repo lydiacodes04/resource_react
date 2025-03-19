@@ -16,10 +16,14 @@ function Sidebar({ handleSignOut, handleEditModal }) {
         />
         <p className="sidebar__username">{currentUser.name}</p>
       </div>
-      <button className="sidebar__profile-edit-btn" onClick={handleEditModal}>
+      <button
+        className="sidebar__profile-edit-btn"
+        type="button"
+        onClick={handleEditModal}
+      >
         Edit Profile
       </button>
-      <button className="sidebar__logout" onClick={handleSignOut}>
+      <button className="sidebar__logout" type="button" onClick={handleSignOut}>
         Log out
       </button>
     </div>
