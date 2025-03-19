@@ -122,6 +122,7 @@ function App() {
   const submitEditProfile = ({ name, avatarUrl }) => {
     updateProfile(name, avatarUrl)
       .then((data) => {
+        setCurrentUser(data);
         closeActiveModal();
         navigate("/profile");
       })
