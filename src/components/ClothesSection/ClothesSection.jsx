@@ -4,7 +4,12 @@ import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import React from "react";
 
-function ClothesSection({ onCardClick, clothingItems, onCardLike }) {
+function ClothesSection({
+  onCardClick,
+  clothingItems,
+  onCardLike,
+  handleAddClick,
+}) {
   const currentUser = useContext(CurrentUserContext);
 
   return (
@@ -12,7 +17,13 @@ function ClothesSection({ onCardClick, clothingItems, onCardLike }) {
       <div className="clothes-section__items">
         {" "}
         Your items
-        <button className="clothes-section__items-button">+ Add New </button>
+        <button
+          className="clothes-section__items-button"
+          onClick={handleAddClick}
+          type="button"
+        >
+          + Add New
+        </button>
       </div>
       <ul className="cards__list">
         {clothingItems
