@@ -1,4 +1,7 @@
-const baseUrl = "http://localhost:3001";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.wtwr4me.justlearning.net"
+    : "http://localhost:3001";
 
 const getHeaders = () => ({
   "Content-Type": "application/json",
