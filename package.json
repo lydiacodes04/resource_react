@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
+    "deploy": "npm run build && scp -r ./dist/* lydia_lockhart4@wtwr4me.justlearning.net:/home/lydia_lockhart4/frontend",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

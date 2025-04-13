@@ -42,8 +42,6 @@ function verifyUser(token) {
 
 export { verifyUser };
 
-//missmatch between update profile and verify user endpoints
-
 function updateProfile(name, avatarUrl) {
   return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
