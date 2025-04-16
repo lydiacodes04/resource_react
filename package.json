@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://www.wtwr4me.justlearning.net",
+  "homepage": "https://wtwr4me.justlearning.net",
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
