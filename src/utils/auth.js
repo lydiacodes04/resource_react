@@ -1,7 +1,4 @@
-const baseUrl =
-  process.env.NODE_ENV === "production"
-    ? "https://api.wtwr4me.justlearning.net"
-    : "http://localhost:3001";
+import { baseUrl } from "../utils/constants";
 
 // const headers = { "Content-Type": "application/json" };
 
