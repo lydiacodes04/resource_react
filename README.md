@@ -5,9 +5,11 @@ The What to Wear (WTWR) App is a web-based application which makes suggestions t
 
 This app is a fullstack application, utilizing React for the frontend, working in Vite with HMR and some ESLint rules. It utilizes a custom-made backend, which uses Express.
 
-Frontend domain: (www.wtwr4me.justlearning.net)
+Frontend domain:
+(https://wwww.wtwr4me.justlearning.net) 
 
-Backend domain: (api.wtwr4me.justlearning.net)
+Backend domain:
+(https://api.wtwr4me.justlearning.net) 
 
 Currently, two official plugins are available:
 
