@@ -298,25 +298,3 @@ function App() {
 }
 
 export default App;
-
-//committed to commits 4/13
-//committed to commits 4/14
-//committed to commits 4/16
-// committed to commits 4/18
-
-//commit it and quit it 4/20
-
-//got help from Devin tutor, found the place I need to restart from 4/21
-//commit it and quit it 4/24
-//committed to commits 4/25
-//committed to commits 4/26
-//committed to commits 4/27
-//committed to commits 4/28
-//committed to commits 4/29
-//committed to commits 4/30
-//committed to commits 5/1
-//first submit of Project 15; finished lessons for Sprint 15 and started lessons for Sprint 16. Plan to finish course by ene of May 2025.
-//committed to commits 5/3
-//committed to commits 5/4
-//lots of work 5/5 and second submit
-//no time today, so committed to commits 5/6
