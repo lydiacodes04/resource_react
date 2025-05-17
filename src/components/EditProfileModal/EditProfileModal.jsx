@@ -17,10 +17,10 @@ function EditProfileModal({ onClose, isOpen, onSubmit }) {
     setName(e.target.value);
   };
 
-  const [avatarUrl, setAvatarUrl] = useState(currentUser?.avatar || "");
+  const [avatar, setAvatar] = useState(currentUser?.avatar || "");
 
-  const handleAvatarUrlChange = (e) => {
-    setAvatarUrl(e.target.value);
+  const handleAvatarChange = (e) => {
+    setAvatar(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -29,11 +29,11 @@ function EditProfileModal({ onClose, isOpen, onSubmit }) {
       alert("Name is required");
       return;
     }
-    if (!avatarUrl.trim()) {
+    if (!avatar.trim()) {
       alert("Avatar URL is required");
       return;
     }
-    onSubmit({ name, avatarUrl });
+    onSubmit({ name, avatar });
   };
 
   return (
@@ -56,16 +56,16 @@ function EditProfileModal({ onClose, isOpen, onSubmit }) {
           onChange={handleNameChange}
         />
       </label>
-      <label htmlFor="avatarUrl" className="modal__label">
+      <label htmlFor="avatar" className="modal__label">
         Avatar *
         <input
           type="url"
           className="modal__input"
-          id="avatarUrl"
+          id="avatar"
           placeholder="Avatar URL"
-          name="avatarUrl"
-          value={avatarUrl}
-          onChange={handleAvatarUrlChange}
+          name="avatar"
+          value={avatar}
+          onChange={handleAvatarChange}
         />
       </label>
     </ModalWithForm>

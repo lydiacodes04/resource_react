@@ -108,8 +108,8 @@ function App() {
       .catch((err) => console.error("Error deleting item:", err));
   };
 
-  const handleRegistration = ({ email, password, name, avatarUrl }) => {
-    signUp(email, password, name, avatarUrl)
+  const handleRegistration = ({ email, password, name, avatar }) => {
+    signUp(email, password, name, avatar)
       .then(() => {
         setCurrentUser({ email, password });
         setIsLoggedIn(true);
@@ -119,8 +119,8 @@ function App() {
       .catch((err) => console.error("Error setting data:", err));
   };
 
-  const submitEditProfile = ({ name, avatarUrl }) => {
-    updateProfile(name, avatarUrl)
+  const submitEditProfile = ({ name, avatar }) => {
+    updateProfile(name, avatar)
       .then((data) => {
         setCurrentUser(data);
         closeActiveModal();

@@ -22,14 +22,14 @@ function RegisterModal({ onClose, isOpen, onSubmit, handleShowLogin }) {
     setName(e.target.value);
   };
 
-  const [avatarUrl, setAvatarUrl] = useState("");
-  const handleAvatarUrlChange = (e) => {
-    setAvatarUrl(e.target.value);
+  const [avatar, setAvatar] = useState("");
+  const handleAvatarChange = (e) => {
+    setAvatar(e.target.value);
   };
 
   function handleSubmitRegistration(e) {
     e.preventDefault();
-    onSubmit({ email, password, name, avatarUrl });
+    onSubmit({ email, password, name, avatar });
   }
 
   return (
@@ -77,16 +77,16 @@ function RegisterModal({ onClose, isOpen, onSubmit, handleShowLogin }) {
           onChange={handleNameChange}
         />
       </label>
-      <label htmlFor="avatarUrl" className="modal__label">
+      <label htmlFor="avatar" className="modal__label">
         Avatar URL *
         <input
           type="link"
           className="modal__input"
-          id="avatarUrl"
+          id="avatar"
           placeholder="Avatar Url"
-          name="avatarUrl"
-          value={avatarUrl}
-          onChange={handleAvatarUrlChange}
+          name="avatar"
+          value={avatar}
+          onChange={handleAvatarChange}
         />
       </label>
 

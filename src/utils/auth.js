@@ -9,11 +9,11 @@ const getHeaders = () => ({
 
 import { checkResponse } from "./api";
 
-function signUp(email, password, name, avatarUrl) {
+function signUp(email, password, name, avatar) {
   return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: getHeaders(),
-    body: JSON.stringify({ email, password, name, avatarUrl }),
+    body: JSON.stringify({ email, password, name, avatar }),
   }).then(checkResponse);
 }
 export { signUp };
@@ -39,13 +39,13 @@ function verifyUser(token) {
 
 export { verifyUser };
 
-function updateProfile(name, avatarUrl) {
+function updateProfile(name, avatar) {
   return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: getHeaders(),
     body: JSON.stringify({
       name,
-      avatar: avatarUrl,
+      avatar: avatar,
     }),
   }).then(checkResponse);
 }
