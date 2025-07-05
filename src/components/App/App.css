@@ -1,9 +1,41 @@
 .page {
-  background-color: #f3f3f3;
+  font-family: "Inter Bold", Arial, sans-serif;
+  font-weight: 700;
+  background-image: url("../../assets/skyline.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .page__content {
+  margin: 0;
+  padding: 0 24px;
+  height: 90vh;
+}
+
+/* .page__content {
   max-width: 1360px;
   max-height: 700px;
   margin: 0 auto;
   padding: 0 20px;
+} */
+
+@media screen and (max-width: 440px) {
+  .page {
+    width: 100vw;
+    height: 120vh;
+  }
+  .page__content {
+    margin: 0;
+    padding: 4px 16px;
+  }
 }
+
+/* Background photo credit  "San Antonio Skyline by Matthew Lejune" 
+<a href="https://unsplash.com/@matthewlejune?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Matthew LeJune</a> 
+on <a href="https://unsplash.com/photos/aerial-view-of-white-building-IpvDhQjrewM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+     */

@@ -1,18 +1,8 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.svg";
 import "./Header.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
-function Header({
-  handleAddClick,
-  weatherData,
-  handleAddRegistration,
-  handleShowLogin,
-}) {
-  const currentDate = new Date().toLocaleString("default", {
-    month: "long",
-    day: "numeric",
-  });
+function Header({ handleAddClick, handleAddRegistration, handleShowLogin }) {
   const { avatar, name } = useContext(CurrentUserContext);
 
   const myAvatar = avatar || name;
@@ -20,13 +10,9 @@ function Header({
   return (
     <header className="header">
       <Link to="/">
-        <img className="header__logo" src={logo} alt="wtwr logo" />
+        <p className="header__logo">ResourceFinder</p>
       </Link>
-      <p className="header__date-and-location">
-        {currentDate}, {weatherData.city}
-      </p>
       <div className="header__controls">
-        <ToggleSwitch />
         <div className="header__nav">
           {!myAvatar ? (
             <>
