@@ -10,6 +10,7 @@
   line-height: 24px;
   text-align: left;
   border-bottom: 1px solid red;
+  color: #000;
 }
 
 .header__logo {
@@ -20,7 +21,7 @@
 }
 
 .header__logo:hover {
-  color: blue;
+  color: #82590c;
 }
 
 .header__about {
@@ -32,7 +33,7 @@
 }
 
 .header__about:hover {
-  color: blue;
+  color: #82590c;
 }
 
 .header__date-and-location {
@@ -70,8 +71,6 @@
 .header__username {
   white-space: nowrap;
   text-decoration: none;
-  color: #000;
-  font-size: 18px;
 }
 
 .header__avatar {
@@ -85,18 +84,20 @@
   border: none;
   white-space: nowrap;
   background: none;
+  font-weight: bold;
 }
 
 .header__sign-up:hover {
-  color: blue;
+  color: #82590c;
 }
 
 .header__log-in {
   border: none;
   white-space: nowrap;
   background: none;
+  font-weight: bold;
 }
 
 .header__log-in:hover {
-  color: blue;
+  color: #82590c;
 }
