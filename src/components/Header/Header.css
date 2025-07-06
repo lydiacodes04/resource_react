@@ -4,9 +4,9 @@
   justify-content: space-between;
   width: 100%;
   margin: 32px 0px 28px;
-  font-family: Cabinet Grotesk, sans-serif;
+  font-family: "Inter Bold", Arial, sans-serif;
+  font-weight: 700;
   font-size: 18px;
-  font-weight: 550;
   line-height: 24px;
   text-align: left;
   border-bottom: 1px solid red;
@@ -17,11 +17,21 @@
   text-decoration: none;
   flex-grow: 1;
   color: #000;
-  font-family: "Inter Bold", Arial, sans-serif;
-  font-weight: 700;
 }
 
 .header__logo:hover {
+  color: blue;
+}
+
+.header__about {
+  align-self: flex-start;
+  margin-right: 24px;
+  text-decoration: none;
+  flex-grow: 1;
+  color: #000;
+}
+
+.header__about:hover {
   color: blue;
 }
 
@@ -73,18 +83,20 @@
 
 .header__sign-up {
   border: none;
-  font-family: Cabinet Grotesk, sans-serif;
-  font-size: 18px;
-  font-weight: 550;
-  line-height: 24px;
   white-space: nowrap;
+  background: none;
+}
+
+.header__sign-up:hover {
+  color: blue;
 }
 
 .header__log-in {
   border: none;
-  font-family: Cabinet Grotesk, sans-serif;
-  font-size: 18px;
-  font-weight: 550;
-  line-height: 24px;
   white-space: nowrap;
+  background: none;
+}
+
+.header__log-in:hover {
+  color: blue;
 }

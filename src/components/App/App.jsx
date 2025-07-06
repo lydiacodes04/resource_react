@@ -28,6 +28,8 @@ import {
   removeCardLike,
 } from "../../utils/api";
 
+import About from "../About/About";
+
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
@@ -224,6 +226,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+              <Route path="/about" element={<About />} />
               <Route
                 path="*"
                 element={

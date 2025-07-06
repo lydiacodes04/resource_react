@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
+
 function Header({ handleAddClick, handleAddRegistration, handleShowLogin }) {
   const { avatar, name } = useContext(CurrentUserContext);
 
@@ -12,8 +13,12 @@ function Header({ handleAddClick, handleAddRegistration, handleShowLogin }) {
       <Link to="/">
         <p className="header__logo">ResourceFinder</p>
       </Link>
+
       <div className="header__controls">
         <div className="header__nav">
+          <Link to="/about">
+            <p className="header__about">About</p>
+          </Link>
           {!myAvatar ? (
             <>
               <button
