@@ -4,7 +4,7 @@
   background-image: url("../../assets/skyline.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -14,7 +14,7 @@
 .page__content {
   margin: 0;
   padding: 0 24px;
-  height: 90vh;
+  height: 95vh;
 }
 
 /* .page__content {

@@ -14,6 +14,7 @@
 }
 
 .header__logo {
+  display: flex;
   margin-right: 24px;
   text-decoration: none;
   flex-grow: 1;
@@ -22,6 +23,16 @@
 
 .header__logo:hover {
   color: #82590c;
+}
+
+.header__logo-icon {
+  margin: 4px;
+}
+.header__logo-icon:hover {
+  background-color: #82590c;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
 }
 
 .header__about {

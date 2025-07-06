@@ -10,7 +10,7 @@ function Main({ onCardClick, clothingItems, onCardLike, isLoggedIn }) {
     <main>
       <section className="cards">
         <p className="cards__text">Search for resources near you.</p>
-        <div className="cards__list">
+        <ul className="cards__list">
           {clothingItems.map((item) => {
             return (
               <ItemCard
@@ -23,7 +23,7 @@ function Main({ onCardClick, clothingItems, onCardLike, isLoggedIn }) {
               />
             );
           })}
-        </div>
+        </ul>
       </section>
     </main>
   );

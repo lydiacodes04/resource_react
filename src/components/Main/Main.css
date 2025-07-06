@@ -1,3 +1,6 @@
+.cards {
+  display: flex;
+}
 .cards__text {
   font-family: Cabinet Grotesk, sans-serif;
   font-size: 20px;

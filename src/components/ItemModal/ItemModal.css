@@ -2,21 +2,18 @@
   width: 100%;
   border-radius: 20px 20px 0 0;
   max-height: calc(60vh);
+  align-self: center;
+  justify-self: center;
 }
 
 .modal__content {
   padding: 1px 1px 25px;
 }
 
-.modal__caption {
-  font-family: Cabinet Grotesk, sans-serif;
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 550;
-}
-
 .modal__footer {
   position: relative;
+  display: flex;
+  flex-direction: column;
   font-family: Cabinet Grotesk, sans-serif;
   font-size: 20px;
   line-height: 24px;
@@ -24,9 +21,16 @@
   padding-left: 30px;
 }
 
+.modal__caption {
+  font-family: Cabinet Grotesk, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
 .modal__delete-btn {
   position: absolute;
-  top: -2px;
+  bottom: 5px;
   right: 25px;
   color: #ff4d00;
   font-family: Cabinet Grotesk, sans-serif;
@@ -34,6 +38,7 @@
   font-weight: 550;
   border: 0;
   background-color: #fff;
+  margin-top: 10px;
 }
 
 .modal__delete-btn_visible {

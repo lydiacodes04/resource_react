@@ -1,12 +1,13 @@
 .card {
   position: relative;
-  max-width: 323px;
-  max-height: 300px;
+  width: 200px;
+  height: 200px;
   display: flex;
   justify-content: center;
   font-family: Cabinet Grotesk, sans-serif;
   color: #fff;
-  background-color: #0000008d;
+  /* background-color: #5853538d; */
+  background-color: #fff;
   margin: 20px;
   padding: 2px 12px 2px 12px;
   border-radius: 5%;
@@ -28,18 +29,20 @@
 }
 .card__heart {
   position: absolute;
-  top: 15px;
-  right: 5px;
+  bottom: 15px;
+  left: 5px;
   margin: 0;
   padding: 2px 12px 2px 12px;
   gap: 8px;
   border-radius: 4px;
   opacity: 0px;
-  align-items: center;
+  align-self: flex-start;
 }
 
 .card__image {
-  width: 100%;
+  align-self: center;
+  width: 120px;
+  height: 120px;
   border: 1px #000;
   border-radius: 19px;
 }

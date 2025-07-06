@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
+import Home from "../../assets/Home.svg";
 
 function Header({ handleAddClick, handleAddRegistration, handleShowLogin }) {
   const { avatar, name } = useContext(CurrentUserContext);
@@ -11,6 +12,7 @@ function Header({ handleAddClick, handleAddRegistration, handleShowLogin }) {
   return (
     <header className="header">
       <Link to="/" className="header__logo">
+        <img className="header__logo-icon" src={Home} />
         <p className="header__logo-text">ResourceFinder</p>
       </Link>
 
