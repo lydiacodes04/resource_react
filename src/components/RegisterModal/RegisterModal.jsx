@@ -40,6 +40,30 @@ function RegisterModal({ onClose, isOpen, onSubmit, handleShowLogin }) {
       isOpen={isOpen}
       onSubmit={handleSubmitRegistration}
     >
+      <label htmlFor="name" className="modal__label">
+        Organization Name *
+        <input
+          type="text"
+          className="modal__input"
+          id="name"
+          placeholder="Name"
+          name="name"
+          value={name}
+          onChange={handleNameChange}
+        />
+      </label>
+      <label htmlFor="avatar" className="modal__label">
+        Organization logo URL *
+        <input
+          type="link"
+          className="modal__input"
+          id="avatar"
+          placeholder="Right-click image, select 'copy image address', & paste here"
+          name="avatar"
+          value={avatar}
+          onChange={handleAvatarChange}
+        />
+      </label>
       <label htmlFor="email" className="modal__label">
         Email *
         <input
@@ -62,31 +86,6 @@ function RegisterModal({ onClose, isOpen, onSubmit, handleShowLogin }) {
           name="password"
           value={password}
           onChange={handlePasswordChange}
-        />
-      </label>
-
-      <label htmlFor="name" className="modal__label">
-        Name *
-        <input
-          type="text"
-          className="modal__input"
-          id="name"
-          placeholder="Name"
-          name="name"
-          value={name}
-          onChange={handleNameChange}
-        />
-      </label>
-      <label htmlFor="avatar" className="modal__label">
-        Avatar URL *
-        <input
-          type="link"
-          className="modal__input"
-          id="avatar"
-          placeholder="Avatar Url"
-          name="avatar"
-          value={avatar}
-          onChange={handleAvatarChange}
         />
       </label>
 

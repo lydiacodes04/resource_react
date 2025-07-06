@@ -56,10 +56,16 @@
   padding-right: 50px;
 }
 
-.header__add-clothes-btn {
+.header__add-resource-btn {
   border: none;
   white-space: nowrap;
   margin-left: 10px;
+  background: none;
+  font-weight: bold;
+  margin-left: 50px;
+}
+.header__add-resource-btn:hover {
+  color: #82590c;
 }
 
 .header__link {
@@ -71,6 +77,11 @@
 .header__username {
   white-space: nowrap;
   text-decoration: none;
+  color: #000;
+  margin-left: 50px;
+}
+.header__username:hover {
+  color: #82590c;
 }
 
 .header__avatar {

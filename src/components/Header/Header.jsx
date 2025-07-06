@@ -42,10 +42,10 @@ function Header({ handleAddClick, handleAddRegistration, handleShowLogin }) {
               <button
                 onClick={handleAddClick}
                 type="button"
-                className="header__add-clothes-btn"
+                className="header__add-resource-btn"
               >
                 {" "}
-                + Add Clothes
+                + Add Resource
               </button>
 
               <Link to="/profile" className="header__link">

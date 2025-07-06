@@ -8,7 +8,6 @@ function ItemModal({ activeModal, onClose, card, handleDeleteItem }) {
 
   const isOwn = card.owner ? card.owner === currentUser._id : false;
 
-  // Creating a variable which you'll then set in `className` for the delete button
   const modalDeleteBtnClassName = `modal__delete-btn ${
     isOwn && activeModal === "preview"
       ? "modal__delete-btn_visible"
@@ -24,7 +23,7 @@ function ItemModal({ activeModal, onClose, card, handleDeleteItem }) {
         <img src={card.imageUrl} alt={card.name} className="modal__image" />
         <div className="modal__footer">
           <h2 className="modal__caption"> {card.name} </h2>
-          <p className="modal__weather">Weather: {card.weather}</p>
+          <p className="modal__weather">Resource type: {card.weather}</p>
           <button
             className={modalDeleteBtnClassName}
             type="button"

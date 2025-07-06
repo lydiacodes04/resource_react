@@ -22,14 +22,14 @@ function getItems() {
 export { getItems };
 
 //CARD ROUTE: create a card (POST)
-function postItems(name, imageUrl, weather) {
+function postItems(name, imageUrl, category) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: getHeaders(),
     body: JSON.stringify({
       name,
       imageUrl,
-      weather,
+      category,
     }),
   }).then(checkResponse);
 }

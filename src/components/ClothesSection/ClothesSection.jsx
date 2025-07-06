@@ -14,17 +14,7 @@ function ClothesSection({
 
   return (
     <div className="clothes-section">
-      <div className="clothes-section__items">
-        {" "}
-        Your items
-        <button
-          className="clothes-section__items-button"
-          onClick={handleAddClick}
-          type="button"
-        >
-          + Add New
-        </button>
-      </div>
+      <div className="clothes-section__items"> </div>
       <ul className="cards__list">
         {clothingItems
           .filter((item) => {

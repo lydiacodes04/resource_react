@@ -14,26 +14,26 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
     setImageUrl(e.target.value);
   };
 
-  const [weather, setWeather] = useState("");
-  const handleWeatherChange = (e) => {
-    setWeather(e.target.value);
+  const [category, setCategory] = useState("");
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value);
   };
 
   function handleSubmit(e) {
     e.preventDefault();
-    onAddItem({ name, imageUrl, weather });
+    onAddItem({ name, imageUrl, category });
   }
 
   return (
     <ModalWithForm
-      title="New garment"
-      buttonText="Add garment"
+      title="New resource"
+      buttonText="Add resource"
       onClose={onClose}
       isOpen={isOpen}
       onSubmit={handleSubmit}
     >
       <label htmlFor="name" className="modal__label">
-        Name
+        Name of Resource
         <input
           type="text"
           className="modal__input"
@@ -45,51 +45,57 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
         />
       </label>
       <label htmlFor="imageUrl" className="modal__label">
-        Image{" "}
+        Resource website link{" "}
         <input
           type="text"
           className="modal__input"
           id="imageUrl"
-          placeholder="Image Url"
+          placeholder="Resource website link"
           name="imageUrl"
           value={imageUrl}
           onChange={handleImageUrlChange}
         />
       </label>
       <fieldset className="modal__radio-buttons">
-        <legend className="modal__legend">Select the weather type: </legend>
-        <label htmlFor="hot" className="modal__label modal__label_type_radio">
+        <legend className="modal__legend">Select the resource type: </legend>
+        <label
+          htmlFor="basic needs"
+          className="modal__label modal__label_type_radio"
+        >
           <input
-            id="hot"
+            id="basic needs"
             type="radio"
             className="modal__radio-input"
             name="input"
-            value="hot"
-            onClick={handleWeatherChange}
+            value="basic needs"
+            onClick={handleCategoryChange}
           />{" "}
-          Hot
+          Basic needs
         </label>
-        <label htmlFor="warm" className="modal__label modal__label_type_radio">
+        <label htmlFor="jobs" className="modal__label modal__label_type_radio">
           <input
-            id="warm"
+            id="jobs"
             type="radio"
             className="modal__radio-input"
             name="input"
-            value="warm"
-            onClick={handleWeatherChange}
+            value="jobs"
+            onClick={handleCategoryChange}
           />{" "}
-          Warm
+          Jobs
         </label>
-        <label htmlFor="cold" className="modal__label modal__label_type_radio">
+        <label
+          htmlFor="education"
+          className="modal__label modal__label_type_radio"
+        >
           <input
-            id="cold"
+            id="education"
             type="radio"
             className="modal__radio-input"
             name="input"
-            value="cold"
-            onClick={handleWeatherChange}
+            value="education"
+            onClick={handleCategoryChange}
           />{" "}
-          Cold
+          Education
         </label>
       </fieldset>
     </ModalWithForm>

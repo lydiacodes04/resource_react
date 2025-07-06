@@ -57,7 +57,7 @@ function App() {
   };
 
   const handleAddClick = () => {
-    setActiveModal("add-garment");
+    setActiveModal("add-resource");
   };
 
   const handleEditModal = () => {
@@ -77,7 +77,8 @@ function App() {
   };
 
   const handleAddItemSubmit = (item) => {
-    postItems(item.name, item.imageUrl, item.weather)
+    console.log(item);
+    postItems(item.name, item.imageUrl, item.category)
       .then((newCard) => {
         setClothingItems([newCard, ...clothingItems]);
         closeActiveModal();
@@ -255,7 +256,7 @@ function App() {
           />
           <AddItemModal
             onClose={closeActiveModal}
-            isOpen={activeModal === "add-garment"}
+            isOpen={activeModal === "add-resource"}
             onAddItem={handleAddItemSubmit}
           />
           <ItemModal
