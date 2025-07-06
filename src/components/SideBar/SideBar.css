@@ -25,13 +25,21 @@
 }
 
 .sidebar__profile-edit-btn {
-  border: none;
   margin-top: 10px;
+  cursor: pointer;
+}
+
+.sidebar__profile-edit-btn:hover {
+  border-radius: 8%;
+  border: 4px solid #82590c;
 }
 
 .sidebar__logout {
-  border: none;
-  background: none;
   cursor: pointer;
   margin-top: 10px;
+}
+
+.sidebar__logout:hover {
+  border-radius: 8%;
+  border: 4px solid #82590c;
 }
