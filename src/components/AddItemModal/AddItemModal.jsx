@@ -68,7 +68,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
             className="modal__radio-input"
             name="input"
             value="basic needs"
-            onClick={handleCategoryChange}
+            onChange={handleCategoryChange}
           />{" "}
           Basic needs
         </label>
@@ -79,7 +79,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
             className="modal__radio-input"
             name="input"
             value="jobs"
-            onClick={handleCategoryChange}
+            onChange={handleCategoryChange}
           />{" "}
           Jobs
         </label>
@@ -93,7 +93,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
             className="modal__radio-input"
             name="input"
             value="education"
-            onClick={handleCategoryChange}
+            onChange={handleCategoryChange}
           />{" "}
           Education
         </label>

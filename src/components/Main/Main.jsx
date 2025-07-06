@@ -9,28 +9,33 @@ function Main({ onCardClick, clothingItems, onCardLike, isLoggedIn }) {
   return (
     <main>
       <section className="cards">
-        <p className="cards__text">Your text here.</p>
-        <ul className="cards__list">
-          {clothingItems
-            // .filter((item) => {
-            //   return item.zip === resourceData.zip;
-            // })
-            .map((item) => {
-              return (
-                <ItemCard
-                  key={item._id}
-                  item={item}
-                  onCardClick={onCardClick}
-                  onCardLike={onCardLike}
-                  isLoggedIn={isLoggedIn}
-                  currentUser={currentUser}
-                />
-              );
-            })}
-        </ul>
+        <p className="cards__text">Search for resources near you.</p>
+        <div className="cards__list">
+          {clothingItems.map((item) => {
+            return (
+              <ItemCard
+                key={item._id}
+                item={item}
+                onCardClick={onCardClick}
+                onCardLike={onCardLike}
+                isLoggedIn={isLoggedIn}
+                currentUser={currentUser}
+              />
+            );
+          })}
+        </div>
       </section>
     </main>
   );
 }
 
 export default Main;
+
+// <ul className="cards__list">
+//         {clothingItems
+//           .filter((item) => {
+//             return item.zip === resourceData.zip;
+//           })
+//           .map((item) => {
+//             return (
+//               <ItemCard

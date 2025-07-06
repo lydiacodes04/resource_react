@@ -5,6 +5,11 @@
   display: flex;
   justify-content: center;
   font-family: Cabinet Grotesk, sans-serif;
+  color: #fff;
+  background-color: #0000008d;
+  margin: 20px;
+  padding: 2px 12px 2px 12px;
+  border-radius: 5%;
 }
 
 .card__name {

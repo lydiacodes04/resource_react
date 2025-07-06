@@ -1,5 +1,5 @@
 import "./ItemModal.css";
-import close from "../../assets/close_icon-white.svg";
+import close from "../../assets/Cross.svg";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
 
@@ -23,7 +23,7 @@ function ItemModal({ activeModal, onClose, card, handleDeleteItem }) {
         <img src={card.imageUrl} alt={card.name} className="modal__image" />
         <div className="modal__footer">
           <h2 className="modal__caption"> {card.name} </h2>
-          <p className="modal__weather">Resource type: {card.weather}</p>
+          <p className="modal__weather">Resource type: {card.category}</p>
           <button
             className={modalDeleteBtnClassName}
             type="button"
