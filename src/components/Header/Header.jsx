@@ -10,14 +10,14 @@ function Header({ handleAddClick, handleAddRegistration, handleShowLogin }) {
 
   return (
     <header className="header">
-      <Link to="/">
-        <p className="header__logo">ResourceFinder</p>
+      <Link to="/" className="header__logo">
+        <p className="header__logo-text">ResourceFinder</p>
       </Link>
 
       <div className="header__controls">
         <div className="header__nav">
-          <Link to="/about">
-            <p className="header__about">About</p>
+          <Link to="/about" className="header__about">
+            <p className="header__about-text">About</p>
           </Link>
           {!myAvatar ? (
             <>
